@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 /.idea/
 /FMOD Project/.*/
+fmod_editor.log
+FMODStudioCache.asset*

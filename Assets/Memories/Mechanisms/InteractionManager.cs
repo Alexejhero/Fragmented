@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using Memories.Characters;
 using UnityEngine;
 
 namespace Memories.Mechanisms
@@ -9,7 +10,7 @@ namespace Memories.Mechanisms
     {
         private readonly List<Collider2D> _collisionResults = new();
 
-        public Characters.Player player;
+        public Player player;
 
         [UsedImplicitly]
         public void OnInteract()

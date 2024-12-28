@@ -24,7 +24,7 @@ namespace Memories.Characters
         public float maxDistance = 200f;
 
         internal static Vector3 currVelocity = Vector3.zero;
-        internal static float DistanceToActivePlayer => Vector3.Distance(Characters.Player.ActivePlayer.transform.position, Camera.main!.transform.position);
+        internal static float DistanceToActivePlayer => Vector3.Distance(Player.ActivePlayer.transform.position, Camera.main!.transform.position);
         private static bool IsInPauseMenu => false; //PauseMenuBehaviour.IsOpen;
         private static bool UseScaledTime => !IsInPauseMenu;
 

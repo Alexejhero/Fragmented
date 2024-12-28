@@ -6,7 +6,7 @@ namespace Memories.Characters.Movement
     public sealed class Noclip : MonoBehaviour
     {
         public Rigidbody2D rb;
-        public Characters.Player player;
+        public Player player;
         public PlayerController controller;
         public float flySpeed;
         private void Start()
@@ -25,7 +25,7 @@ namespace Memories.Characters.Movement
 
         private void Update()
         {
-            if (player != Characters.Player.ActivePlayer) return;
+            if (player != Player.ActivePlayer) return;
             rb.velocity = Vector2.zero;
             Vector2 movement = flySpeed * Time.deltaTime * controller.MoveInput;
             transform.position += (Vector3)movement;
@@ -33,7 +33,7 @@ namespace Memories.Characters.Movement
 
         public void OnNoclip()
         {
-            if (player != Characters.Player.ActivePlayer) return;
+            if (player != Player.ActivePlayer) return;
             enabled = !enabled;
         }
     }
