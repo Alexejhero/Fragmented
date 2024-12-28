@@ -6,25 +6,38 @@ namespace Memories.Book
 {
 	public class DummyBook : MonoBehaviour
 	{
-		[SerializeField]
 		private Popup[] popups;
+
+		private MemoryCeiling[] ceilings;
 
 		[SerializeField]
 		private float openTime=2f;
+
+		[SerializeField]
+		private int ceilingDelay = 800; //milliseconds
 
 		private bool isOpen = false;
 
 		private void Awake()
 		{
 			popups = GetComponentsInChildren<Popup>();
+			ceilings = GetComponentsInChildren<MemoryCeiling>();
 		}
 
 		private void Update()
 		{
 			if ((UnityEngine.Input.GetKeyDown(KeyCode.O)) && !isOpen)
 			{
-				DummyOpen().Forget();
+				DoOpen().Forget();
 			}
+		}
+
+		private async UniTask DoOpen()
+		{
+			await DummyOpen();
+			await UniTask.Delay(ceilingDelay);
+			// drop ceilings after opening
+			DropCeilings();
 		}
 
 		private void UpdatePopups(float lift)
@@ -33,6 +46,15 @@ namespace Memories.Book
 			{
 				mp.DoRotate(lift);
 			}
+		}
+
+		private void DropCeilings()
+		{
+			foreach (MemoryCeiling mc in ceilings)
+			{
+				mc.DoDrop();
+			}
+
 		}
 
 		private async UniTask DummyOpen()
