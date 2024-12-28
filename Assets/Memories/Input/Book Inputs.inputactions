@@ -1,5 +1,5 @@
 {
-    "name": "InputActions2D",
+    "name": "Book Inputs",
     "maps": [
         {
             "name": "Player",
@@ -45,7 +45,7 @@
                     "name": "Noclip",
                     "type": "Button",
                     "id": "6d06c04c-eab0-421b-9505-734b16bd4827",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

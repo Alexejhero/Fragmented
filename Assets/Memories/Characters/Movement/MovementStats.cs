@@ -3,25 +3,25 @@ using UnityEngine;
 namespace Memories.Characters.Movement
 {
     [CreateAssetMenu]
-    public class MovementStats : ScriptableObject
+    public sealed class MovementStats : ScriptableObject
     {
-        [Header("Horizontal Movement")]
-        
+        [Header("Directional Movement")]
+
         [Min(0), Tooltip("Beyond this value, the controller will not add any speed")]
-        public float maxHorizontalSpeed;
-        [Min(0), Tooltip("Horizontal acceleration when grounded.")]
+        public float maxDirectionalSpeed;
+        [Min(0), Tooltip("Directional acceleration when grounded.")]
         public float groundAcceleration;
         [Min(0), Tooltip("Deceleration when no input is pressed.")]
         public float idleDeceleration;
         [Min(0), Tooltip("Multiplier to idle deceleration when switching movement direction. Applies mid-air as well")]
         public float turnDecelerationMulti;
-        [Min(0), Tooltip("Horizontal acceleration when in the air.")]
+        [Min(0), Tooltip("Directional acceleration when in the air.")]
         public float airAcceleration;
         [Tooltip("Idle deceleration applied in the air. Improves air control. Unaffected by the air acceleration multiplier.")]
         public float idleAirDeceleration;
-        
+
         [Header("Jumping")]
-        
+
         [Min(0)]
         public float peakHeight;
         [Min(0), Tooltip("The time it takes to reach the peak of the jump. This also affects falling gravity to keep things feeling consistent.")]

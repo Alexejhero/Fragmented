@@ -1,6 +1,6 @@
 using System;
 
-namespace Memories.Data;
+namespace Helpers;
 
 public enum Comparison
 {
@@ -9,17 +9,17 @@ public enum Comparison
 }
 
 [Serializable]
-public struct MoodRequirement
+public struct ValueRequirement
 {
     public Comparison type;
     public int threshold;
 
-    public bool Matches(int mood)
+    public bool IsMetBy(int value)
     {
         return type switch
         {
-            Comparison.LessThan => mood < threshold,
-            Comparison.GreaterThan => mood > threshold,
+            Comparison.LessThan => value < threshold,
+            Comparison.GreaterThan => value > threshold,
             _ => throw new ArgumentOutOfRangeException()
         };
     }

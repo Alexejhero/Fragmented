@@ -20,7 +20,7 @@ namespace Memories.Characters.Movement
         // by popular request
         public bool IsGrounded => groundTracker.IsGrounded;
 
-        private InputActions2D _input;
+        private BookInputs _input;
         private Vector2 _move;
 
         private bool _jumpPressQueued;
@@ -45,7 +45,7 @@ namespace Memories.Characters.Movement
             this.EnsureComponent(ref groundTracker);
             _defaultGravMulti = _gravMultiShouldBe = rb.gravityScale;
 
-            _input = new InputActions2D();
+            _input = new BookInputs();
             _input.Player.Enable();
 
             moveInput = _input.Player.Move;
@@ -249,7 +249,7 @@ namespace Memories.Characters.Movement
                 float deceleration = IsGrounded
                     ? stats.idleDeceleration
                     : stats.idleAirDeceleration;
-                Accelerate(-rb.velocity.x / stats.maxHorizontalSpeed, deceleration);
+                Accelerate(-rb.velocity.x / stats.maxDirectionalSpeed, deceleration);
                 return;
             }
             if (!canMove) return;
@@ -270,7 +270,7 @@ namespace Memories.Characters.Movement
         private void Accelerate(float proportion, float acceleration)
         {
             float deltaV = proportion * acceleration * Time.deltaTime;
-            float maxSpeed = stats.maxHorizontalSpeed * Math.Abs(proportion);
+            float maxSpeed = stats.maxDirectionalSpeed * Math.Abs(proportion);
             if (proportion > 0 == rb.velocity.x > 0)
             {
                 float delta = maxSpeed - Mathf.Abs(rb.velocity.x);
