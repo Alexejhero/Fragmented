@@ -873,6 +873,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1de0ea210777354faffc40ede618234, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -927,8 +932,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offShelfPosition: {fileID: 4265410328740775156}
-  readingPosition: {fileID: 0}
+  previewPosition: {fileID: 0}
   cameraTransform: {fileID: 0}
+  cameraReadingLocation: {fileID: 0}
+  bookshelfObject: {fileID: 0}
   pageSeparation: 0
   open: 0
   finished: 0
