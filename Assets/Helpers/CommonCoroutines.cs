@@ -19,7 +19,7 @@ namespace Helpers
 
         public static IEnumerator DoOverTime(float duration, Func<float, IEnumerator> coroAction, bool unscaled = false)
         {
-            for (float t = 0; t < duration; t += unscaled ? Time.unscaledDeltaTime : Time.deltaTime)
+            for (float t = 0; t < duration; t = unscaled ? Time.unscaledTime : Time.time)
             {
                 float now = Time.time;
                 yield return coroAction(t);

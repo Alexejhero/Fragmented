@@ -7,7 +7,7 @@ namespace Memories
 {
     public sealed class Respawnable : MonoBehaviour
     {
-        private Vector3 checkpoint;
+        private Vector3 _checkpoint;
         public Action<Respawnable> OnResetBegin;
         public Action<Respawnable> OnResetFinish;
 
@@ -25,11 +25,11 @@ namespace Memories
             {
                 Player pl = GetComponent<Player>();
                 yield return new WaitForSeconds(pl && pl == Player.ActivePlayer ? 1 : 0);
-                transform.position = checkpoint;
+                transform.position = _checkpoint;
                 OnResetFinish?.Invoke(this);
             }
         }
         public void SetCheckpoint(Vector3 pos)
-            => checkpoint = pos;
+            => _checkpoint = pos;
     }
 }

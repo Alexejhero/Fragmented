@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Memories.Characters
 {
-    public sealed class Player : MonoBehaviour
+    public sealed class Player : Actor
     {
         public static Player ActivePlayer;
 
@@ -36,7 +36,6 @@ namespace Memories.Characters
                 if (deathSound)
                 {
                     deathSound.Play();
-                    deathSound.SetParameter("Is Active Player", this == ActivePlayer ? 1 : 0);
                 }
 
                 if (this != ActivePlayer) return;
