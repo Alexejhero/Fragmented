@@ -114,6 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9160266764243219578}
+  - component: {fileID: 4189938556087028093}
   m_Layer: 0
   m_Name: BookTemplate
   m_TagString: Untagged
@@ -131,13 +132,29 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.48, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8129694537892117279}
   - {fileID: 6755446108787237692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4189938556087028093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217247848918427780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee483c53983a46f4e9d54f0174cce9f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popups: []
+  ceilings: []
+  openTime: 2
+  ceilingDelay: 800
 --- !u!1 &5484580366494017286
 GameObject:
   m_ObjectHideFlags: 0
