@@ -5,7 +5,7 @@ public class WorldScaleLock : MonoBehaviour
 {
     private Vector3 _targetScale;
 
-    private void Awake()
+    private void OnEnable()
     {
         _targetScale = transform.lossyScale;
     }

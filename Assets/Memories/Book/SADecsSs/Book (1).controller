@@ -134,7 +134,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Aborting
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -244021340891266478}
@@ -147,7 +147,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 62c104192791cc64aaee820feef79e26, type: 2}
+  m_Motion: {fileID: 7400000, guid: 96ce2480a9ea1044dabf155c5b92aa53, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
