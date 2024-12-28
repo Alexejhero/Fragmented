@@ -14,7 +14,7 @@ public class WorldScaleLock : MonoBehaviour
     {
         // Adjust localScale so that lossyScale matches
         Vector3 currentLossyScale = transform.lossyScale;
-        Vector3 scaleRatio = new Vector3(
+        Vector3 scaleRatio = new(
             _targetScale.x / currentLossyScale.x,
             _targetScale.y / currentLossyScale.y,
             _targetScale.z / currentLossyScale.z
