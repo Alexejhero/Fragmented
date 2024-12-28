@@ -19,15 +19,21 @@ namespace Memories.Book
 
         private void Update()
         {
+            if (!book) return;
             float lift = book.pageSeparation;
-            // animator can rotate whatever axis
-            // animator.SetFloat("PopupLift", lift);
-
-            // X-axis temporary for now
-            var liftDiff = lift - lastLift;
-            if (Mathf.Approximately(liftDiff, 0)) return;
-            transform.Rotate(maxLiftAngle * liftDiff);
-            lastLift = book.pageSeparation;
+            DoRotate(lift);
         }
-    }
+
+        public void DoRotate(float lift)
+        {
+			// animator can rotate whatever axis
+			// animator.SetFloat("PopupLift", lift);
+
+			// X-axis temporary for now
+			var liftDiff = lift - lastLift;
+			if (Mathf.Approximately(liftDiff, 0)) return;
+			transform.Rotate(maxLiftAngle * liftDiff);
+			lastLift = book.pageSeparation;
+		}
+	}
 }
