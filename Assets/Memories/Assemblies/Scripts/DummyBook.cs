@@ -19,6 +19,7 @@ namespace Memories.Book
 		private int ceilingDelay = 800; //milliseconds
 
 		private bool isOpen = false;
+		private bool isAnimating = false;
 
 		private void Awake()
 		{
@@ -28,17 +29,24 @@ namespace Memories.Book
 
 		private void Update()
 		{
-			if ((UnityEngine.Input.GetKeyDown(KeyCode.M)) && !isOpen)
+			if ((UnityEngine.Input.GetKeyDown(KeyCode.M)) && !isOpen && !isAnimating)
 			{
-				isOpen = true;
 				DoOpen().Forget();
+			}else if ((UnityEngine.Input.GetKeyDown(KeyCode.M)) && isOpen && !isAnimating)
+			{
+				DoOpen(false).Forget();
 			}
+
 		}
 
-		private async UniTask DoOpen()
+		private async UniTask DoOpen(bool doOpen = true)
 		{
-			await DummyOpen();
-			await UniTask.Delay(ceilingDelay);
+			isAnimating = true;
+			await DummyOpen(doOpen);
+			if (doOpen) 
+			{
+				await UniTask.Delay(ceilingDelay);
+			}
 			// drop ceilings after opening
 			DropCeilings();
 		}
@@ -60,15 +68,17 @@ namespace Memories.Book
 
 		}
 
-		private async UniTask DummyOpen()
+		private async UniTask DummyOpen(bool doOpen = true)
 		{
-			float lerpval = 0;
-			while (lerpval < 1)
+			float lerpval = (doOpen ? 0 : 1);
+			while ( (doOpen&&(lerpval < 1)) || (!doOpen && (lerpval > 0)))
 			{
-				lerpval += Time.deltaTime / openTime;
+				lerpval += (doOpen ? Time.deltaTime : -Time.deltaTime) / openTime;
 				UpdatePopups(lerpval);
 				await UniTask.Yield();
 			}
+			isOpen = doOpen;
+			isAnimating = false;
 		}
 	}
 }
