@@ -26,8 +26,9 @@ namespace Memories.Book
 
 		private void Update()
 		{
-			if ((UnityEngine.Input.GetKeyDown(KeyCode.O)) && !isOpen)
+			if ((UnityEngine.Input.GetKeyDown(KeyCode.M)) && !isOpen)
 			{
+				isOpen = true;
 				DoOpen().Forget();
 			}
 		}
