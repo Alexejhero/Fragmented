@@ -3,21 +3,32 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class WorldScaleLock : MonoBehaviour
 {
-    private Vector3 _targetScale;
-
-    private void OnEnable()
-    {
-        _targetScale = transform.lossyScale;
-    }
+    public Vector3 targetScale;
 
     private void Update()
     {
-        // Adjust localScale so that lossyScale matches
+        // I dont know what the fuck is happening here
+
+        if (transform.localScale.x == 0)
+        {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+
+        if (transform.localScale.y == 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
+        }
+
+        if (transform.localScale.z == 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1);
+        }
+
         Vector3 currentLossyScale = transform.lossyScale;
         Vector3 scaleRatio = new(
-            _targetScale.x / currentLossyScale.x,
-            _targetScale.y / currentLossyScale.y,
-            _targetScale.z / currentLossyScale.z
+            targetScale.x / currentLossyScale.x,
+            targetScale.y / currentLossyScale.y,
+            targetScale.z / currentLossyScale.z
         );
         transform.localScale = new Vector3(
             transform.localScale.x * scaleRatio.x,

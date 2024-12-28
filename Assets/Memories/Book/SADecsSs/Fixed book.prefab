@@ -737,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
@@ -747,7 +747,7 @@ PrefabInstance:
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.3333333
+      value: 3.333333
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
@@ -847,6 +847,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3564151143789635634}
+    - targetCorrespondingSourceObject: {fileID: -5563664483175013427, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3332025665115931790}
   m_SourcePrefab: {fileID: 100100000, guid: 317396669d8c77a4e9392f80f8194011, type: 3}
 --- !u!4 &1333374607627186897 stripped
 Transform:
@@ -920,6 +924,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f58daf98c6cddd449670258c16dec7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetScale: {x: 100, y: 100, z: 100}
+--- !u!114 &3332025665115931790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2864928145180260087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebc665b89fc45e0ba41387cb806e4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossyScale: {x: 103, y: 100, z: 100.00001}
+  eulerAngles: {x: 90, y: 90.00001, z: 0}
 --- !u!4 &4914290074108832936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3370750187207804526, guid: 317396669d8c77a4e9392f80f8194011,
