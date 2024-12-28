@@ -25,8 +25,9 @@ namespace Memories.Characters
 
         private SpriteRenderer[] _renderers;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             AudioSystem.PauseSfx(false);
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnResetBegin += _ =>
@@ -69,9 +70,6 @@ namespace Memories.Characters
 
         public void OnEnable()
         {
-            // todo 2d camera
-            Camera.main!.GetComponent<CameraController>().target = transform;
-            ActivePlayer = this;
             ToggleMovement(true);
             SetSortOrder(1);
         }

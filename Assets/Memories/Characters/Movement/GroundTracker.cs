@@ -26,7 +26,7 @@ namespace Memories.Characters.Movement
 
         private void FixedUpdate()
         {
-            if (maxSurfaceAngle != _savedMaxSurfaceAngle)
+            if (!Mathf.Approximately(maxSurfaceAngle, _savedMaxSurfaceAngle))
                 RecalculateSurfaceCos();
             _internalGroundCheck = false;
         }
@@ -74,7 +74,7 @@ namespace Memories.Characters.Movement
             foreach (ContactPoint2D contact in collision.GetContacts())
             {
                 if (!contact.enabled) continue; // platform effectors
-                
+
                 Vector2 normal = contact.normal;
                 if (Vector2.Dot(Vector2.up, normal) >= minSurfaceCos)
                 {

@@ -17,7 +17,7 @@ namespace Memories.Book
             if (!book) book = transform.GetComponentInParent<MemoryBook>();
         }
 
-        void Update()
+        private void Update()
         {
             float lift = book.pageSeparation;
             // animator can rotate whatever axis
@@ -26,9 +26,7 @@ namespace Memories.Book
             // X-axis temporary for now
             var liftDiff = lift - lastLift;
             if (Mathf.Approximately(liftDiff, 0)) return;
-            Debug.Log($"{liftDiff} {transform.localEulerAngles}");
             transform.Rotate(maxLiftAngle * liftDiff);
-            Debug.Log($"{liftDiff} 2 {transform.localEulerAngles}");
             lastLift = book.pageSeparation;
         }
     }
