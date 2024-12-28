@@ -6,8 +6,10 @@ namespace Memories.Book
 {
 	public class DummyBook : MonoBehaviour
 	{
+		[SerializeField]
 		private Popup[] popups;
 
+		[SerializeField]
 		private MemoryCeiling[] ceilings;
 
 		[SerializeField]
