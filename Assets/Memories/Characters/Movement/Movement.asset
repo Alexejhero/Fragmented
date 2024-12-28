@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1da023764df08248adfed95216f8dff, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  maxDirectionalSpeed: 6
+  maxDirectionalSpeed: 12
   groundAcceleration: 24
-  idleDeceleration: 30
-  turnDecelerationMulti: 2
+  idleDeceleration: 18
+  turnDecelerationMulti: 0.1
   airAcceleration: 1
   idleAirDeceleration: 2
   peakHeight: 1

@@ -289,25 +289,21 @@ namespace Memories.Characters.Movement
             _lastDeltaV = deltaV;
 
             Vector2 targetSpeed = stats.maxDirectionalSpeed * proportion.Abs();
+            Vector2 rbHorizVel = rb.velocity.XZ();
+            Vector2 speedRoomLeft = targetSpeed - rbHorizVel.Abs();
 
             if (Mathf.Sign(proportion.x) == Mathf.Sign(rb.velocity.x))
             {
-                float delta = targetSpeed.x - Mathf.Abs(rb.velocity.x);
                 // Min() on magnitude while preserving sign
-                if (delta < 0.01f)
-                    deltaV.x = 0;
-                else if (Mathf.Abs(deltaV.x) > delta)
-                    deltaV.x = Mathf.Sign(deltaV.x) * delta;
+                deltaV.x = speedRoomLeft.x < 0.01f ? 0
+                    : Mathf.Sign(deltaV.x) * Mathf.Min(Mathf.Abs(deltaV.x), speedRoomLeft.x);
             }
 
             if (Mathf.Sign(proportion.y) == Mathf.Sign(rb.velocity.z))
             {
-                float delta = targetSpeed.y - Mathf.Abs(rb.velocity.z);
                 // Min() on magnitude while preserving sign
-                if (delta < 0.01f)
-                    deltaV.y = 0;
-                else if (Mathf.Abs(deltaV.y) > delta)
-                    deltaV.y = Mathf.Sign(deltaV.y) * delta;
+                deltaV.y = speedRoomLeft.y < 0.01f ? 0
+                    : Mathf.Sign(deltaV.y) * Mathf.Min(Mathf.Abs(deltaV.y), speedRoomLeft.y);
             }
 
             rb.velocity += deltaV.XZ() * Time.deltaTime;

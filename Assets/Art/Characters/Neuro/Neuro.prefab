@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbbfd1d7dd53ff4fad3d399b61f7e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterAnimator: {fileID: 8402715580104880053}
-  characterBody: {fileID: 2322004528421505944}
+  animator: {fileID: 8402715580104880053}
+  rb: {fileID: 2322004528421505944}
+  controller: {fileID: 5750116666983498378}
 --- !u!114 &5750116666983498378
 MonoBehaviour:
   m_ObjectHideFlags: 0
