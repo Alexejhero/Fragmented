@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 3144450903168329060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: 0, z: 0}
+  m_LocalPosition: {x: 0.148, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -762,7 +762,7 @@ PrefabInstance:
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.3333335
+      value: 3.3333333
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
@@ -936,19 +936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScale: {x: 12, y: 12, z: 12}
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2864928145180260087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ebc665b89fc45e0ba41387cb806e4ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lossyScale: {x: 103, y: 100, z: 100.00001}
-  eulerAngles: {x: 90, y: 90.00001, z: 0}
 --- !u!4 &4914290074108832936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3370750187207804526, guid: 317396669d8c77a4e9392f80f8194011,
