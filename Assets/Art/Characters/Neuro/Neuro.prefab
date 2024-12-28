@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 552856074226169393}
   - component: {fileID: 2803799613875599565}
   - component: {fileID: 2322004528421505944}
+  - component: {fileID: 3873350787325658791}
   m_Layer: 0
   m_Name: Neuro
   m_TagString: Untagged
@@ -84,6 +85,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3873350787325658791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483755889505758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbbfd1d7dd53ff4fad3d399b61f7e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterAnimator: {fileID: 8402715580104880053}
 --- !u!1001 &2735625496125116964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +174,12 @@ PrefabInstance:
 --- !u!4 &2484964003725931983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2eea99e677fc3a49b5c3b6b09fcb00c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2735625496125116964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8402715580104880053 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: c2eea99e677fc3a49b5c3b6b09fcb00c,
     type: 3}
   m_PrefabInstance: {fileID: 2735625496125116964}
   m_PrefabAsset: {fileID: 0}
