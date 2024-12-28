@@ -8,11 +8,9 @@ namespace Memories.Book
     public class MemoryBook : MonoBehaviour
     {
         private static readonly int _openProp = Animator.StringToHash("open");
+        private static readonly int _finishedProp = Animator.StringToHash("finished");
 
         private Animator _animator;
-
-        public GameObject left;
-        public GameObject right;
 
         private Vector3 _startPos;
 
@@ -21,9 +19,11 @@ namespace Memories.Book
 
         public Transform cameraTransform;
 
+        [HideInInspector]
         public float pageSeparation;
 
         public bool open;
+        public bool finished;
 
         private void Awake()
         {
@@ -34,11 +34,12 @@ namespace Memories.Book
         private void Update()
         {
             _animator.SetBool(_openProp, open);
+            _animator.SetBool(_finishedProp, finished);
 
-            float absDiff = Mathf.Abs(left.transform.localEulerAngles.y - right.transform.localEulerAngles.y);
-            float degreeDiff = absDiff % 360;
-            const float oneOver180 = 1f / 180f; // multiplication is faster than division;
-            pageSeparation = degreeDiff * oneOver180;
+            // float absDiff = Mathf.Abs(left.transform.localEulerAngles.y - right.transform.localEulerAngles.y);
+            // float degreeDiff = absDiff % 360;
+            // const float oneOver180 = 1f / 180f; // multiplication is faster than division;
+            // pageSeparation = degreeDiff * oneOver180;
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.A)) TakeOut().Forget();
         }
