@@ -33,7 +33,7 @@ namespace Memories.Book
 			var liftDiff = lift - lastLift;
 			if (Mathf.Approximately(liftDiff, 0)) return;
 			transform.Rotate(maxLiftAngle * liftDiff);
-			lastLift = book.pageSeparation;
+            lastLift = lift; // book.pageSeparation;
 		}
 	}
 }

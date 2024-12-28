@@ -12,9 +12,19 @@ namespace Memories.Book
 		[SerializeField]
 		private float openTime=2f;
 
+		private bool isOpen = false;
+
 		private void Awake()
 		{
 			popups = GetComponentsInChildren<Popup>();
+		}
+
+		private void Update()
+		{
+			if ((UnityEngine.Input.GetKeyDown(KeyCode.O)) && !isOpen)
+			{
+				DummyOpen().Forget();
+			}
 		}
 
 		private void UpdatePopups(float lift)
