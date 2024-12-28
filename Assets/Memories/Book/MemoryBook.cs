@@ -56,7 +56,7 @@ namespace Memories.Book
             if (UnityEngine.Input.GetKeyDown(KeyCode.C)) Close().Forget();
         }
 
-        private async UniTask TakeOut()
+        public async UniTask TakeOut()
         {
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(previewPosition, 1f).Forget();

@@ -479,7 +479,7 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMOD Project/SchizoQuest.fspro
+  sourceProjectPath: FMOD Project/Jam2.fspro
   sourceBankPath: FMOD Project/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5

@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Memories.Sequencers;
+namespace Memories.Cutscenes;
 
-public abstract class CutsceneSequencer : MonoBehaviour
+public abstract class CustomSequencer : MonoBehaviour
 {
     public abstract IEnumerator Play();
 }
