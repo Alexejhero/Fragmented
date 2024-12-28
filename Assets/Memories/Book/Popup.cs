@@ -18,9 +18,12 @@ namespace Memories.Book
         [SerializeField]
         private bool initializeCounterRotation = false;
 
+        [SerializeField]
+        private bool ignoreBooks = false;
+
 		protected void Awake()
         {
-            if (!book) book = transform.GetComponentInParent<MemoryBook>();
+            if (!book && !ignoreBooks) book = transform.GetComponentInParent<MemoryBook>();
             if (collider != null) collider.enabled = false;
             if (initializeCounterRotation) transform.Rotate(maxLiftAngle);
 		}

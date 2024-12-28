@@ -13,7 +13,10 @@ namespace Memories.Characters
         private static readonly int _isLeft = Animator.StringToHash("isLeft");
         private static readonly int _isMoving = Animator.StringToHash("isMoving");
 
-        [SerializeField]
+        private Vector3 scaleForward = Vector3.one;
+		private Vector3 scaleBackwards = new Vector3(-1, 1, 1);
+
+		[SerializeField]
         private Animator animator;
 
         [SerializeField]
@@ -31,7 +34,10 @@ namespace Memories.Characters
             this.EnsureComponent(ref animator);
             this.EnsureComponent(ref rb);
             this.EnsureComponent(ref controller);
-        }
+
+            scaleForward *= transform.localScale.x;
+			scaleBackwards *= transform.localScale.x;
+		}
 
         private void Update()
         {
@@ -50,7 +56,7 @@ namespace Memories.Characters
             animator.SetBool(_isLeft, isLeft);
             animator.SetBool(_isMoving, isMoving);
 
-            transform.localScale = isLeft ? new Vector3(-1, 1, 1) : Vector3.one;
+            transform.localScale = isLeft ? scaleBackwards : scaleForward;
         }
 
         private void PlayerReset()
