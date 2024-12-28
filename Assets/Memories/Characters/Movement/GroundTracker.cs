@@ -1,4 +1,4 @@
-using Helpers;
+using TriInspector;
 using UnityEngine;
 
 namespace Memories.Characters.Movement
@@ -13,13 +13,13 @@ namespace Memories.Characters.Movement
         public bool IsRecentlyGrounded => isOnGround || coyoteTimer < coyoteTime;
         public float coyoteTime = 0.15f;
         [Header("Runtime Info")]
-        [SerializeField] private bool isOnGround;
-        public float coyoteTimer;
-        public Vector2 lastSurfacePoint;
-        public Vector2 surfaceNormal;
-        public Collider2D surfaceCollider;
+        [ShowInInspector, ReadOnly] private bool isOnGround;
+        [ReadOnly] public float coyoteTimer;
+        [ReadOnly] public Vector3 lastSurfacePoint;
+        [ReadOnly] public Vector3 surfaceNormal;
+        [ReadOnly] public Collider surfaceCollider;
 
-        // cleared on FixedUpdate, (maybe) set in OnCollision****2D, then checked in Update
+        // cleared on FixedUpdate, (maybe) set in OnCollision****, then checked in Update
         // see https://docs.unity3d.com/Manual/ExecutionOrder.html
         // this does mean that changes are delayed until the next physics frame
         private bool _internalGroundCheck;
@@ -46,37 +46,34 @@ namespace Memories.Characters.Movement
             minSurfaceCos = Mathf.Cos(Mathf.Deg2Rad * maxSurfaceAngle);
         }
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public void OnCollisionEnter(Collision collision)
         {
             GroundCheck(collision);
         }
 
-        public void OnCollisionStay2D(Collision2D collision)
+        public void OnCollisionStay(Collision collision)
         {
             GroundCheck(collision);
         }
 
-        private void GroundCheck(Collision2D collision)
+        private void GroundCheck(Collision collision)
         {
             if (!enabled) return;
 
-            if (CheckContactNormals(collision))
-            {
-                _internalGroundCheck = true;
-                surfaceCollider = collision.collider;
-            }
+            if (!CheckContactNormals(collision)) return;
+
+            _internalGroundCheck = true;
+            surfaceCollider = collision.collider;
         }
 
-        private bool CheckContactNormals(Collision2D collision)
+        private bool CheckContactNormals(Collision collision)
         {
             if (!collision.gameObject) return false;
             if (collision.contactCount == 0) return false;
-            foreach (ContactPoint2D contact in collision.GetContacts())
+            foreach (ContactPoint contact in collision.contacts)
             {
-                if (!contact.enabled) continue; // platform effectors
-
-                Vector2 normal = contact.normal;
-                if (Vector2.Dot(Vector2.up, normal) >= minSurfaceCos)
+                Vector3 normal = contact.normal;
+                if (Vector3.Dot(Vector3.up, normal) >= minSurfaceCos)
                 {
                     surfaceNormal = normal;
                     lastSurfacePoint = contact.point;

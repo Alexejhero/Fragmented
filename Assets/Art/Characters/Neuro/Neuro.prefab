@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2803799613875599565}
   - component: {fileID: 2322004528421505944}
   - component: {fileID: 3873350787325658791}
+  - component: {fileID: 5750116666983498378}
+  - component: {fileID: 7093946013717279300}
+  - component: {fileID: 4623211278605284916}
   m_Layer: 0
   m_Name: Neuro
   m_TagString: Untagged
@@ -42,7 +45,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7483755889505758119}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5e39fe414b215a2429705218151a4d28, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -83,7 +86,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &3873350787325658791
 MonoBehaviour:
@@ -99,6 +102,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAnimator: {fileID: 8402715580104880053}
   characterBody: {fileID: 2322004528421505944}
+--- !u!114 &5750116666983498378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483755889505758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448573331bffc914eb5a9831c905c527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 346cfad8f58233b43897ebe1946a8379, type: 2}
+  rb: {fileID: 2322004528421505944}
+  grav: {fileID: 7093946013717279300}
+  groundTracker: {fileID: 4623211278605284916}
+  canMove: 1
+  canJump: 1
+--- !u!114 &7093946013717279300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483755889505758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb6074b7046473b9d59964c8a599389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2322004528421505944}
+  scale: 1
+--- !u!114 &4623211278605284916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483755889505758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662625a49d4a4c44fa3ff58274a2b885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSurfaceAngle: 45
+  coyoteTime: 0.15
+  coyoteTimer: 0
+  lastSurfacePoint: {x: 0, y: 0, z: 0}
+  surfaceNormal: {x: 0, y: 0, z: 0}
+  surfaceCollider: {fileID: 0}
+  debugGizmos: 0
 --- !u!1001 &2735625496125116964
 PrefabInstance:
   m_ObjectHideFlags: 0

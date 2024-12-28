@@ -1,6 +1,7 @@
-using System;
 using Helpers;
 using Memories.Input;
+using TriInspector;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,19 +10,28 @@ namespace Memories.Characters.Movement
     public sealed class PlayerController : MonoBehaviour
     {
         public MovementStats stats;
-        public Rigidbody2D rb;
+        public Rigidbody rb;
+        public GravityScaler grav;
         public GroundTracker groundTracker;
         public bool canMove;
         public bool canJump;
 
         /// <summary>The latest directional input received.</summary>
+        [ShowInInspector]
         public Vector2 MoveInput => _move;
+        [ShowInInspector]
         public bool IsJumping => _jumping;
         // by popular request
+        [ShowInInspector]
         public bool IsGrounded => groundTracker.IsGrounded;
 
         private BookInputs _input;
         private Vector2 _move;
+        [ShowInInspector]
+        private Vector3 _lastDeltaV;
+
+        [ShowInInspector]
+        private Vector3 _rbVelocity;
 
         private bool _jumpPressQueued;
         private bool _jumpHeld;
@@ -43,7 +53,7 @@ namespace Memories.Characters.Movement
         {
             this.EnsureComponent(ref rb);
             this.EnsureComponent(ref groundTracker);
-            _defaultGravMulti = _gravMultiShouldBe = rb.gravityScale;
+            _defaultGravMulti = _gravMultiShouldBe = grav.scale;
 
             _input = new BookInputs();
             _input.Player.Enable();
@@ -70,7 +80,7 @@ namespace Memories.Characters.Movement
             CheckGrounded();
 
             HandleVertical();
-            HandleHorizontal();
+            HandleDirectionals();
         }
 
         public void OnMoveInput(InputAction.CallbackContext ctx)
@@ -122,18 +132,18 @@ namespace Memories.Characters.Movement
 
         private void AdjustGravity()
         {
-            if (rb.gravityScale != _gravMultiShouldBe) // changed from the outside
-                _defaultGravMulti = rb.gravityScale;
+            if (grav.scale != _gravMultiShouldBe) // changed from the outside
+                _defaultGravMulti = grav.scale;
             float scale = CalcGravity();
-            rb.gravityScale = _gravMultiShouldBe = scale;
+            grav.scale = _gravMultiShouldBe = scale;
         }
 
         private float CalcGravity()
         {
             float scale = _defaultGravMulti;
             bool applyMidAirGravity = !IsGrounded
-                || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>() // moving platform hack
-                || _jumpedThisFrame;
+                                      || groundTracker.surfaceCollider.GetComponent<Rigidbody2D>() // moving platform hack
+                                      || _jumpedThisFrame;
             if (applyMidAirGravity)
             {
                 scale *= GetJumpGravityMulti();
@@ -211,7 +221,7 @@ namespace Memories.Characters.Movement
         {
             if (resetVerticalSpeed)
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0);
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             }
             // Jump peak height = 1/2 * (v0 ^ 2 / gravity)
             // therefore v0 = sqrt(2 * height * gravity)
@@ -219,11 +229,11 @@ namespace Memories.Characters.Movement
 
             // gravity will be this while rising
             float gravScale = _defaultGravMulti * GetJumpGravityMulti();
-            float gravity = gravScale * -Physics2D.gravity.y;
+            float gravity = gravScale * -Physics.gravity.y;
 
             float jumpSpeed = Mathf.Sqrt(2 * stats.peakHeight * gravity);
 
-            rb.velocity += new Vector2(0, jumpSpeed);
+            rb.velocity += jumpSpeed * Vector3.up;
 
             _jumping = true;
             _jumpedThisFrame = true;
@@ -240,47 +250,68 @@ namespace Memories.Characters.Movement
             return gravity / -Physics2D.gravity.y;
         }
 
-        private void HandleHorizontal()
+        private void HandleDirectionals()
         {
-            float moveProportion = _move.x;
+            Vector2 moveProportion = _move;
 
-            if (Mathf.Abs(moveProportion) < 0.1f) // todo configurable deadzone (surely in a future patch (clueless))
+            if (moveProportion.sqrMagnitude < 0.01f) // todo configurable deadzone (surely in a future patch (clueless))
             {
-                float deceleration = IsGrounded
+                float decel = IsGrounded
                     ? stats.idleDeceleration
                     : stats.idleAirDeceleration;
-                Accelerate(-rb.velocity.x / stats.maxDirectionalSpeed, deceleration);
+                Vector2 deceleration = new(decel, decel);
+                Accelerate(-new Vector2(rb.velocity.x, rb.velocity.z) / stats.maxDirectionalSpeed, deceleration);
                 return;
             }
             if (!canMove) return;
 
-            float acceleration = IsGrounded
+            float accel = IsGrounded
                 ? stats.groundAcceleration
                 : stats.airAcceleration;
+            Vector2 acceleration = new(accel, accel);
 
             // moving in the opposite direction (turning)
-            if (!Mathf.Approximately(rb.velocity.x, 0) && moveProportion > 0 != rb.velocity.x > 0)
+            if (!Mathf.Approximately(rb.velocity.x, 0) && Mathf.Sign(moveProportion.x) != Mathf.Sign(rb.velocity.x))
             {
-                acceleration *= stats.turnDecelerationMulti;
+                acceleration.x *= stats.turnDecelerationMulti;
+            }
+            if (!Mathf.Approximately(rb.velocity.z, 0) && Mathf.Sign(moveProportion.y) != Mathf.Sign(rb.velocity.z))
+            {
+                acceleration.y *= stats.turnDecelerationMulti;
             }
 
             Accelerate(moveProportion, acceleration);
         }
 
-        private void Accelerate(float proportion, float acceleration)
+        private void Accelerate(Vector2 proportion, Vector2 acceleration)
         {
-            float deltaV = proportion * acceleration * Time.deltaTime;
-            float maxSpeed = stats.maxDirectionalSpeed * Math.Abs(proportion);
-            if (proportion > 0 == rb.velocity.x > 0)
+            Vector2 deltaV = proportion * acceleration;
+            _lastDeltaV = deltaV;
+
+            Vector2 targetSpeed = stats.maxDirectionalSpeed * proportion.Abs();
+
+            if (Mathf.Sign(proportion.x) == Mathf.Sign(rb.velocity.x))
             {
-                float delta = maxSpeed - Mathf.Abs(rb.velocity.x);
-                if (delta < 0.01f) return;
+                float delta = targetSpeed.x - Mathf.Abs(rb.velocity.x);
                 // Min() on magnitude while preserving sign
-                if (Mathf.Abs(deltaV) > delta)
-                    deltaV = Mathf.Sign(deltaV) * delta;
+                if (delta < 0.01f)
+                    deltaV.x = 0;
+                else if (Mathf.Abs(deltaV.x) > delta)
+                    deltaV.x = Mathf.Sign(deltaV.x) * delta;
             }
 
-            rb.velocity += new Vector2(deltaV, 0);
+            if (Mathf.Sign(proportion.y) == Mathf.Sign(rb.velocity.z))
+            {
+                float delta = targetSpeed.y - Mathf.Abs(rb.velocity.z);
+                // Min() on magnitude while preserving sign
+                if (delta < 0.01f)
+                    deltaV.y = 0;
+                else if (Mathf.Abs(deltaV.y) > delta)
+                    deltaV.y = Mathf.Sign(deltaV.y) * delta;
+            }
+
+            rb.velocity += deltaV.XZ() * Time.deltaTime;
+            _rbVelocity = rb.velocity;
         }
 
         private void OnDisable()
@@ -297,5 +328,15 @@ namespace Memories.Characters.Movement
             _jumpHeld = false;
             _jumping = false;
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            Handles.color = Color.yellow;
+            Handles.DrawWireDisc(transform.position, Vector3.up, stats.maxDirectionalSpeed);
+            Handles.color = Color.red;
+            Handles.DrawLine(transform.position, transform.position + rb.velocity);
+        }
+#endif
     }
 }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1da023764df08248adfed95216f8dff, type: 3}
+  m_Name: Movement
+  m_EditorClassIdentifier: 
+  maxDirectionalSpeed: 6
+  groundAcceleration: 24
+  idleDeceleration: 30
+  turnDecelerationMulti: 2
+  airAcceleration: 1
+  idleAirDeceleration: 2
+  peakHeight: 1
+  timeToPeak: 0.4
+  extraJumps: 0
+  earlyCutoffGravityMulti: 2
+  resetFallVelocity: 1
+  resetRiseVelocity: 1
+  bunnyhopBuffer: 0.1
