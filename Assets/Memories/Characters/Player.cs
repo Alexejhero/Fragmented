@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Memories.Characters
 {
-    public sealed class Player : Actor
+    public sealed class Player : BookActor
     {
         public static Player ActivePlayer;
 
