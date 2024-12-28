@@ -11,11 +11,14 @@ namespace Memories.Book
         public float lastLift;
         // todo: animator
         // public Animator animator;
+        [SerializeField]
+        private Collider collider;
 
         protected void Awake()
         {
             if (!book) book = transform.GetComponentInParent<MemoryBook>();
-        }
+            if (collider != null) collider.enabled = false;
+		}
 
         private void Update()
         {
@@ -34,6 +37,8 @@ namespace Memories.Book
 			if (Mathf.Approximately(liftDiff, 0)) return;
 			transform.Rotate(maxLiftAngle * liftDiff);
             lastLift = lift; // book.pageSeparation;
+
+			if (collider != null) collider.enabled = lift > 0.9;
 		}
 	}
 }

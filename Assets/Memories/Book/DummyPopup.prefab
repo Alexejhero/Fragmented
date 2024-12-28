@@ -48,6 +48,7 @@ MonoBehaviour:
   book: {fileID: 0}
   maxLiftAngle: {x: 88, y: 0, z: 0}
   lastLift: 0
+  collider: {fileID: 8887834124159261327}
 --- !u!1 &7651987574015747171
 GameObject:
   m_ObjectHideFlags: 0
