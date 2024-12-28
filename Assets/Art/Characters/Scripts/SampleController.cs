@@ -40,6 +40,15 @@ public class SampleController : MonoBehaviour
 		Debug.Log("mov " + isMoving + "  ?? " + isLeft);
 		characterAnimator.SetBool("isLeft", isLeft);
 		characterAnimator.SetBool("isMoving", isMoving);
+
+		if (isLeft)
+		{
+			transform.localScale = new Vector3(-1, 1, 1);
+		}
+		else
+		{
+			transform.localScale = Vector3.one;
+		}
 	}
 
 	private void PlayerReset()
