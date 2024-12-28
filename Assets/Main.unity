@@ -441,21 +441,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5374
       objectReference: {fileID: 0}
@@ -504,11 +489,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1858519385326790763, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: m_Name
@@ -549,6 +529,21 @@ PrefabInstance:
       propertyPath: cameraReadingLocation
       value: 
       objectReference: {fileID: 872654574}
+    - target: {fileID: 8199102394750637278, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199102394750637278, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199102394750637278, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.3333328
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

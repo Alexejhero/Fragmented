@@ -664,6 +664,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4128383740851021839, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128383740851021839, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128383740851021839, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_Name
@@ -920,7 +935,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f58daf98c6cddd449670258c16dec7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScale: {x: 100, y: 100, z: 100}
+  targetScale: {x: 12, y: 12, z: 12}
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2864928145180260087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebc665b89fc45e0ba41387cb806e4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lossyScale: {x: 103, y: 100, z: 100.00001}
+  eulerAngles: {x: 90, y: 90.00001, z: 0}
 --- !u!4 &4914290074108832936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3370750187207804526, guid: 317396669d8c77a4e9392f80f8194011,
