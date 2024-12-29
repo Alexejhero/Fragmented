@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneName: boot_intro
   skippable: 1
+  repeatable: 0
   repeatBehaviour: 0
   mainLines:
   - rid: 949997391457288228
@@ -27,6 +28,7 @@ MonoBehaviour:
   - rid: 949997391457288237
   - rid: 949997391457288235
   - rid: 949997391457288236
+  - rid: 949997416182972416
   repeatLines: []
   references:
     version: 2
@@ -84,3 +86,6 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Does Neuro-sama's planetary reign finally begin today?
+    - rid: 949997416182972416
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 

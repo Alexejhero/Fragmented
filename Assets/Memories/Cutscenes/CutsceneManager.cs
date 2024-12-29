@@ -60,6 +60,8 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
     {
         if (!currentCutscene) return;
         if (!currentCutscene.data.skippable) return;
+        // non-skippable instructions
+        if (currentCutscene.data.mainLines.Any(l => l is CloseBook)) return;
 
         _cts.Cancel();
         _cts = new();
@@ -109,6 +111,12 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                 Book.TurnPages(pages.pages);
                 break;
             }
+            case CloseBook:
+            {
+                Debug.Log("closing book");
+                await Book.Close();
+                break;
+            }
         }
     }
 
@@ -136,6 +144,11 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case TurnPages: // todo: erm... problem. how to instantly flip?
             {
+                break;
+            }
+            case CloseBook: // this one is just not skippable inherently
+            {
+                Book.Close().Forget();
                 break;
             }
         }

@@ -181,7 +181,7 @@ namespace Memories.Book
 
         public void OpenEvent() => Open().Forget();
 
-        private async UniTask Open()
+        public async UniTask Open()
         {
             if (state != State.Previewing) return;
 
@@ -203,7 +203,7 @@ namespace Memories.Book
             state = State.Opened;
         }
 
-        private async UniTask Close()
+        public async UniTask Close()
         {
             if (state != State.Opened) return;
 

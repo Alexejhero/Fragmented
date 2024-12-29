@@ -73,7 +73,13 @@ public sealed class MultipleWaitAll : DialogueInstruction
     public DialogueInstruction[] instructions;
 }
 
+[Serializable]
 public sealed class TurnPages : DialogueInstruction
 {
     public int pages;
+}
+
+[Serializable]
+public sealed class CloseBook : DialogueInstruction
+{
 }
