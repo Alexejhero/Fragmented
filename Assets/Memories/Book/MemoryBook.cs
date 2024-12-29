@@ -1,5 +1,8 @@
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Memories.Characters;
+using Memories.Cutscenes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -24,6 +27,9 @@ namespace Memories.Book
         public Transform cameraPreviewLocation;
         public Transform cameraReadingLocation;
         public GameObject bookshelfObject;
+
+        public BookActor[] actors;
+        public CustomSequencer[] customSequences;
 
         [HideInInspector]
         public bool inTransition;
@@ -107,6 +113,11 @@ namespace Memories.Book
             cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.7f);
             await UniTask.Delay(700);
             bookshelfObject.SetActive(true);
+        }
+
+        public CustomSequencer GetSequencer(string sequenceName)
+        {
+            return customSequences.FirstOrDefault(s => s.sequenceName == sequenceName);
         }
     }
 }

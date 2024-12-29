@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using Helpers;
+using Memories.Book;
 using UnityEngine;
 
 namespace Memories;
@@ -18,6 +19,7 @@ public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
     public List<Memory> coreMemories = new();
     public IEnumerable<Memory> Available => allMemories.Where(m => m.IsAvailable);
     public IEnumerable<Memory> Forgotten => allMemories.Where(m => m.state is Memory.State.Forgotten);
+    public MemoryBook currentBook;
 
     private void Start()
     {

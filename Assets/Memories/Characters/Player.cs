@@ -25,9 +25,8 @@ namespace Memories.Characters
 
         private SpriteRenderer[] _renderers;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
             AudioSystem.PauseSfx(false);
             _renderers = GetComponentsInChildren<SpriteRenderer>();
             respawn.OnResetBegin += _ =>

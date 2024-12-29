@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Memories.Characters;
+using FMODUnity;
 using TriInspector;
 using UnityEngine;
 
@@ -9,23 +9,36 @@ namespace Memories.Cutscenes;
 [AddComponentMenu("Cutscenes/Cutscene")]
 public sealed class Cutscene : MonoBehaviour
 {
+    public int timesPlayed;
+    public CutsceneData data;
+}
+
+[CreateAssetMenu(menuName = "Cutscenes/Cutscene Data")]
+public sealed class CutsceneData : ScriptableObject
+{
+    public string cutsceneName;
+
     public enum RepeatBehaviour
     {
         Last,
         Random,
         Loop,
     }
-
-    public string cutsceneName;
-    public int timesPlayed;
     public RepeatBehaviour repeatBehaviour;
 
     [SerializeReference]
     public DialogueInstruction[] mainLines;
     [SerializeReference]
-    public List<DialogueInstruction[]> repeatLines;
+    public LineSet[] repeatLines;
 }
 
+// unity is too weak to serialize a list of arrays
+[Serializable]
+public sealed class LineSet
+{
+    [SerializeReference]
+    public DialogueInstruction[] lines;
+}
 
 [Serializable]
 public abstract class DialogueInstruction
@@ -41,7 +54,7 @@ public sealed class Pause : DialogueInstruction
 [Serializable]
 public sealed class TextLine : DialogueInstruction
 {
-    public BookActor actor;
+    public string dialogueActorName;
     [TextArea]
     public string text;
 }
@@ -49,5 +62,18 @@ public sealed class TextLine : DialogueInstruction
 [Serializable]
 public sealed class CustomSequence : DialogueInstruction
 {
-    public CustomSequencer sequencer;
+    public string sequenceName;
+}
+
+[Serializable]
+public sealed class PlaySfx : DialogueInstruction
+{
+    public EventReference sound;
+}
+
+[Serializable]
+public sealed class MultipleWaitAll : DialogueInstruction
+{
+    [SerializeReference]
+    public DialogueInstruction[] instructions;
 }

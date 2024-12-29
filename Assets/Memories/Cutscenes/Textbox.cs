@@ -1,6 +1,7 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Memories.Characters;
+using TMPro;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
@@ -8,6 +9,7 @@ namespace Memories.Cutscenes;
 public sealed class Textbox : MonoBehaviour
 {
     public BookActor actor;
+    public TMP_Text tmp;
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public sealed class Textbox : MonoBehaviour
         _advanceSource.TrySetResult();
     }
 
+    // input system, triggers when clicking anywhere
     public void OnClick()
     {
         Advance();

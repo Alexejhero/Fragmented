@@ -1,4 +1,3 @@
-using System.Collections;
 using Cysharp.Threading.Tasks;
 using Memories.Book;
 using Memories.Cutscenes;
@@ -7,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace Memories;
 
-public class Memory : MonoBehaviour, IPointerClickHandler
+public sealed class Memory : MonoBehaviour, IPointerClickHandler
 {
     public enum State
     {
@@ -19,13 +18,15 @@ public class Memory : MonoBehaviour, IPointerClickHandler
 
     public MemoryBook book;
 
-    public CutsceneManager cutscenes;
+    public Cutscene unlock;
 
     [Tooltip("Plays on entering the memory (opening the book), before any gameplay.")]
     public Cutscene intro;
 
     [Tooltip("Plays on closing the book in the main archive (followup neuro monologue etc)")]
     public Cutscene outro;
+
+    public Cutscene forget;
 
     public State state = State.Locked;
     public bool IsAvailable => state is State.New or State.Core;
@@ -35,6 +36,7 @@ public class Memory : MonoBehaviour, IPointerClickHandler
         Debug.Assert(state is State.Locked);
 
         // play vfx/animation
+        await CutsceneManager.Instance.Play(unlock);
     }
 
     public async UniTask Open()
@@ -44,7 +46,9 @@ public class Memory : MonoBehaviour, IPointerClickHandler
         // play open book vfx/animation
         await book.TakeOut();
 
-        await cutscenes.Play(intro);
+        CutsceneManager.Instance.Load(book);
+
+        await CutsceneManager.Instance.Play(intro);
     }
 
     public async UniTask Close()
@@ -55,7 +59,7 @@ public class Memory : MonoBehaviour, IPointerClickHandler
         // play close book vfx/animation
         // await book.PutBack();
 
-        await cutscenes.Play(outro);
+        await CutsceneManager.Instance.Play(outro);
 
         ArchiveManager.Instance.coreMemories.Add(this);
     }
@@ -66,6 +70,7 @@ public class Memory : MonoBehaviour, IPointerClickHandler
         state = State.Forgotten;
 
         // play burn vfx/animation
+        await CutsceneManager.Instance.Play(forget);
     }
 
     public void OnPointerClick(PointerEventData eventData)

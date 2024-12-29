@@ -1,15 +1,29 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
+using FMODUnity;
+using Helpers;
+using Memories.Book;
+using Memories.Characters;
 
 namespace Memories.Cutscenes;
 
-public sealed class CutsceneManager : MonoBehaviour
+public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
 {
     public Cutscene currentCutscene;
+    private readonly List<BookActor> _actors = new();
 
     private CancellationTokenSource _cts;
+
+    private MemoryBook Book => ArchiveManager.Instance.currentBook;
+
+    public void Load(MemoryBook book)
+    {
+        book.GetComponentsInChildren(true, _actors);
+    }
+
     public async UniTask Play(Cutscene cutscene)
     {
         if (currentCutscene && currentCutscene != cutscene)
@@ -22,7 +36,7 @@ public sealed class CutsceneManager : MonoBehaviour
         CancellationToken ct = _cts.Token;
         bool skipped = false;
 
-        foreach (var instr in cutscene.mainLines)
+        foreach (var instr in cutscene.data.mainLines)
         {
             if (skipped)
             {
@@ -48,7 +62,8 @@ public sealed class CutsceneManager : MonoBehaviour
         {
             case TextLine textLine:
             {
-                await TextboxManager.Instance.Show(textLine.actor, textLine.text, ct);
+                var actor = _actors.Find(a => a.dialogueActorName == textLine.dialogueActorName);
+                await TextboxManager.Instance.Show(actor, textLine.text, ct);
                 break;
             }
             case Pause pause:
@@ -58,7 +73,18 @@ public sealed class CutsceneManager : MonoBehaviour
             }
             case CustomSequence customSequence:
             {
-                await customSequence.sequencer.Play(ct);
+                var sequence = Book.GetSequencer(customSequence.sequenceName);
+                await sequence.Play(ct);
+                break;
+            }
+            case MultipleWaitAll multi:
+            {
+                await UniTask.WhenAll(multi.instructions.Select(i => Execute(i, ct)));
+                break;
+            }
+            case PlaySfx sfx:
+            {
+                RuntimeManager.PlayOneShot(sfx.sound);
                 break;
             }
         }
@@ -70,10 +96,26 @@ public sealed class CutsceneManager : MonoBehaviour
         {
             case TextLine:
             case Pause:
+            {
                 break;
+            }
             case CustomSequence seq:
-                seq.sequencer.Skip();
+            {
+                var sequence = Book.GetSequencer(seq.sequenceName);
+                sequence.Skip();
                 break;
+            }
+            case MultipleWaitAll multi:
+            {
+                foreach (DialogueInstruction inner in multi.instructions)
+                    Skip(inner);
+                break;
+            }
+            case PlaySfx sfx:
+            {
+                // RuntimeManager.PlayOneShot(sfx.sound);
+                break;
+            }
         }
     }
 }

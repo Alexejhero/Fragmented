@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ExamineHouse
+  m_EditorClassIdentifier: Assembly-CSharp:Memories.Cutscenes:CutsceneData
+  cutsceneName: examine_house
+  repeatBehaviour: 1
+  mainLines:
+  - rid: 949997391457288206
+  - rid: 949997391457288201
+  - rid: 949997391457288204
+  - rid: 949997391457288205
+  - rid: 949997391457288202
+  repeatLines:
+  - rid: 949997391457288207
+  - rid: 949997391457288208
+  - rid: 949997391457288209
+  references:
+    version: 2
+    RefIds:
+    - rid: 949997391457288201
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 949997391457288202
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: neuro
+        text: Hmm... Nobody's home.
+    - rid: 949997391457288204
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: neuro
+        text: Hello?
+    - rid: 949997391457288205
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 949997391457288206
+      type: {class: MultipleWaitAll, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        instructions:
+        - rid: 949997391457288213
+        - rid: 949997391457288214
+    - rid: 949997391457288207
+      type: {class: LineSet, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        lines:
+        - rid: 949997391457288211
+        - rid: 949997391457288217
+        - rid: 949997391457288218
+    - rid: 949997391457288208
+      type: {class: LineSet, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        lines:
+        - rid: 949997391457288219
+    - rid: 949997391457288209
+      type: {class: LineSet, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        lines:
+        - rid: 949997391457288220
+    - rid: 949997391457288211
+      type: {class: MultipleWaitAll, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        instructions:
+        - rid: 949997391457288215
+        - rid: 949997391457288216
+    - rid: 949997391457288213
+      type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sound:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: event:/sfx/knock
+    - rid: 949997391457288214
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: none
+        text: (knock knock)
+    - rid: 949997391457288215
+      type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sound:
+          Guid:
+            Data1: 0
+            Data2: 0
+            Data3: 0
+            Data4: 0
+          Path: event:/sfx/knock
+    - rid: 949997391457288216
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: none
+        text: (knock knock)
+    - rid: 949997391457288217
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 949997391457288218
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: neuro
+        text: Nobody's home.
+    - rid: 949997391457288219
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: neuro
+        text: Is anybody in there?...
+    - rid: 949997391457288220
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        dialogueActorName: neuro
+        text: Hello?...
