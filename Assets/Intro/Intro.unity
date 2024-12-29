@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 338298987}
   - component: {fileID: 338298986}
   - component: {fileID: 338298989}
+  - component: {fileID: 338298990}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -365,7 +366,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338298985}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &338298987
 Camera:
   m_ObjectHideFlags: 0
@@ -476,6 +477,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &338298990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338298985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &472830695
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +503,7 @@ GameObject:
   - component: {fileID: 472830697}
   - component: {fileID: 472830696}
   - component: {fileID: 472830700}
+  - component: {fileID: 472830701}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -602,6 +617,38 @@ MonoBehaviour:
   videoHider: {fileID: 1380670808}
   player: {fileID: 2079082842}
   logger: {fileID: 4387497}
+  ambience: {fileID: 472830701}
+--- !u!114 &472830701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472830695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -754139075
+      Data2: 1236813771
+      Data3: 673708706
+      Data4: 617648364
+    Path: event:/sfx/ambient/server
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &686121947
 GameObject:
   m_ObjectHideFlags: 0

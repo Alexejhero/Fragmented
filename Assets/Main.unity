@@ -2137,6 +2137,41 @@ MonoBehaviour:
   - {fileID: 1487370926}
   maxUnlocked: 3
   currentlyUnlocked: 0
+  bookSlideIn:
+    Guid:
+      Data1: -1108877970
+      Data2: 1135881025
+      Data3: -860858698
+      Data4: 773661416
+    Path: event:/sfx/book/slide_in
+  bookSlideOut:
+    Guid:
+      Data1: -749050948
+      Data2: 1083635610
+      Data3: -365549176
+      Data4: -1482813828
+    Path: event:/sfx/book/slide_out
+  bookOpen:
+    Guid:
+      Data1: -756218679
+      Data2: 1163026554
+      Data3: 1450700970
+      Data4: -890268101
+    Path: event:/sfx/book/open
+  bookClose:
+    Guid:
+      Data1: 1957233283
+      Data2: 1334369165
+      Data3: -1084527206
+      Data4: -602460190
+    Path: event:/sfx/book/close
+  bookPage:
+    Guid:
+      Data1: 319699117
+      Data2: 1126570073
+      Data3: -195092319
+      Data4: -51119174
+    Path: event:/sfx/book/page
 --- !u!4 &1429647746
 Transform:
   m_ObjectHideFlags: 0

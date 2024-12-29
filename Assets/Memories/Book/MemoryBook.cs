@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Helpers;
 using UnityEngine;
 using UnityEngine.Serialization;
 using VFX.Book;
@@ -122,6 +123,9 @@ namespace Memories.Book
 
             state = State.Busy;
 
+            mainSceneScript.bookSlideOut.PlayOneShot();
+            await UniTask.Delay(100);
+
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(mainSceneScript.bookPreviewPosition, 1f).Forget();
 
@@ -157,9 +161,10 @@ namespace Memories.Book
 
             await UniTask.Delay(1000);
 
-            transform.DOMove(_startPos, 0.3f);
-            transform.DORotate(_startRot, 0.3f);
-            await UniTask.Delay(300);
+            mainSceneScript.bookSlideIn.PlayOneShot();
+            transform.DOMove(_startPos, 0.5f);
+            transform.DORotate(_startRot, 0.5f);
+            await UniTask.Delay(500);
 
             state = State.OnShelf;
             mainSceneScript.activeBook = null;

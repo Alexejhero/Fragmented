@@ -2,7 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
+using Helpers;
 using Memories.Book;
+using TriInspector;
 using UnityEngine;
 
 public class MainSceneScript : MonoBehaviour
@@ -28,6 +31,14 @@ public class MainSceneScript : MonoBehaviour
     public int currentlyUnlocked = 0;
 
     private List<MemoryBook> _books;
+
+    [GroupNext("Sounds")]
+    public EventReference bookSlideIn;
+    public EventReference bookSlideOut;
+    public EventReference bookOpen;
+    public EventReference bookClose;
+    public EventReference bookPage;
+    [UnGroupNext]
 
     private void Awake()
     {
@@ -66,6 +77,7 @@ public class MainSceneScript : MonoBehaviour
     {
         _books.Where(b => b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(false));
         bookshelfObject.SetActive(false);
+        bookOpen.PlayOneShot();
         cameraTransform.DOMove(cameraReadingLocation.position, 0.85f);
         cameraTransform.DORotate(cameraReadingLocation.eulerAngles, 0.85f);
     }
@@ -74,6 +86,7 @@ public class MainSceneScript : MonoBehaviour
     {
         cameraTransform.DOMove(cameraPreviewLocation.position, 0.7f);
         cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.7f);
+        bookClose.PlayOneShot();
         await UniTask.Delay(700);
         bookshelfObject.SetActive(true);
         _books.Where(b => b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(true));

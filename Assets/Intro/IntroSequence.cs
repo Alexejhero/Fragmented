@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,8 @@ public class IntroSequence : MonoBehaviour
     public VideoPlayer player;
 
     public Logger logger;
+
+    public StudioEventEmitter ambience;
 
     // ReSharper disable once Unity.IncorrectMethodSignature UnusedMember.Global
     public async UniTask Start()
@@ -40,6 +43,7 @@ public class IntroSequence : MonoBehaviour
 
         await UniTask.Delay(2500);
 
+        ambience.Play();
         await logger.Run();
 
         await UniTask.Delay(1000);

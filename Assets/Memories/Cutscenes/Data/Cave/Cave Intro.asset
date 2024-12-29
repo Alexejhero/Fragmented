@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneName: cave_intro
   skippable: 1
+  repeatable: 0
   repeatBehaviour: 0
   mainLines:
   - rid: 949997391457288244
@@ -34,6 +35,8 @@ MonoBehaviour:
   - rid: 949997391457288261
   - rid: 949997391457288262
   - rid: 949997391457288263
+  - rid: 949997414614302722
+  - rid: 949997414614302721
   repeatLines: []
   references:
     version: 2
@@ -130,3 +133,17 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 4780f907e22124144a2c89240dfe7f6d, type: 2}
         text: CAVE STREAM VII
+    - rid: 949997414614302721
+      type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sound:
+          Guid:
+            Data1: 712651088
+            Data2: 1173469376
+            Data3: -251000182
+            Data4: 1440126224
+          Path: event:/sfx/cutscene/cave_noise
+    - rid: 949997414614302722
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3

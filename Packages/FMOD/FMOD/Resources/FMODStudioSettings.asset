@@ -502,7 +502,9 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks: []
+  Banks:
+  - Music
+  - Sfx
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
