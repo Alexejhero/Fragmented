@@ -598,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startText: {fileID: 1146101932}
   neuroText: {fileID: 833693737}
+  videoGraphic: {fileID: 2079082840}
   videoHider: {fileID: 1380670808}
   player: {fileID: 2079082842}
   logger: {fileID: 4387497}
