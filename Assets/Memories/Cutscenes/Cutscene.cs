@@ -9,6 +9,25 @@ public sealed class Cutscene : MonoBehaviour
 {
     public int timesPlayed;
     public CutsceneData data;
+
+    private int _repeatLoopIndex;
+
+    public DialogueInstruction[] GetLines()
+    {
+        if (timesPlayed == 0)
+            return data.mainLines;
+
+        int i = _repeatLoopIndex++;
+        i = data.repeatBehaviour switch
+        {
+            CutsceneData.RepeatBehaviour.Last => Math.Max(i, data.repeatLines.Length - 1),
+            CutsceneData.RepeatBehaviour.Loop => i % data.repeatLines.Length,
+            CutsceneData.RepeatBehaviour.Random => UnityEngine.Random.Range(0, data.repeatLines.Length),
+            _ => i,
+        };
+
+        return data.repeatLines[i].lines;
+    }
 }
 
 [CreateAssetMenu(menuName = "Cutscenes/Cutscene Data")]

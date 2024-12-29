@@ -35,7 +35,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         CancellationToken ct = _cts.Token;
         bool skipped = false;
 
-        foreach (DialogueInstruction instr in cutscene.data.mainLines)
+        foreach (DialogueInstruction instr in cutscene.GetLines())
         {
             if (skipped)
             {
@@ -46,6 +46,8 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                 skipped = true;
             }
         }
+
+        cutscene.timesPlayed++;
         currentCutscene = null;
     }
 
