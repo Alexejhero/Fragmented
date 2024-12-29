@@ -1,4 +1,8 @@
+using System;
+using System.Linq;
 using Memories.Book;
+using Memories.Characters;
+using Memories.Cutscenes;
 using UnityEngine;
 
 public class BookSpread : MonoBehaviour
@@ -9,6 +13,9 @@ public class BookSpread : MonoBehaviour
 
     private MemoryBook _book;
     private BasePopup[] _popups;
+
+    public BookActor[] actors;
+    public CustomSequencer[] customSequences;
 
     private Transform _leftPage;
     private Transform _rightPage;
@@ -33,10 +40,7 @@ public class BookSpread : MonoBehaviour
             return;
         }
 
-        float popupProgress = (_leftPage.localEulerAngles.y - _rightPage.localEulerAngles.y + 360) % 360 / 180;
-        if (Mathf.Abs(popupProgress) < 0.01f) popupProgress = 0;
-        if (popupProgress > 1.7f) popupProgress = 0;
-        if (popupProgress > 1) popupProgress = 1;
+        float popupProgress = Math.Abs(_leftPage.localEulerAngles.y - _rightPage.localEulerAngles.y) % 360 / 180;
 
         if (!_book.Advancing) popupProgress *= -1;
 
@@ -49,5 +53,10 @@ public class BookSpread : MonoBehaviour
         }
 
         if (ceiling) ceiling.DoAction(popupProgress);
+    }
+
+    public CustomSequencer GetSequencer(string sequenceName)
+    {
+        return customSequences.FirstOrDefault(s => s.sequenceName == sequenceName);
     }
 }

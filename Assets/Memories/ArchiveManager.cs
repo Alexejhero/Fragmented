@@ -4,22 +4,21 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using Helpers;
 using Memories.Book;
+using TriInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Memories;
 
 public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
 {
-    [Header("Data")]
-    [Tooltip("Memories are unlocked in this order")]
-    public List<Memory> allMemories = new();
-    public Memory[] unlockAtStart = Array.Empty<Memory>();
-    public int coreCapacity = 3;
+    [FormerlySerializedAs("allMemories")]
+    public List<MemoryProgression> unlockOrder = new();
 
-    [Header("Runtime")]
-    public List<Memory> coreMemories = new();
-    public IEnumerable<Memory> Available => allMemories.Where(m => m.IsAvailable);
-    public IEnumerable<Memory> Forgotten => allMemories.Where(m => m.state is Memory.State.Forgotten);
+    private int _unlocked;
+    public MemoryProgression[] unlockAtStart = Array.Empty<MemoryProgression>();
+
+    [ShowInPlayMode]
     public MemoryBook currentBook;
 
     private void Start()
@@ -28,11 +27,16 @@ public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
         {
             m.Unlock().Forget();
         }
+        _unlocked = unlockAtStart.Length;
     }
 
-    public bool CanView(Memory memory)
+    public async UniTask OnMemoryFinished(MemoryBook book)
     {
-        Debug.Log($"CanView: {memory} {memory.state} {memory.IsAvailable}");
-        return memory.IsAvailable && coreMemories.Count < coreCapacity;
+        // play any post-close cutscenes
+        await book.memoryProgression.FirstClose();
+        // burn current book
+        // await RunForgetSequence(book);
+        // unlock next book
+        await unlockOrder[_unlocked++].Unlock();
     }
 }

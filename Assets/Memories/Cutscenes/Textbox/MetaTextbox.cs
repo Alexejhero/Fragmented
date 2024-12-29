@@ -8,6 +8,7 @@ namespace Memories.Cutscenes.Textbox
     public sealed class MetaTextbox : TextboxController
     {
         public CanvasGroup canvasGroup;
+        public override bool IsShown => canvasGroup.alpha > 0;
         public override async UniTask ShowTextbox()
         {
             if (Mathf.Approximately(canvasGroup.alpha, 1)) return;

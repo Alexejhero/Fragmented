@@ -46,11 +46,15 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         Debug.Log($"Finished cutscene: {currentCutscene.data.cutsceneName}{(skipped ? " (skipped)" : "")}");
 
         cutscene.timesPlayed++;
+        await TextboxManager.Instance.HideTopmost();
         currentCutscene = null;
     }
 
     public void SkipCutscene()
     {
+        if (!currentCutscene) return;
+        if (!currentCutscene.data.skippable) return;
+
         _cts.Cancel();
         _cts = new();
     }
@@ -61,7 +65,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine textLine:
             {
-                BookActor actor = Book.actors.FirstOrDefault(a => a.dialogueData == textLine.actor)
+                BookActor actor = Book.GetCurrentSpread().actors.FirstOrDefault(a => a.dialogueData == textLine.actor)
                     ?? throw new InvalidOperationException($"Missing actor {textLine.actor.dialogueActorName} on book {Book}");
                 Debug.Log($"[{textLine.actor.dialogueActorName}] {textLine.text}");
                 await TextboxManager.Instance.Show(actor, textLine.text, ct);
@@ -70,14 +74,14 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             case Pause pause:
             {
                 Debug.Log($"pause {pause.duration}");
-                await TextboxManager.Instance.GetTopmost().HideTextbox();
+                await TextboxManager.Instance.HideTopmost();
                 await UniTask.Delay(TimeSpan.FromSeconds(pause.duration), cancellationToken: ct);
                 break;
             }
             case CustomSequence customSequence:
             {
                 Debug.Log($"running {customSequence.sequenceName}");
-                CustomSequencer sequence = Book.GetSequencer(customSequence.sequenceName);
+                CustomSequencer sequence = Book.GetCurrentSpread().GetSequencer(customSequence.sequenceName);
                 await sequence.Play(ct);
                 break;
             }
@@ -91,6 +95,12 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             {
                 Debug.Log($"sfx {sfx.sound.Path}");
                 RuntimeManager.PlayOneShot(sfx.sound);
+                break;
+            }
+            case TurnPages pages:
+            {
+                Debug.Log($"turning {pages.pages} pages");
+                Book.TurnPages(pages.pages);
                 break;
             }
         }
@@ -108,7 +118,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case CustomSequence seq:
             {
-                CustomSequencer sequence = Book.GetSequencer(seq.sequenceName);
+                CustomSequencer sequence = Book.GetCurrentSpread().GetSequencer(seq.sequenceName);
                 sequence.Skip();
                 break;
             }
@@ -116,6 +126,10 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             {
                 foreach (DialogueInstruction inner in multi.instructions)
                     Skip(inner);
+                break;
+            }
+            case TurnPages: // todo: erm... problem. how to instantly flip?
+            {
                 break;
             }
         }

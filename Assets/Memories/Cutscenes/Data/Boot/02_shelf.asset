@@ -18,14 +18,11 @@ MonoBehaviour:
   mainLines:
   - rid: 949997391457288239
   - rid: 949997391457288240
-  - rid: -2
-  - rid: -2
+  - rid: 949997391457288264
   repeatLines: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 949997391457288239
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -36,3 +33,8 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Normal, I guess?
+    - rid: 949997391457288264
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 0}
+        text: todo

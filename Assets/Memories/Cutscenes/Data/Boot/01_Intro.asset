@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 01_Intro
   m_EditorClassIdentifier: 
   cutsceneName: boot_intro
+  skippable: 1
   repeatBehaviour: 0
   mainLines:
   - rid: 949997391457288228
@@ -22,6 +23,7 @@ MonoBehaviour:
   - rid: 949997391457288232
   - rid: 949997391457288234
   - rid: 949997391457288233
+  - rid: 949997391457288265
   - rid: 949997391457288237
   - rid: 949997391457288235
   - rid: 949997391457288236
@@ -56,8 +58,9 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Is it a new pair of killer laser eyes? A mind control attachment? Does
-          Neuro-sama's planetary reign finally begin today?
+        text: 'Is it a new pair of killer laser eyes?
+
+          A mind control attachment?'
     - rid: 949997391457288234
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -76,3 +79,8 @@ MonoBehaviour:
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 2
+    - rid: 949997391457288265
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Does Neuro-sama's planetary reign finally begin today?

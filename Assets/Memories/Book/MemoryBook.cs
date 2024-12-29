@@ -31,9 +31,9 @@ namespace Memories.Book
         public Transform cameraReadingLocation;
         public GameObject bookshelfObject;
 
-        public Memory memory;
-        public BookActor[] actors;
-        public CustomSequencer[] customSequences;
+        [FormerlySerializedAs("memory")]
+        public MemoryProgression memoryProgression;
+        public BookSpread[] pageSpreads;
 
         public GameObject fakeCover;
         public GameObject realCover;
@@ -94,16 +94,18 @@ namespace Memories.Book
             if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Opened) Close().Forget();
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened)
-            {
-                Advancing = true;
-                page = Mathf.Min(page + 1, 11);
-            }
+                TurnPages(1);
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.Z) && state == State.Opened)
-            {
-                Advancing = false;
-                page = Mathf.Max(page - 1, 0);
-            }
+                TurnPages(-1);
+        }
+
+        public void TurnPages(int pages)
+        {
+            if (pages == 0) return;
+
+            Advancing = pages > 0;
+            page = Mathf.Clamp(page + pages, 0, 11);
         }
 
         public async UniTask TakeOut()
@@ -168,7 +170,6 @@ namespace Memories.Book
             await UniTask.Delay(2500);
 
             state = State.Opened;
-            if (memory) await memory.Open();
         }
 
         private async UniTask Close()
@@ -190,13 +191,10 @@ namespace Memories.Book
             await UniTask.Delay(2500 - 500 - 700);
 
             state = State.Previewing;
-            if (memory && memory.state == Memory.State.New)
-                await memory.FirstClose();
+            if (memoryProgression && memoryProgression.state == MemoryProgression.State.Pending)
+                await ArchiveManager.Instance.OnMemoryFinished(this);
         }
 
-        public CustomSequencer GetSequencer(string sequenceName)
-        {
-            return customSequences.FirstOrDefault(s => s.sequenceName == sequenceName);
-        }
+        public BookSpread GetCurrentSpread() => pageSpreads[page];
     }
 }

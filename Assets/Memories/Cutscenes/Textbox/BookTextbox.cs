@@ -9,9 +9,12 @@ namespace Memories.Cutscenes.Textbox
         public Transform moveableObject;
         public Transform hiddenPosition;
         public Transform activePosition;
+
+        public override bool IsShown => !Mathf.Approximately(moveableObject.position.y, hiddenPosition.position.y);
+
         public override async UniTask ShowTextbox()
         {
-            if (Mathf.Approximately(moveableObject.position.y, activePosition.position.y)) return;
+            if (IsShown) return;
 
             moveableObject.DOMoveY(activePosition.position.y, 0.5f)
                 .SetEase(Ease.OutCubic);
@@ -20,7 +23,7 @@ namespace Memories.Cutscenes.Textbox
 
         public override async UniTask HideTextbox()
         {
-            if (Mathf.Approximately(moveableObject.position.y, hiddenPosition.position.y)) return;
+            if (!IsShown) return;
 
             moveableObject.DOMoveY(hiddenPosition.position.y, 0.5f)
                 .SetEase(Ease.InCubic);

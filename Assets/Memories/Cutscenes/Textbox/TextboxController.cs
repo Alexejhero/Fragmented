@@ -10,15 +10,16 @@ namespace Memories.Cutscenes.Textbox
     {
         public TMP_Text tmp;
         [Tooltip("Characters revealed per second")]
-        public int speed = 12;
+        public int speed = 16;
 
         // delay equivalent to x characters
         public int spacersPauseCharacters = 5;
-        public int sentencePauseCharacters = 7;
+        public int sentencePauseCharacters = 8;
         public int ellipsisPauseCharacters = 15;
 
         public abstract UniTask ShowTextbox();
         public abstract UniTask HideTextbox();
+        public abstract bool IsShown { get; }
 
         public void Clear() => tmp.text = "";
 
@@ -56,29 +57,30 @@ namespace Memories.Cutscenes.Textbox
 
         private async UniTask TickCharacters(string text, EventReference talkNoise, CancellationToken ct = default)
         {
-            bool haveTalkNoise = talkNoise.IsNull;
+            bool haveTalkNoise = !talkNoise.IsNull;
             float delayPerCharacter = 1f / speed;
 
             for (int i = 0; i < text.Length; i++)
             {
                 tmp.maxVisibleCharacters = i + 1;
-                float delayCharacters = delayPerCharacter * text[i] switch
+                float delayCharacters = text[i] switch
                 {
                     ',' => spacersPauseCharacters,
                     // " - "
-                    '-' when i > 0 && text[i-1] == ' ' && i < text.Length - 1 && text[i + 1] == ' '
+                    '-' when i > 0 && char.IsWhiteSpace(text[i-1]) && i < text.Length - 1 && char.IsWhiteSpace(text[i + 1])
                         => spacersPauseCharacters,
+                    // "..." with more delay with each subsequent '.' (e.g. 2x with "....", 3x with ".....", etc)
                     '.' when i>1 && text[i-1] == '.' && text[i-2] == '.'
                         => ellipsisPauseCharacters,
-                    '.' or '!' or '?' when i < text.Length && text[i+1] == ' '
+                    '.' or '!' or '?' when i+1 < text.Length && char.IsWhiteSpace(text[i+1])
                         => sentencePauseCharacters,
                     _ => 1,
                 };
-                if (!haveTalkNoise)
-                {
-                    RuntimeManager.PlayOneShot(talkNoise);
-                }
-                await UniTask.Delay(Mathf.RoundToInt(1000 * delayCharacters), cancellationToken: ct);
+
+                if (haveTalkNoise) RuntimeManager.PlayOneShot(talkNoise);
+
+                float delay = delayPerCharacter * delayCharacters;
+                await UniTask.Delay(Mathf.RoundToInt(1000 * delay), cancellationToken: ct);
             }
         }
 
@@ -88,8 +90,10 @@ namespace Memories.Cutscenes.Textbox
         public void Advance()
         {
             Debug.Log("Advance");
-            _advanceSource.TrySetResult();
+            // need to swap _advanceSource before TrySetResult() invokes its callbacks
+            UniTaskCompletionSource oldSource = _advanceSource;
             _advanceSource = new();
+            oldSource.TrySetResult();
         }
 
         // input system, triggers when clicking anywhere (or pressing the key bound to Submit)

@@ -34,14 +34,15 @@ namespace Memories.Cutscenes.Textbox
 
         public void Advance()
         {
-            GetTopmost().Advance();
+            TextboxController topmost = GetTopmost();
+            if (topmost) topmost.Advance();
         }
 
         public TextboxController GetTopmost()
         {
             // overlay textbox takes priority
-            return metaTextbox.enabled ? metaTextbox
-                : bookTextbox.enabled ? bookTextbox
+            return metaTextbox.IsShown ? metaTextbox
+                : bookTextbox.IsShown ? bookTextbox
                 : null;
         }
 
@@ -53,6 +54,12 @@ namespace Memories.Cutscenes.Textbox
                 TextboxType.Meta => metaTextbox,
                 _ => throw new ArgumentOutOfRangeException(nameof(type))
             };
+        }
+
+        public async UniTask HideTopmost()
+        {
+            TextboxController topmost = GetTopmost();
+            if (topmost) await topmost.HideTextbox();
         }
     }
 }

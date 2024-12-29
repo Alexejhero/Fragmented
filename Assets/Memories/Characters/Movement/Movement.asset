@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDirectionalSpeed: 0.5
   groundAcceleration: 1
-  idleDeceleration: 4
+  idleDeceleration: 16
   turnDecelerationMulti: 1.5
   airAcceleration: 1
   idleAirDeceleration: 2
