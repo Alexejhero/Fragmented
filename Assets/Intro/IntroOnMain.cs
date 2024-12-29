@@ -7,6 +7,7 @@ public class IntroOnMain : MonoBehaviour
 {
     public TextMeshProUGUI neuroTextMiddle;
     public Image videoHider;
+    public MainSceneScript mainSceneScript;
 
     // ReSharper disable once Unity.IncorrectMethodSignature UnusedMember.Local
     private async UniTask Start()
@@ -20,6 +21,7 @@ public class IntroOnMain : MonoBehaviour
 
         await UniTask.Delay(1000);
 
+        mainSceneScript.busy = false;
         gameObject.SetActive(false);
     }
 }

@@ -17,6 +17,8 @@ public class MainSceneScript : MonoBehaviour
 
     public new Light light;
 
+    public bool busy = true;
+
     [HideInInspector]
     public MemoryBook activeBook;
 
