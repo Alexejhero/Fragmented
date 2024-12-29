@@ -1440,8 +1440,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2063,17 +2063,17 @@ PrefabInstance:
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.99999946
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.99999976
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.3333333
+      value: 3.3333316
       objectReference: {fileID: 0}
     - target: {fileID: 7260559572991148516, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
@@ -2144,7 +2144,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d1de0ea210777354faffc40ede618234, type: 2}
+      objectReference: {fileID: 2100000, guid: 4e4e02eb745835a4e8671d0f2a3b1f29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2194,12 +2194,12 @@ MonoBehaviour:
   cameraPreviewLocation: {fileID: 0}
   cameraReadingLocation: {fileID: 0}
   bookshelfObject: {fileID: 0}
+  memory: {fileID: 0}
   actors: []
   customSequences: []
   pageSeparation: 0
   open: 0
   page: 0
-  pageSpreadProgress: 0
   state: 0
 --- !u!95 &6753487954282821929
 Animator:
