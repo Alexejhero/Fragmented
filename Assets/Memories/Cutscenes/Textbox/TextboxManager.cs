@@ -1,9 +1,7 @@
 using System;
 using System.Threading;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Helpers;
-using Memories.Characters;
 using UnityEngine;
 
 namespace Memories.Cutscenes.Textbox

@@ -5,7 +5,6 @@ using Cysharp.Threading.Tasks;
 using FMODUnity;
 using Helpers;
 using Memories.Book;
-using Memories.Characters;
 using Memories.Cutscenes.Textbox;
 using UnityEngine;
 

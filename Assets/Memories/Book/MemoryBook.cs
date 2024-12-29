@@ -1,9 +1,6 @@
 using System;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Memories.Characters;
-using Memories.Cutscenes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
