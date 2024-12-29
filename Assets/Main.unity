@@ -186,6 +186,12 @@ Transform:
   - {fileID: 975614049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &292201210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5903291858624668760, guid: c0e268acb74b453449a64ef99824989e,
+    type: 3}
+  m_PrefabInstance: {fileID: 746875609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &305277983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,6 +720,11 @@ PrefabInstance:
       propertyPath: realCover
       value: 
       objectReference: {fileID: 1501676099}
+    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: realArmature
+      value: 
+      objectReference: {fileID: 292201210}
     - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: bookshelfObject
