@@ -9,7 +9,6 @@ namespace Memories.Book
     public class MemoryBook : MonoBehaviour
     {
         private static readonly int _openProp = Animator.StringToHash("open");
-        private static readonly int _finishedProp = Animator.StringToHash("finished");
 
         private Animator _animator;
 
@@ -33,21 +32,30 @@ namespace Memories.Book
         public float pageSeparation;
 
         public bool open;
-        public bool finished;
+
+        public float popupProgress = 0;
+
+        private Popup[] _popups;
 
         private void Awake()
         {
+            _popups = GetComponentsInChildren<Popup>();
+
             _animator = GetComponent<Animator>();
             _startPos = transform.position;
 
-            _cameraStartPos = cameraTransform.position;
-            _cameraStartRot = cameraTransform.eulerAngles;
+            _cameraStartPos = cameraTransform != null ? cameraTransform.position : Vector3.zero;
+            _cameraStartRot = cameraTransform != null ? cameraTransform.eulerAngles : Vector3.zero;
         }
 
         private void Update()
         {
             _animator.SetBool(_openProp, open);
-            _animator.SetBool(_finishedProp, finished);
+
+            foreach (Popup popup in _popups)
+            {
+                popup.DoRotate(popupProgress);
+            }
 
             // float absDiff = Mathf.Abs(left.transform.localEulerAngles.y - right.transform.localEulerAngles.y);
             // float degreeDiff = absDiff % 360;
