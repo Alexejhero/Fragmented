@@ -4,8 +4,8 @@ using UnityEngine.TextCore.Text;
 
 namespace Memories.Cutscenes;
 
-[CreateAssetMenu(menuName = "Cutscenes/Dialogue Actor", fileName = "DialogueActor", order = 0)]
-public sealed class DialogueActor : ScriptableObject
+[CreateAssetMenu(menuName = "Cutscenes/Dialogue Actor Data", fileName = "DialogueActor", order = 0)]
+public sealed class DialogueActorData : ScriptableObject
 {
     public Sprite face;
     public FontAsset font;

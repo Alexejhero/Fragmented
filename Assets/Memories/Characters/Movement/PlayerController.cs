@@ -25,7 +25,7 @@ namespace Memories.Characters.Movement
         [ShowInInspector]
         public bool IsGrounded => groundTracker.IsGrounded;
 
-        private BookInputs _input;
+        private Inputs _input;
         private Vector2 _move;
         [ShowInInspector]
         private Vector3 _lastDeltaV;
@@ -55,7 +55,7 @@ namespace Memories.Characters.Movement
             this.EnsureComponent(ref groundTracker);
             _defaultGravMulti = _gravMultiShouldBe = grav.scale;
 
-            _input = new BookInputs();
+            _input = new Inputs();
             _input.Player.Enable();
 
             moveInput = _input.Player.Move;

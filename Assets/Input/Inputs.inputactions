@@ -1,5 +1,5 @@
 {
-    "name": "Book Inputs",
+    "name": "Inputs",
     "maps": [
         {
             "name": "Player",
@@ -18,7 +18,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "01f0ec62-5134-4113-802e-d7b026221771",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -342,7 +342,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "c5ec16e7-5205-43f6-8256-786de9a9b240",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -351,7 +351,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "1283e303-7f42-4eef-b310-ff4c3bee2c22",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

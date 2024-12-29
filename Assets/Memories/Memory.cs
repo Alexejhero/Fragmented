@@ -19,11 +19,13 @@ public class Memory : MonoBehaviour, IPointerClickHandler
 
     public MemoryBook book;
 
+    public CutsceneManager cutscenes;
+
     [Tooltip("Plays on entering the memory (opening the book), before any gameplay.")]
-    public CustomSequencer intro;
+    public Cutscene intro;
 
     [Tooltip("Plays on closing the book in the main archive (followup neuro monologue etc)")]
-    public CustomSequencer outro;
+    public Cutscene outro;
 
     public State state = State.Locked;
     public bool IsAvailable => state is State.New or State.Core;
@@ -33,46 +35,43 @@ public class Memory : MonoBehaviour, IPointerClickHandler
         Debug.Assert(state is State.Locked);
 
         // play vfx/animation
-
-        await UniTask.Yield();
     }
 
-    public IEnumerator Open()
+    public async UniTask Open()
     {
         Debug.Assert(ArchiveManager.Instance.CanView(this));
 
         // play open book vfx/animation
-        yield return book.TakeOut().ToCoroutine();
+        await book.TakeOut();
 
-        yield return intro.Play();
+        await cutscenes.Play(intro);
     }
 
-    public IEnumerator Close()
+    public async UniTask Close()
     {
         Debug.Assert(ArchiveManager.Instance.CanView(this));
         state = State.Core;
 
         // play close book vfx/animation
+        // await book.PutBack();
 
-        yield return outro.Play();
+        await cutscenes.Play(outro);
 
         ArchiveManager.Instance.coreMemories.Add(this);
     }
 
-    public IEnumerator Forget()
+    public async UniTask Forget()
     {
         Debug.Assert(state is State.Core);
         state = State.Forgotten;
 
         // play burn vfx/animation
-
-        yield break;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (!ArchiveManager.Instance.CanView(this)) return;
 
-        StartCoroutine(Open());
+        Open().Forget();
     }
 }

@@ -1,13 +1,25 @@
 using System;
 using System.Collections.Generic;
+using Memories.Characters;
 using TriInspector;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
 
-[CreateAssetMenu(menuName = "Cutscenes/Cutscene", fileName = "Cutscene", order = 0)]
-public sealed class Cutscene : ScriptableObject
+[AddComponentMenu("Cutscenes/Cutscene")]
+public sealed class Cutscene : MonoBehaviour
 {
+    public enum RepeatBehaviour
+    {
+        Last,
+        Random,
+        Loop,
+    }
+
+    public string cutsceneName;
+    public int timesPlayed;
+    public RepeatBehaviour repeatBehaviour;
+
     [SerializeReference]
     public DialogueInstruction[] mainLines;
     [SerializeReference]
@@ -20,21 +32,22 @@ public abstract class DialogueInstruction
 {
 }
 
+[Serializable]
 public sealed class Pause : DialogueInstruction
 {
     public float duration;
 }
 
+[Serializable]
 public sealed class TextLine : DialogueInstruction
 {
-    public DialogueActor actor;
+    public BookActor actor;
     [TextArea]
     public string text;
 }
 
-public sealed class SendMessage : DialogueInstruction
+[Serializable]
+public sealed class CustomSequence : DialogueInstruction
 {
-    [InfoBox("Make sure the object name is unique in the scene.")]
-    public string targetObjectName;
-    public string message;
+    public CustomSequencer sequencer;
 }

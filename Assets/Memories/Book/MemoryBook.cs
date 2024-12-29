@@ -27,6 +27,9 @@ namespace Memories.Book
         public GameObject bookshelfObject;
 
         [HideInInspector]
+        public bool inTransition;
+
+        [HideInInspector]
         public float pageSeparation;
 
         public bool open;
@@ -70,12 +73,14 @@ namespace Memories.Book
 
         public async UniTask TakeOut()
         {
+            inTransition = true;
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(previewPosition, 1f).Forget();
 
             await UniTask.Delay(700);
             cameraTransform.DOMove(cameraPreviewLocation.position, 0.5f);
             cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.5f);
+            inTransition = false;
         }
 
         private async UniTask Open()
