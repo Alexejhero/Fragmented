@@ -674,6 +674,74 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &1335715183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624153378250520311, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
+        type: 3}
+      propertyPath: m_Name
+      value: Book 2 Vedals Room
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ba133ec54d30bc4aa052ab4bafa4422, type: 3}
 --- !u!1001 &1533266356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,131 +814,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d66235bc59ca7dc49b3ae35f8ffc781f, type: 3}
---- !u!1001 &1887535703
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 279962720089615437, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 624153378250520311, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_Name
-      value: Book 2 Vedals Room
-      objectReference: {fileID: 0}
-    - target: {fileID: 624153378250520311, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.4165577
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4800655
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.025462031
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.71413773
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.68963474
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.08635451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.083391584
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 76.069
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 278.09302
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731109847938315735, guid: 7ba133ec54d30bc4aa052ab4bafa4422,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -81.665
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7786798445891212426, guid: 7ba133ec54d30bc4aa052ab4bafa4422, type: 3}
-    - {fileID: 1125167501279466706, guid: 7ba133ec54d30bc4aa052ab4bafa4422, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7ba133ec54d30bc4aa052ab4bafa4422, type: 3}
 --- !u!1 &1998682439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book 1 Neuro Room
       objectReference: {fileID: 0}
+    - target: {fileID: 624153378250520311, guid: d1e0753a08fff5d4cba989b258b6301b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5956665566359355869, guid: d1e0753a08fff5d4cba989b258b6301b,
         type: 3}
       propertyPath: m_IsActive
@@ -1338,6 +1286,6 @@ SceneRoots:
   - {fileID: 1243681997}
   - {fileID: 25208947397623753}
   - {fileID: 963999063}
-  - {fileID: 1887535703}
   - {fileID: 1205632002}
   - {fileID: 487051930}
+  - {fileID: 1335715183}
