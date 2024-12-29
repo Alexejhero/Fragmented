@@ -20,6 +20,8 @@ namespace Memories.Book
         private Vector3 _cameraStartPos;
         private Vector3 _cameraStartRot;
 
+        public MemoryBookshelf bookshelf;
+
         public Transform offShelfPosition;
         [FormerlySerializedAs("readingPosition")] public Transform previewPosition;
 
@@ -39,11 +41,8 @@ namespace Memories.Book
         [HideInInspector]
         public float pageSeparation;
 
-        [HideInInspector]
-        public bool open;
-
-        [HideInInspector]
-        public int page;
+        public bool animatorIsOpen;
+        [FormerlySerializedAs("page")] public int animatorPage;
 
         [NonSerialized]
         public bool Advancing = true;
@@ -57,6 +56,16 @@ namespace Memories.Book
             OnShelf,
             Previewing,
             Opened
+        }
+
+        // private void OnMouseEnter()
+        // {
+            // Debug.Log("Mouse Enter");
+        // }
+
+        private void OnMouseDown()
+        {
+            TakeOut().Forget();
         }
 
         private void Awake()
@@ -82,12 +91,9 @@ namespace Memories.Book
 
         private void Update()
         {
-            _animator.SetBool(_openProp, open);
-            _animator.SetInteger(_pageProp, page);
+            _animator.SetBool(_openProp, animatorIsOpen);
+            _animator.SetInteger(_pageProp, animatorPage);
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.E) && state == State.OnShelf) TakeOut().Forget();
-            if (UnityEngine.Input.GetKeyDown(KeyCode.E) && state == State.Previewing) PutBack().Forget();
-            if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Previewing) Open().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Opened) Close().Forget();
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened)
@@ -102,11 +108,14 @@ namespace Memories.Book
             if (pages == 0) return;
 
             Advancing = pages > 0;
-            page = Mathf.Clamp(page + pages, 0, 11);
+            animatorPage = Mathf.Clamp(animatorPage + pages, 0, 11);
         }
 
         public async UniTask TakeOut()
         {
+            if (!bookshelf || bookshelf.activeBook) return;
+            bookshelf.activeBook = this;
+
             state = State.Moving;
 
             await transform.LerpTransform(offShelfPosition, 0.3f);
@@ -125,8 +134,12 @@ namespace Memories.Book
             ArchiveManager.Instance.currentBook = this;
         }
 
-        public async UniTask PutBack()
+        public void PutBackEvent() => PutBack().Forget();
+
+        private async UniTask PutBack()
         {
+            if (!bookshelf || bookshelf.activeBook != this) return;
+
             if (!offShelfPosition) return;
 
             state = State.Moving;
@@ -136,11 +149,12 @@ namespace Memories.Book
 
             transform.DOMove(offShelfPosition.position, 1);
             transform.DORotate(offShelfPosition.eulerAngles, 1);
-            await UniTask.Delay(250);
+
             if (fakeCover) fakeCover.SetActive(true);
             if (realCover) realCover.SetActive(false);
             if (realArmature) realArmature.SetActive(false);
-            await UniTask.Delay(750);
+
+            await UniTask.Delay(1000);
 
             transform.DOMove(_startPos, 0.3f);
             transform.DORotate(_startRot, 0.3f);
@@ -148,7 +162,10 @@ namespace Memories.Book
 
             state = State.OnShelf;
             ArchiveManager.Instance.currentBook = null;
+            bookshelf.activeBook = null;
         }
+
+        public void OpenEvent() => Open().Forget();
 
         private async UniTask Open()
         {
@@ -156,7 +173,7 @@ namespace Memories.Book
 
             if (bookshelfObject) bookshelfObject.SetActive(false);
             Advancing = true;
-            open = true;
+            animatorIsOpen = true;
 
             if (cameraTransform)
             {
@@ -174,7 +191,7 @@ namespace Memories.Book
             state = State.Moving;
 
             Advancing = false;
-            open = false;
+            animatorIsOpen = false;
             await UniTask.Delay(500);
 
             if (cameraTransform)
@@ -192,6 +209,6 @@ namespace Memories.Book
                 await ArchiveManager.Instance.OnMemoryFinished(this);
         }
 
-        public BookSpread GetCurrentSpread() => pageSpreads[page];
+        public BookSpread GetCurrentSpread() => pageSpreads[animatorPage];
     }
 }

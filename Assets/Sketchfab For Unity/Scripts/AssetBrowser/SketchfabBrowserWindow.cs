@@ -267,7 +267,7 @@ namespace Sketchfab
 				{
 					displayCenteredMessage("It look like you don't have any model or your plan doesn't allow you to access them");
 				}
-				
+
 				displayFooter();
 			}
 
@@ -341,7 +341,7 @@ namespace Sketchfab
 					resetFilters();
 				}
 				triggerSearch();
-			}	
+			}
 		}
 
 		void displayLicenseFilter()
