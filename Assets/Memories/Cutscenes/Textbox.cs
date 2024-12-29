@@ -11,6 +11,11 @@ public sealed class Textbox : MonoBehaviour
     [Tooltip("Characters revealed per second")]
     public int speed = 10;
 
+    // todo adjust
+    public float commaPause = 0.5f;
+    public float sentencePause = 0.7f;
+    public float ellipsisPause = 1.5f;
+
     private void Awake()
     {
         TextboxManager.Instance.Register(this);
@@ -43,7 +48,16 @@ public sealed class Textbox : MonoBehaviour
                 return;
             }
             tmp.maxVisibleCharacters = i;
-            await UniTask.Delay(1000 / speed, cancellationToken: ct);
+            float delay = text[i] switch
+            {
+                ',' => commaPause,
+                '.' when i>1 && text[i-1] == '.' && text[i-2] == '.'
+                    => ellipsisPause,
+                '.' or '!' or '?' when i+1 < text.Length && !char.IsPunctuation(text[i+1])
+                    => sentencePause,
+                _ => 1f / speed,
+            };
+            await UniTask.Delay(Mathf.RoundToInt(1000 * delay), cancellationToken: ct);
         }
     }
 
