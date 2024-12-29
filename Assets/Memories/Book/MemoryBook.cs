@@ -17,6 +17,7 @@ namespace Memories.Book
         private Animator _animator;
 
         private Vector3 _startPos;
+        private Vector3 _startRot;
 
         private Vector3 _cameraStartPos;
         private Vector3 _cameraStartRot;
@@ -33,9 +34,6 @@ namespace Memories.Book
         public CustomSequencer[] customSequences;
 
         [HideInInspector]
-        public bool inTransition;
-
-        [HideInInspector]
         public float pageSeparation;
 
         public bool open;
@@ -43,10 +41,22 @@ namespace Memories.Book
 
         public float pageSpreadProgress;
 
+        private State _state = State.OnShelf;
+
+        private enum State
+        {
+            Moving = -1,
+            OnShelf,
+            Previewing,
+            Opened
+        }
+
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+
             _startPos = transform.position;
+            _startRot = transform.eulerAngles;
 
             _cameraStartPos = cameraTransform != null ? cameraTransform.position : Vector3.zero;
             _cameraStartRot = cameraTransform != null ? cameraTransform.eulerAngles : Vector3.zero;
@@ -57,51 +67,71 @@ namespace Memories.Book
             _animator.SetBool(_openProp, open);
             _animator.SetInteger(_pageProp, page);
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.T)) TakeOut().Forget();
-            if (UnityEngine.Input.GetKeyDown(KeyCode.O)) Open().Forget();
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C)) Close().Forget();
-            if (UnityEngine.Input.GetKeyDown(KeyCode.P)) Stuff().Forget();
-        }
-
-        public async UniTask Stuff()
-        {
-            while (true)
-            {
-                await Open();
-                await UniTask.Delay(2000);
-                await Close();
-                await UniTask.Delay(2000);
-            }
+            if (UnityEngine.Input.GetKeyDown(KeyCode.E) && _state == State.OnShelf) TakeOut().Forget();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.E) && _state == State.Previewing) PutBack().Forget();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.O) && _state == State.Previewing) Open().Forget();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.O) && _state == State.Opened) Close().Forget();
         }
 
         public async UniTask TakeOut()
         {
-            inTransition = true;
+            _state = State.Moving;
+
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(previewPosition, 1f).Forget();
 
             await UniTask.Delay(700);
             cameraTransform.DOMove(cameraPreviewLocation.position, 0.5f);
             cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.5f);
-            inTransition = false;
+            await UniTask.Delay(500);
+
+            _state = State.Previewing;
+        }
+
+        public async UniTask PutBack()
+        {
+            _state = State.Moving;
+
+            cameraTransform.DOMove(_cameraStartPos, 0.5f);
+            cameraTransform.DORotate(_cameraStartRot, 0.5f);
+
+            transform.DOMove(offShelfPosition.position, 1);
+            transform.DORotate(offShelfPosition.eulerAngles, 1);
+            await UniTask.Delay(1000);
+
+            transform.DOMove(_startPos, 0.3f);
+            transform.DORotate(_startRot, 0.3f);
+            await UniTask.Delay(300);
+
+            _state = State.OnShelf;
         }
 
         private async UniTask Open()
         {
+            _state = State.Moving;
+
             bookshelfObject.SetActive(false);
             open = true;
             cameraTransform.DOMove(cameraReadingLocation.position, 0.85f);
             cameraTransform.DORotate(cameraReadingLocation.eulerAngles, 0.85f);
+            await UniTask.Delay(2500);
+
+            _state = State.Opened;
         }
 
         private async UniTask Close()
         {
+            _state = State.Moving;
+
             open = false;
             await UniTask.Delay(500);
             cameraTransform.DOMove(cameraPreviewLocation.position, 0.7f);
             cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.7f);
             await UniTask.Delay(700);
             bookshelfObject.SetActive(true);
+            await UniTask.Delay(2500 - 500 - 700);
+
+            _state = State.Previewing;
         }
 
         public CustomSequencer GetSequencer(string sequenceName)

@@ -10,13 +10,6 @@
       },
       "hash": "8d1bad21d9a66aacf3d8c4232f0dfad42fafb7af"
     },
-    "com.calci.assetlens": {
-      "version": "https://github.com/alexejheroarchive/assetlens.git#upm",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e1ce56b5dd57b5697e7c18cb7a76d5b6c7123674"
-    },
     "com.codewriter.triinspector": {
       "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
       "depth": 0,

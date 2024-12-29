@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.alexejhero.unitycsharp11": "https://github.com/Alexejhero/Unity-CSharp11.git?path=Assets/UnityCSharp11",
-    "com.calci.assetlens": "https://github.com/alexejheroarchive/assetlens.git#upm",
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.unity.2d.sprite": "1.0.0",

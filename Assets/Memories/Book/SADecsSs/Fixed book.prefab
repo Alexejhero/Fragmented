@@ -657,37 +657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 10
---- !u!1 &3144450903168329060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4265410328740775156}
-  m_Layer: 0
-  m_Name: off_shelf
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4265410328740775156
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3144450903168329060}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.148, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1333374607627186897}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3827003002071731269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,10 +2138,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 317396669d8c77a4e9392f80f8194011,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4265410328740775156}
     - targetCorrespondingSourceObject: {fileID: 8265055367671405654, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       insertIndex: -1
@@ -2195,12 +2160,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3564151143789635634}
   m_SourcePrefab: {fileID: 100100000, guid: 317396669d8c77a4e9392f80f8194011, type: 3}
---- !u!4 &1333374607627186897 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 317396669d8c77a4e9392f80f8194011,
-    type: 3}
-  m_PrefabInstance: {fileID: 1516482005239960890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858519385326790763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 317396669d8c77a4e9392f80f8194011,
@@ -2219,13 +2178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offShelfPosition: {fileID: 4265410328740775156}
+  offShelfPosition: {fileID: 0}
   previewPosition: {fileID: 0}
   cameraTransform: {fileID: 0}
   cameraPreviewLocation: {fileID: 0}
   cameraReadingLocation: {fileID: 0}
   bookshelfObject: {fileID: 0}
-  inTransition: 0
+  actors: []
+  customSequences: []
   pageSeparation: 0
   open: 0
   page: 0
