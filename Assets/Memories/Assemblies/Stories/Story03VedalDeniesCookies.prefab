@@ -1090,7 +1090,7 @@ PrefabInstance:
     - target: {fileID: 3773449908978845268, guid: 8902fc6b3c1ae5642b40ac1812be68b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3773449908978845268, guid: 8902fc6b3c1ae5642b40ac1812be68b1,
         type: 3}
@@ -1813,7 +1813,7 @@ PrefabInstance:
     - target: {fileID: 1693508223542154709, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_Name
-      value: Story03VedalDeniesCookies Variant
+      value: Story03VedalDeniesCookies
       objectReference: {fileID: 0}
     - target: {fileID: 2074853677140447087, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
