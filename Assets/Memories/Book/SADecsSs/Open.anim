@@ -87,7 +87,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -97,7 +97,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: popupProgress
+    attribute: pageSpreadProgress
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}
@@ -148,7 +148,7 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1341282812
+      attribute: 1721896606
       script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}
       typeID: 114
       customType: 0
@@ -435,7 +435,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -445,7 +445,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: popupProgress
+    attribute: pageSpreadProgress
     path: 
     classID: 114
     script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}

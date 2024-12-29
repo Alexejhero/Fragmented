@@ -12,6 +12,7 @@ namespace Memories.Book
     public class MemoryBook : MonoBehaviour
     {
         private static readonly int _openProp = Animator.StringToHash("open");
+        private static readonly int _pageProp = Animator.StringToHash("page");
 
         private Animator _animator;
 
@@ -38,15 +39,12 @@ namespace Memories.Book
         public float pageSeparation;
 
         public bool open;
+        public int page;
 
-        public float popupProgress = 0;
-
-        private Popup[] _popups;
+        public float pageSpreadProgress;
 
         private void Awake()
         {
-            _popups = GetComponentsInChildren<Popup>();
-
             _animator = GetComponent<Animator>();
             _startPos = transform.position;
 
@@ -57,16 +55,7 @@ namespace Memories.Book
         private void Update()
         {
             _animator.SetBool(_openProp, open);
-
-            foreach (Popup popup in _popups)
-            {
-                popup.DoRotate(popupProgress);
-            }
-
-            // float absDiff = Mathf.Abs(left.transform.localEulerAngles.y - right.transform.localEulerAngles.y);
-            // float degreeDiff = absDiff % 360;
-            // const float oneOver180 = 1f / 180f; // multiplication is faster than division;
-            // pageSeparation = degreeDiff * oneOver180;
+            _animator.SetInteger(_pageProp, page);
 
             if (UnityEngine.Input.GetKeyDown(KeyCode.T)) TakeOut().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.O)) Open().Forget();
