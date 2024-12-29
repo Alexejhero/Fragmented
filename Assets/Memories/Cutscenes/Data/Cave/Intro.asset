@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
-  m_Name: New Cutscene Data
+  m_Name: Intro
   m_EditorClassIdentifier: 
-  cutsceneName: cave_vedal
+  cutsceneName: cave_intro
   skippable: 1
   repeatBehaviour: 0
   mainLines:
@@ -28,7 +28,7 @@ MonoBehaviour:
   - rid: 949997391457288250
   - rid: 949997391457288252
   - rid: 949997391457288254
-  - rid: 949997391457288256
+  - rid: 949997391457288266
   - rid: 949997391457288259
   - rid: 949997391457288260
   - rid: 949997391457288261
@@ -42,8 +42,8 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Chat, I have saved this to the very end. I have something *very* important
-          to announce to you.
+        text: Chat, I saved this for the end. I have something *very* important to
+          announce to you all.
     - rid: 949997391457288242
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -61,8 +61,8 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: We hit 2 hours and 15 minutes? Well. Another successful dev stream,
-          if I do say so myself.
+        text: 2 hours and 15 minutes. Another successful dev stream, if I do say
+          so myself.
     - rid: 949997391457288245
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -73,7 +73,7 @@ MonoBehaviour:
     - rid: 949997391457288246
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 0}
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: You don't wanna miss it. Mark your calendars, tomorrow 7pm GMT. Be
           there or be square.
     - rid: 949997391457288247
@@ -100,10 +100,6 @@ MonoBehaviour:
       type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         pages: 1
-    - rid: 949997391457288256
-      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        sequenceName: cave_stream_7
     - rid: 949997391457288259
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -129,3 +125,8 @@ MonoBehaviour:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Vedal is officially creatively bankrupt as of today. I watched him
           file the paperwork as he sobbed into his beige patternless handkerchief.
+    - rid: 949997391457288266
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 4780f907e22124144a2c89240dfe7f6d, type: 2}
+        text: CAVE STREAM VII

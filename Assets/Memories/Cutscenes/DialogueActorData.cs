@@ -1,4 +1,5 @@
 using FMODUnity;
+using Memories.Cutscenes.Textbox;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
@@ -9,4 +10,5 @@ public sealed class DialogueActorData : ScriptableObject
     public string dialogueActorName;
     public Color textColor = Color.white;
     public EventReference talkNoise;
+    public TextboxType textboxType;
 }

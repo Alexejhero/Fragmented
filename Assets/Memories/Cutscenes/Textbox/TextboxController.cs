@@ -63,6 +63,9 @@ namespace Memories.Cutscenes.Textbox
             for (int i = 0; i < text.Length; i++)
             {
                 tmp.maxVisibleCharacters = i + 1;
+
+                if (char.IsWhiteSpace(text[i])) continue;
+
                 float delayCharacters = text[i] switch
                 {
                     ',' => spacersPauseCharacters,

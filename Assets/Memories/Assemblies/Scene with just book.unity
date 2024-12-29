@@ -122,6 +122,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &192141233 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1564301460736058751, guid: d1e0753a08fff5d4cba989b258b6301b,
+    type: 3}
+  m_PrefabInstance: {fileID: 25208947397623753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487051926
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +236,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
   textboxType: 0
+--- !u!1 &585214552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585214553}
+  - component: {fileID: 585214554}
+  m_Layer: 0
+  m_Name: Cave test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &585214553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585214552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 192141233}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &585214554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585214552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea79822226df45eab18299562349b6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timesPlayed: 0
+  data: {fileID: 11400000, guid: 2927820a09fb8de47b27a1766aa03be1, type: 2}
 --- !u!1 &844222945
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +723,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Textbox (book)
       objectReference: {fileID: 0}
+    - target: {fileID: 7346184762692898515, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346184762692898515, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346184762692898515, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346184762692898515, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346184762692898515, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7390812916214160312, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
+        type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1109,6 +1191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book 1 Neuro Room
       objectReference: {fileID: 0}
+    - target: {fileID: 5956665566359355869, guid: d1e0753a08fff5d4cba989b258b6301b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9180068678459699281, guid: d1e0753a08fff5d4cba989b258b6301b,
         type: 3}
       propertyPath: actors.Array.size
@@ -1131,6 +1218,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2032628572}
+    - targetCorrespondingSourceObject: {fileID: 1564301460736058751, guid: d1e0753a08fff5d4cba989b258b6301b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 585214553}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1465510542707877442, guid: d1e0753a08fff5d4cba989b258b6301b,
         type: 3}

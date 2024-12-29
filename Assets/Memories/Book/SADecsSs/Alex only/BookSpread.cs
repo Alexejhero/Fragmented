@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using Memories.Book;
-using Memories.Characters;
 using Memories.Cutscenes;
 using UnityEngine;
 
@@ -14,7 +13,6 @@ public class BookSpread : MonoBehaviour
     private MemoryBook _book;
     private BasePopup[] _popups;
 
-    public BookActor[] actors;
     public CustomSequencer[] customSequences;
 
     private Transform _leftPage;

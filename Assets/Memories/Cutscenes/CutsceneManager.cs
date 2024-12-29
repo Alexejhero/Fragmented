@@ -65,10 +65,10 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine textLine:
             {
-                BookActor actor = Book.GetCurrentSpread().actors.FirstOrDefault(a => a.dialogueData == textLine.actor)
-                    ?? throw new InvalidOperationException($"Missing actor {textLine.actor.dialogueActorName} on book {Book}");
+                if (!textLine.actor) throw new InvalidOperationException($"Actor not assigned to \"{textLine.text}\"");
+
                 Debug.Log($"[{textLine.actor.dialogueActorName}] {textLine.text}");
-                await TextboxManager.Instance.Show(actor, textLine.text, ct);
+                await TextboxManager.Instance.Show(textLine.actor, textLine.text, ct);
                 break;
             }
             case Pause pause:
