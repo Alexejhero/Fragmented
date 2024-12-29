@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8486200403316769967}
   - component: {fileID: 2107283919366878333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2756452247077849247}
   - component: {fileID: 3217685019832034919}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6057061671280843143}
   - component: {fileID: 6195814807358508454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2009340475468217059}
   - component: {fileID: 8125407316027781800}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1834,6 +1834,11 @@ PrefabInstance:
       propertyPath: playOnOpen
       value: 
       objectReference: {fileID: 1352353162134014889}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: cage
+      value: 
+      objectReference: {fileID: 8580478128118278873}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: state
