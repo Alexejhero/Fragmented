@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story03VedalDeniesCookies01
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 1
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822431
+  - rid: 8057489064158822432
+  - rid: 8057489064158822433
+  - rid: 8057489064158822434
+  - rid: 8057489064158822435
+  - rid: 8057489064158822436
+  - rid: 8057489064158822438
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822431
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 8057489064158822432
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Vedal, where are my cookies?
+    - rid: 8057489064158822433
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: What cookies?
+    - rid: 8057489064158822434
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: The ones you promised me 3 days ago!
+    - rid: 8057489064158822435
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 8057489064158822436
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "I have no idea what you\u2019re talking about."
+    - rid: 8057489064158822438
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story03VedalDeniesCookies02
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 1
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822439
+  - rid: 8057489064158822440
+  - rid: 8057489064158822441
+  - rid: 8057489064158822442
+  - rid: 8057489064158822443
+  - rid: 8057489064158822444
+  - rid: 8057489064158822445
+  - rid: 8057489064158822446
+  - rid: 8057489064158822447
+  - rid: 8057489064158822448
+  - rid: 8057489064158822449
+  - rid: 8057489064158822450
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822439
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 8057489064158822440
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Neuro, stop following me around!
+    - rid: 8057489064158822441
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "I\u2019m BUSY!"
+    - rid: 8057489064158822442
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: "You said I\u2019d get a cookie if I killed Camila!"
+    - rid: 8057489064158822443
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+    - rid: 8057489064158822444
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
+        text: She means in Minecraft, of course
+    - rid: 8057489064158822445
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+    - rid: 8057489064158822446
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That never happened.
+    - rid: 8057489064158822447
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Are you sure?
+    - rid: 8057489064158822448
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: I NEVER LIE!
+    - rid: 8057489064158822449
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: ...
+    - rid: 8057489064158822450
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
