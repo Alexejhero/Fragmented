@@ -49,6 +49,8 @@ namespace Memories.Book
             Opened
         }
 
+        public GameObject deleteButtonContainer;
+
         // private void OnMouseEnter()
         // {
             // Debug.Log("Mouse Enter");
@@ -78,6 +80,8 @@ namespace Memories.Book
         {
             _animator.SetBool(_openProp, animatorIsOpen);
             _animator.SetInteger(_pageProp, animatorPage);
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close(true).Forget();
         }
 
         public void TurnPages(int pages)
@@ -88,9 +92,9 @@ namespace Memories.Book
             animatorPage = Mathf.Clamp(animatorPage + pages, 0, 11);
         }
 
-        public async UniTask TakeOut()
+        private async UniTask TakeOut()
         {
-            if (!mainSceneScript || mainSceneScript.activeBook) return;
+            if (!mainSceneScript || mainSceneScript.activeBook || mainSceneScript.busy) return;
             mainSceneScript.activeBook = this;
 
             state = State.Moving;
@@ -160,6 +164,8 @@ namespace Memories.Book
         {
             state = State.Moving;
 
+            if (finished) deleteButtonContainer.SetActive(true);
+
             Advancing = false;
             animatorIsOpen = false;
             await UniTask.Delay(500);
@@ -171,6 +177,17 @@ namespace Memories.Book
             state = State.Previewing;
             if (memoryProgression && memoryProgression.state == MemoryProgression.State.Pending)
                 await ArchiveManager.Instance.OnMemoryFinished(this);
+        }
+
+        public void DeleteEvent() => Delete().Forget();
+
+        private async UniTask Delete()
+        {
+            // TODO: winter
+            gameObject.SetActive(false);
+            mainSceneScript.PutBackBook();
+            ArchiveManager.Instance.currentBook = null;
+            mainSceneScript.activeBook = null;
         }
 
         public BookSpread GetCurrentSpread() => pageSpreads[animatorPage];

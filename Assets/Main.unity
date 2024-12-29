@@ -1295,29 +1295,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
-      propertyPath: light
-      value: 
-      objectReference: {fileID: 1633285463}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: bookshelf
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: bookshelfObject
-      value: 
-      objectReference: {fileID: 694873755}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: cameraTransform
-      value: 
-      objectReference: {fileID: 2096296487}
     - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: mainSceneScript
@@ -1325,29 +1305,9 @@ PrefabInstance:
       objectReference: {fileID: 1429647745}
     - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
-      propertyPath: previewPosition
-      value: 
-      objectReference: {fileID: 1572149820}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: readingPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
       propertyPath: offShelfPosition
       value: 
       objectReference: {fileID: 1335535618260865473}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: cameraPreviewLocation
-      value: 
-      objectReference: {fileID: 370207366}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
-        type: 3}
-      propertyPath: cameraReadingLocation
-      value: 
-      objectReference: {fileID: 872654574}
     - target: {fileID: 8199102394750637278, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1514,6 +1474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 655652266593176460, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
@@ -2114,6 +2079,7 @@ MonoBehaviour:
   cameraPreviewLocation: {fileID: 370207366}
   cameraReadingLocation: {fileID: 872654574}
   light: {fileID: 1633285463}
+  busy: 1
   activeBook: {fileID: 0}
 --- !u!4 &1429647746
 Transform:
@@ -2273,6 +2239,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 655652266593176460, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1333374607627186897, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2655,6 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neuroTextMiddle: {fileID: 1453712644}
   videoHider: {fileID: 1038387865}
+  mainSceneScript: {fileID: 1429647745}
 --- !u!1001 &1784546265
 PrefabInstance:
   m_ObjectHideFlags: 0
