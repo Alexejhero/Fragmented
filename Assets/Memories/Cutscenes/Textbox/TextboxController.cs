@@ -58,15 +58,18 @@ namespace Memories.Cutscenes.Textbox
         private async UniTask TickCharacters(string text, EventReference talkNoise, CancellationToken ct = default)
         {
             bool haveTalkNoise = !talkNoise.IsNull;
+            // play noise every other char (every char is too much)
+            bool played = false;
             float delayPerCharacter = 1f / speed;
 
             for (int i = 0; i < text.Length; i++)
             {
                 tmp.maxVisibleCharacters = i + 1;
 
-                if (char.IsWhiteSpace(text[i])) continue;
+                char c = text[i];
+                if (char.IsWhiteSpace(c)) continue;
 
-                float delayCharacters = text[i] switch
+                float delayCharacters = c switch
                 {
                     ',' => spacersPauseCharacters,
                     // " - "
@@ -80,7 +83,8 @@ namespace Memories.Cutscenes.Textbox
                     _ => 1,
                 };
 
-                if (haveTalkNoise) RuntimeManager.PlayOneShot(talkNoise);
+                if (haveTalkNoise && !char.IsPunctuation(c) && (played = !played))
+                    RuntimeManager.PlayOneShot(talkNoise);
 
                 float delay = delayPerCharacter * delayCharacters;
                 await UniTask.Delay(Mathf.RoundToInt(1000 * delay), cancellationToken: ct);
