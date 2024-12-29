@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Neuro
   m_EditorClassIdentifier: 
   dialogueActorName: neuro
-  textColor: {r: 0.9339623, g: 0.4273318, b: 0.79789364, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
   talkNoise:
     Guid:
       Data1: 1085329594
@@ -22,3 +22,4 @@ MonoBehaviour:
       Data4: -1271019846
     Path: event:/sfx/barks/neuro
   textboxType: 0
+  fontAsset: {fileID: 11400000, guid: f426595156d86a64a868e4a732fad0b7, type: 2}

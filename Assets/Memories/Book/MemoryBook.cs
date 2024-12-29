@@ -136,9 +136,9 @@ namespace Memories.Book
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(mainSceneScript.bookPreviewPosition, 1f).Forget();
 
-            await UniTask.Delay(700);
+            await UniTask.Delay(600);
             mainSceneScript.TakeOutBook();
-            await UniTask.Delay(250);
+            await UniTask.Delay(350);
             if (fakeCover) fakeCover.SetActive(false);
             if (realCover) realCover.SetActive(true);
             if (realArmature) realArmature.SetActive(true);

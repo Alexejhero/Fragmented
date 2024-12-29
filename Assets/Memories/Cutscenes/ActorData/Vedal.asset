@@ -21,3 +21,5 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  textboxType: 0
+  fontAsset: {fileID: 11400000, guid: 25eb0c5bcbfe4024795f46b0ac10b5e6, type: 2}

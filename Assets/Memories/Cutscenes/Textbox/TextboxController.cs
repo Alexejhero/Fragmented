@@ -36,6 +36,7 @@ namespace Memories.Cutscenes.Textbox
             CancellationTokenSource linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
             try
             {
+                tmp.font = actor.fontAsset;
                 tmp.color = actor.textColor;
                 tmp.text = text;
                 tmp.maxVisibleCharacters = 0;
