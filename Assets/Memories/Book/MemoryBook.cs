@@ -230,11 +230,12 @@ namespace Memories.Book
             materialDriver.Forget(1f);
             await UniTask.Delay(1000);
 
-            gameObject.SetActive(false);
             mainSceneScript.PutBackBook();
             mainSceneScript.activeBook = null;
 
             mainSceneScript.currentlyUnlocked--;
+
+            Destroy(gameObject);
         }
 
         public BookSpread GetCurrentSpread() => pageSpreads[animatorPage];
