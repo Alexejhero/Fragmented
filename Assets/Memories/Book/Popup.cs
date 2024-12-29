@@ -33,6 +33,7 @@ namespace Memories.Book
             if (!book && !ignoreBooks) book = transform.GetComponentInParent<MemoryBook>();
             if (collider != null) collider.enabled = false;
             if (initializeCounterRotation) transform.Rotate(reverseRotation ? -maxLiftAngle : maxLiftAngle);
+            if (tmp != null) tmp.enabled = false;
 		}
 
         private void Update()
