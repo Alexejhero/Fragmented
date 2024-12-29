@@ -16,10 +16,10 @@ MonoBehaviour:
   textColor: {r: 0, g: 0.24528301, b: 0.030835582, a: 1}
   talkNoise:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1544283688
+      Data2: 1210541733
+      Data3: 1053597829
+      Data4: -1695320551
+    Path: event:/sfx/barks/vedal
   textboxType: 0
   fontAsset: {fileID: 11400000, guid: 25eb0c5bcbfe4024795f46b0ac10b5e6, type: 2}

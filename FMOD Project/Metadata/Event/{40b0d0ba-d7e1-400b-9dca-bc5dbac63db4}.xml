@@ -5,7 +5,7 @@
 			<value>neuro</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ed4a55d9-cf1f-4ddd-89ca-8f2db25f7751}</destination>
@@ -106,7 +106,6 @@
 	<object class="MixerBusEffectChain" id="{9a4c2f5f-f8b2-4e86-84fe-c49d6a4d257a}">
 		<relationship name="effects">
 			<destination>{7cb027f8-0597-4fd6-a4ed-e8fbe08f9787}</destination>
-			<destination>{03e6fbfc-92a4-4894-94c1-f715a6685f30}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{abd4fd47-8dc2-42ca-bb61-aaee7765ce2d}" />
@@ -177,5 +176,4 @@
 	</object>
 	<object class="MixerBusFader" id="{14f74f33-b9d4-4bb9-9732-e90a8880ae00}" />
 	<object class="MixerBusFader" id="{7cb027f8-0597-4fd6-a4ed-e8fbe08f9787}" />
-	<object class="SpatialiserEffect" id="{03e6fbfc-92a4-4894-94c1-f715a6685f30}" />
 </objects>
