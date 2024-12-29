@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -19,18 +17,9 @@ namespace Memories.Book
         private Vector3 _startPos;
         private Vector3 _startRot;
 
-        private Vector3 _cameraStartPos;
-        private Vector3 _cameraStartRot;
-
-        public MemoryBookshelf bookshelf;
+        public MainSceneScript mainSceneScript;
 
         public Transform offShelfPosition;
-        [FormerlySerializedAs("readingPosition")] public Transform previewPosition;
-
-        public Transform cameraTransform;
-        public Transform cameraPreviewLocation;
-        public Transform cameraReadingLocation;
-        public GameObject bookshelfObject;
 
         [FormerlySerializedAs("memory")]
         public MemoryProgression memoryProgression;
@@ -60,8 +49,6 @@ namespace Memories.Book
             Opened
         }
 
-        private List<MemoryBook> _otherBooks;
-
         // private void OnMouseEnter()
         // {
             // Debug.Log("Mouse Enter");
@@ -74,18 +61,10 @@ namespace Memories.Book
 
         private void Awake()
         {
-            _otherBooks = FindObjectsOfType<MemoryBook>().Where(b => b != this).ToList();
-
             _animator = GetComponent<Animator>();
 
             _startPos = transform.position;
             _startRot = transform.eulerAngles;
-
-            if (cameraTransform)
-            {
-                _cameraStartPos = cameraTransform.position;
-                _cameraStartRot = cameraTransform.eulerAngles;
-            }
 
             if (fakeCover && realCover && realArmature && state == State.OnShelf)
             {
@@ -119,17 +98,16 @@ namespace Memories.Book
 
         public async UniTask TakeOut()
         {
-            if (!bookshelf || bookshelf.activeBook) return;
-            bookshelf.activeBook = this;
+            if (!mainSceneScript || mainSceneScript.activeBook) return;
+            mainSceneScript.activeBook = this;
 
             state = State.Moving;
 
             await transform.LerpTransform(offShelfPosition, 0.3f);
-            transform.LerpTransform(previewPosition, 1f).Forget();
+            transform.LerpTransform(mainSceneScript.bookPreviewPosition, 1f).Forget();
 
             await UniTask.Delay(700);
-            cameraTransform.DOMove(cameraPreviewLocation.position, 0.5f);
-            cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.5f);
+            mainSceneScript.TakeOutBook();
             await UniTask.Delay(250);
             if (fakeCover) fakeCover.SetActive(false);
             if (realCover) realCover.SetActive(true);
@@ -144,14 +122,13 @@ namespace Memories.Book
 
         private async UniTask PutBack()
         {
-            if (!bookshelf || bookshelf.activeBook != this) return;
+            if (!mainSceneScript || mainSceneScript.activeBook != this) return;
 
             if (!offShelfPosition) return;
 
             state = State.Moving;
 
-            cameraTransform.DOMove(_cameraStartPos, 0.5f);
-            cameraTransform.DORotate(_cameraStartRot, 0.5f);
+            mainSceneScript.PutBackBook();
 
             transform.DOMove(offShelfPosition.position, 1);
             transform.DORotate(offShelfPosition.eulerAngles, 1);
@@ -168,7 +145,7 @@ namespace Memories.Book
 
             state = State.OnShelf;
             ArchiveManager.Instance.currentBook = null;
-            bookshelf.activeBook = null;
+            mainSceneScript.activeBook = null;
         }
 
         public void OpenEvent() => Open().Forget();
@@ -177,16 +154,10 @@ namespace Memories.Book
         {
             state = State.Moving;
 
-            if (bookshelfObject) bookshelfObject.SetActive(false);
-            _otherBooks.ForEach(b => b.gameObject.SetActive(false));
             Advancing = true;
             animatorIsOpen = true;
 
-            if (cameraTransform)
-            {
-                cameraTransform.DOMove(cameraReadingLocation.position, 0.85f);
-                cameraTransform.DORotate(cameraReadingLocation.eulerAngles, 0.85f);
-            }
+            if (mainSceneScript) mainSceneScript.OpenBook();
 
             await UniTask.Delay(2500);
 
@@ -201,16 +172,9 @@ namespace Memories.Book
             animatorIsOpen = false;
             await UniTask.Delay(500);
 
-            if (cameraTransform)
-            {
-                cameraTransform.DOMove(cameraPreviewLocation.position, 0.7f);
-                cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.7f);
-            }
+            if (mainSceneScript) mainSceneScript.CloseBook().Forget();
 
-            await UniTask.Delay(700);
-            if (bookshelfObject) bookshelfObject.SetActive(true);
-            _otherBooks.ForEach(b => b.gameObject.SetActive(true));
-            await UniTask.Delay(2500 - 500 - 700);
+            await UniTask.Delay(2500 - 500);
 
             state = State.Previewing;
             if (memoryProgression && memoryProgression.state == MemoryProgression.State.Pending)
