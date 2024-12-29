@@ -25,6 +25,8 @@ namespace Memories.Book
 
         public BookSpread[] pageSpreads;
 
+        public Collider ownCollider;
+
         public GameObject fakeCover;
         public GameObject realCover;
         public GameObject realArmature;
@@ -112,6 +114,7 @@ namespace Memories.Book
             materialDriver.Unlock();
             await UniTask.Delay(1000);
             _unlocked = true;
+            ownCollider.enabled = true;
 
             state = oldState; // should only ever be OnShelf
         }
@@ -123,6 +126,7 @@ namespace Memories.Book
 
             state = State.Busy;
 
+            ownCollider.enabled = false;
             mainSceneScript.bookSlideOut.PlayOneShot();
             await UniTask.Delay(100);
 
@@ -166,6 +170,8 @@ namespace Memories.Book
             transform.DORotate(_startRot, 0.5f);
             await UniTask.Delay(500);
 
+            ownCollider.enabled = true;
+
             state = State.OnShelf;
             mainSceneScript.activeBook = null;
         }
@@ -179,7 +185,7 @@ namespace Memories.Book
             state = State.Busy;
 
             normalContainer.SetActive(false);
-            
+
             Advancing = true;
             animatorIsOpen = true;
 
