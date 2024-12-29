@@ -13,6 +13,8 @@ public class BookSpread : MonoBehaviour
     private MemoryBook _book;
     private BasePopup[] _popups;
 
+    public Cutscene playOnOpen;
+    public Cutscene playBeforeClose;
     public CustomSequencer[] customSequences;
 
     private Transform _leftPage;
@@ -51,6 +53,10 @@ public class BookSpread : MonoBehaviour
         }
 
         if (ceiling) ceiling.DoAction(popupProgress);
+        if (Mathf.Approximately(Math.Abs(popupProgress), 1))
+        {
+            if (playOnOpen) playOnOpen.Play();
+        }
     }
 
     public CustomSequencer GetSequencer(string sequenceName)

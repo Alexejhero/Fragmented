@@ -1,14 +1,16 @@
 using System;
 using FMODUnity;
+using TriInspector;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
 
 [CreateAssetMenu(menuName = "Cutscenes/Cutscene Data")]
-public class CutsceneData : ScriptableObject
+public sealed class CutsceneData : ScriptableObject
 {
     public string cutsceneName;
     public bool skippable = true;
+    public bool repeatable;
 
     public enum RepeatBehaviour
     {
@@ -20,7 +22,7 @@ public class CutsceneData : ScriptableObject
 
     [SerializeReference]
     public DialogueInstruction[] mainLines;
-    [SerializeReference]
+    [SerializeReference, ShowIf(nameof(repeatable))]
     public LineSet[] repeatLines;
 }
 
