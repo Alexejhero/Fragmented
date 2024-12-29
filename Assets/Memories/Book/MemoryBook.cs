@@ -53,6 +53,9 @@ namespace Memories.Book
         public GameObject normalContainer;
         public GameObject deleteButtonContainer;
 
+        public Color coverLightColor = new Color32(255, 244, 214, 255);
+        public float coverLightIntensity = 1;
+
         // private void OnMouseEnter()
         // {
             // Debug.Log("Mouse Enter");
@@ -77,7 +80,7 @@ namespace Memories.Book
                 realArmature.SetActive(false);
             }
 
-            materialDriver.SetDefaults(false);
+            materialDriver.SetDefaults(true);
         }
 
         private void Update()
