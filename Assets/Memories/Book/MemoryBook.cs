@@ -54,6 +54,18 @@ namespace Memories.Book
             if (UnityEngine.Input.GetKeyDown(KeyCode.T)) TakeOut().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.O)) Open().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.C)) Close().Forget();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.P)) Stuff().Forget();
+        }
+
+        public async UniTask Stuff()
+        {
+            while (true)
+            {
+                await Open();
+                await UniTask.Delay(2000);
+                await Close();
+                await UniTask.Delay(2000);
+            }
         }
 
         public async UniTask TakeOut()
