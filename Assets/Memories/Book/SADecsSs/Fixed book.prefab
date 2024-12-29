@@ -1980,6 +1980,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: -4128383740851021839, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128383740851021839, guid: 317396669d8c77a4e9392f80f8194011,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 317396669d8c77a4e9392f80f8194011,
         type: 3}
       propertyPath: m_Name
@@ -2190,6 +2200,7 @@ MonoBehaviour:
   open: 0
   page: 0
   pageSpreadProgress: 0
+  state: 0
 --- !u!95 &6753487954282821929
 Animator:
   serializedVersion: 5

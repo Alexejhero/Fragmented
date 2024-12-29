@@ -10,6 +10,16 @@
       },
       "hash": "8d1bad21d9a66aacf3d8c4232f0dfad42fafb7af"
     },
+    "com.alexejhero.unitycsharp11.hotreload": {
+      "version": "https://github.com/Alexejhero/Unity-CSharp11.git?path=Assets/UnityCSharp11.HotReload",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.alexejhero.unitycsharp11": "1.1.1",
+        "com.singularitygroup.hotreload": "1.12.11"
+      },
+      "hash": "8d1bad21d9a66aacf3d8c4232f0dfad42fafb7af"
+    },
     "com.codewriter.triinspector": {
       "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
       "depth": 0,
@@ -25,6 +35,16 @@
       "source": "git",
       "dependencies": {},
       "hash": "b0d01ca75fc890b76e81202d655d17c1f4214a18"
+    },
+    "com.singularitygroup.hotreload": {
+      "version": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.12.14",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
+      "hash": "9f9c6863d0fce36ec96da4c98d226d63780daab5"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -199,18 +219,6 @@
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.timeline": {
-      "version": "1.7.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

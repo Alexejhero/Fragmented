@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Memories.Book
 {
     [AddComponentMenu("Memory/Popup")]
-    public class Popup : MonoBehaviour
+    public class Popup : BasePopup
     {
         public MemoryBook book;
         public Vector3 maxLiftAngle = new(60, 0, 0);
@@ -49,8 +49,10 @@ namespace Memories.Book
             DoRotate(lift);
         }
 
-        public void DoRotate(float lift)
+        public override void DoRotate(float lift)
         {
+	        lift = Mathf.Abs(lift); // we don't care about the direction
+
 			// animator can rotate whatever axis
 			// animator.SetFloat("PopupLift", lift);
 

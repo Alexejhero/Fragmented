@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "com.alexejhero.unitycsharp11": "https://github.com/Alexejhero/Unity-CSharp11.git?path=Assets/UnityCSharp11",
+    "com.alexejhero.unitycsharp11.hotreload": "https://github.com/Alexejhero/Unity-CSharp11.git?path=Assets/UnityCSharp11.HotReload",
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.singularitygroup.hotreload": "git+https://gitlab.hotreload.net/root/hot-reload-releases.git#1.12.14",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "3.0.34",
     "com.unity.ide.visualstudio": "2.0.22",
@@ -10,7 +12,6 @@
     "com.unity.inputsystem": "1.11.2",
     "com.unity.render-pipelines.universal": "14.0.11",
     "com.unity.textmeshpro": "3.0.9",
-    "com.unity.timeline": "1.7.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

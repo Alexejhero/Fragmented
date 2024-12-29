@@ -323,6 +323,7 @@ namespace Memories.Characters.Movement
             _jumpPressQueued = false;
             _jumpHeld = false;
             _jumping = false;
+            rb.velocity = _rbVelocity = Vector3.zero;
         }
 
 #if UNITY_EDITOR
