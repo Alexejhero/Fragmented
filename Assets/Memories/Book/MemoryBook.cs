@@ -44,7 +44,7 @@ namespace Memories.Book
 
         private enum State
         {
-            Moving = -1,
+            Busy = -1,
             OnShelf,
             Previewing,
             Opened
@@ -56,10 +56,7 @@ namespace Memories.Book
         public Color coverLightColor = new Color32(255, 244, 214, 255);
         public float coverLightIntensity = 1;
 
-        // private void OnMouseEnter()
-        // {
-            // Debug.Log("Mouse Enter");
-        // }
+        private bool _unlocked;
 
         private void OnMouseDown()
         {
@@ -80,7 +77,7 @@ namespace Memories.Book
                 realArmature.SetActive(false);
             }
 
-            materialDriver.SetDefaults(true);
+            materialDriver.SetDefaults(false);
         }
 
         private void Update()
@@ -99,12 +96,31 @@ namespace Memories.Book
             animatorPage = Mathf.Clamp(animatorPage + pages, 0, 11);
         }
 
+        public void Unlock()
+        {
+            CoUnlock().Forget();
+        }
+
+        private async UniTask CoUnlock()
+        {
+            if (_unlocked) return;
+
+            State oldState = state;
+            state = State.Busy;
+
+            materialDriver.Unlock();
+            await UniTask.Delay(1000);
+            _unlocked = true;
+
+            state = oldState; // should only ever be OnShelf
+        }
+
         private async UniTask TakeOut()
         {
-            if (!mainSceneScript || mainSceneScript.activeBook || mainSceneScript.busy) return;
+            if (!mainSceneScript || mainSceneScript.activeBook || mainSceneScript.busy || !_unlocked || state != State.OnShelf) return;
             mainSceneScript.activeBook = this;
 
-            state = State.Moving;
+            state = State.Busy;
 
             await transform.LerpTransform(offShelfPosition, 0.3f);
             transform.LerpTransform(mainSceneScript.bookPreviewPosition, 1f).Forget();
@@ -124,11 +140,11 @@ namespace Memories.Book
 
         private async UniTask PutBack()
         {
-            if (!mainSceneScript || mainSceneScript.activeBook != this) return;
+            if (!mainSceneScript || mainSceneScript.activeBook != this || state != State.Previewing) return;
 
             if (!offShelfPosition) return;
 
-            state = State.Moving;
+            state = State.Busy;
 
             mainSceneScript.PutBackBook();
 
@@ -153,11 +169,13 @@ namespace Memories.Book
 
         private async UniTask Open()
         {
+            if (state != State.Previewing) return;
+
+            state = State.Busy;
+
             normalContainer.SetActive(false);
 
             materialDriver.SetViewed();
-
-            state = State.Moving;
 
             Advancing = true;
             animatorIsOpen = true;
@@ -171,7 +189,9 @@ namespace Memories.Book
 
         private async UniTask Close()
         {
-            state = State.Moving;
+            if (state != State.Opened) return;
+
+            state = State.Busy;
 
             Advancing = false;
             animatorIsOpen = false;
@@ -190,6 +210,10 @@ namespace Memories.Book
 
         private async UniTask Delete()
         {
+            if (state != State.Previewing) return;
+
+            state = State.Busy;
+
             fakeCover.SetActive(true);
             realCover.SetActive(false);
             realArmature.SetActive(false);
@@ -200,6 +224,8 @@ namespace Memories.Book
             gameObject.SetActive(false);
             mainSceneScript.PutBackBook();
             mainSceneScript.activeBook = null;
+
+            mainSceneScript.currentlyUnlocked--;
         }
 
         public BookSpread GetCurrentSpread() => pageSpreads[animatorPage];

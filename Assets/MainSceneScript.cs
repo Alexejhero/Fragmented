@@ -23,6 +23,10 @@ public class MainSceneScript : MonoBehaviour
     private Vector3 _cameraStartPos;
     private Vector3 _cameraStartRot;
 
+    public List<MemoryBook> unlockPile;
+    public int maxUnlocked = 3;
+    public int currentlyUnlocked = 0;
+
     private List<MemoryBook> _books;
 
     private void Awake()
@@ -31,6 +35,19 @@ public class MainSceneScript : MonoBehaviour
         _cameraStartRot = cameraTransform.eulerAngles;
 
         _books = FindObjectsOfType<MemoryBook>().ToList();
+    }
+
+    private void Update()
+    {
+        while (currentlyUnlocked < maxUnlocked && unlockPile.Count > 0)
+        {
+            int index = Random.Range(0, unlockPile.Count);
+            MemoryBook book = unlockPile[index];
+            unlockPile.RemoveAt(index);
+
+            book.Unlock();
+            currentlyUnlocked++;
+        }
     }
 
     public void TakeOutBook()
