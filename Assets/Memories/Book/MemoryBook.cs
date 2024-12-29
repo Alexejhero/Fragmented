@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -58,6 +60,8 @@ namespace Memories.Book
             Opened
         }
 
+        private List<MemoryBook> _otherBooks;
+
         // private void OnMouseEnter()
         // {
             // Debug.Log("Mouse Enter");
@@ -70,6 +74,8 @@ namespace Memories.Book
 
         private void Awake()
         {
+            _otherBooks = FindObjectsOfType<MemoryBook>().Where(b => b != this).ToList();
+
             _animator = GetComponent<Animator>();
 
             _startPos = transform.position;
@@ -172,6 +178,7 @@ namespace Memories.Book
             state = State.Moving;
 
             if (bookshelfObject) bookshelfObject.SetActive(false);
+            _otherBooks.ForEach(b => b.gameObject.SetActive(false));
             Advancing = true;
             animatorIsOpen = true;
 
@@ -202,6 +209,7 @@ namespace Memories.Book
 
             await UniTask.Delay(700);
             if (bookshelfObject) bookshelfObject.SetActive(true);
+            _otherBooks.ForEach(b => b.gameObject.SetActive(true));
             await UniTask.Delay(2500 - 500 - 700);
 
             state = State.Previewing;
