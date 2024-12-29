@@ -3947,6 +3947,7 @@ MonoBehaviour:
   - {fileID: 5772778447849557427}
   - {fileID: 6559634335613064874}
   - {fileID: 4984313611932380420}
+  ownCollider: {fileID: 2278062157261159182}
   fakeCover: {fileID: 2171278404054402546}
   realCover: {fileID: 2199942264117765982}
   realArmature: {fileID: 5903291858624668760}
@@ -3997,7 +3998,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.16856956, y: 0.04638399, z: 0.24636555}
   m_Center: {x: -0.105942726, y: -0.007394381, z: 0.0022783875}

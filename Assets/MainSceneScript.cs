@@ -75,7 +75,7 @@ public class MainSceneScript : MonoBehaviour
 
     public void OpenBook()
     {
-        _books.Where(b => b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(false));
+        _books.Where(b => b && b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(false));
         bookshelfObject.SetActive(false);
         bookOpen.PlayOneShot();
         cameraTransform.DOMove(cameraReadingLocation.position, 0.85f);
@@ -89,6 +89,6 @@ public class MainSceneScript : MonoBehaviour
         bookClose.PlayOneShot();
         await UniTask.Delay(700);
         bookshelfObject.SetActive(true);
-        _books.Where(b => b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(true));
+        _books.Where(b => b && b != activeBook).ToList().ForEach(b => b.gameObject.SetActive(true));
     }
 }
