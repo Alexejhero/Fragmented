@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{05a24c41-ea0b-4530-a602-ba827c282ad0}">
+		<property name="assetPath">
+			<value>sfx/barks/neuro/Neuro_Doo_doo_doo-12.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.10945578231292517</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a38cb77a-6793-41aa-bbd0-1cc729c8bbec}</destination>
+		</relationship>
+	</object>
+</objects>
