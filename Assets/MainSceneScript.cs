@@ -26,6 +26,9 @@ public class MainSceneScript : MonoBehaviour
     private Vector3 _cameraStartPos;
     private Vector3 _cameraStartRot;
 
+    public List<MemoryBook> unlockOrderPrequeue;
+    public List<MemoryBook> unlockOrderPostqueue;
+
     public List<MemoryBook> unlockPile;
     public int maxUnlocked = 3;
     public int currentlyUnlocked = 0;
@@ -50,7 +53,18 @@ public class MainSceneScript : MonoBehaviour
 
     private void Update()
     {
-        while (currentlyUnlocked < maxUnlocked && unlockPile.Count > 0)
+        if (unlockOrderPrequeue.Count > 0 && currentlyUnlocked == 0)
+        {
+            MemoryBook book = unlockOrderPrequeue[0];
+            unlockOrderPrequeue.RemoveAt(0);
+
+            book.Unlock();
+            currentlyUnlocked++;
+
+            return;
+        }
+
+        while (unlockPile.Count > 0 && currentlyUnlocked < maxUnlocked)
         {
             int index = Random.Range(0, unlockPile.Count);
             MemoryBook book = unlockPile[index];
@@ -58,6 +72,19 @@ public class MainSceneScript : MonoBehaviour
 
             book.Unlock();
             currentlyUnlocked++;
+
+            return;
+        }
+
+        if (unlockOrderPostqueue.Count > 0 && currentlyUnlocked == 0)
+        {
+            MemoryBook book = unlockOrderPostqueue[0];
+            unlockOrderPostqueue.RemoveAt(0);
+
+            book.Unlock();
+            currentlyUnlocked++;
+
+            return;
         }
     }
 
