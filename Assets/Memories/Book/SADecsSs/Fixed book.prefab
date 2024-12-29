@@ -51,6 +51,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &250788810360801608
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +496,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &1850954549711957626
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +725,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &2690321809888624917
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +778,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &2743584034571198541
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +831,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &3095910676274258011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1376,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &5272681820019158404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,6 +1733,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &6425033790861517088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2233,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &7425074402941006804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2318,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &7586515358130654952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2467,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &8516638469037091821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2520,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &8629368037372561403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2739,8 @@ MonoBehaviour:
   playOnOpen: {fileID: 0}
   playBeforeClose: {fileID: 0}
   customSequences: []
+  lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  lightIntensity: 1
 --- !u!1 &8805327771948713691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,6 +3957,8 @@ MonoBehaviour:
   state: 0
   normalContainer: {fileID: 3342228995097685755}
   deleteButtonContainer: {fileID: 9127884028862026289}
+  coverLightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  coverLightIntensity: 1
 --- !u!95 &6753487954282821929
 Animator:
   serializedVersion: 5
@@ -3987,12 +4013,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f09072325cc4a47a8113c5fe616383, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveColor: {r: 1, g: 1, b: 1, a: 1}
-  pendingAccentColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  hoveringColor: {r: 0, g: 1, b: 1, a: 1}
+  dissolveColor: {r: 0.9811321, g: 0.24556501, b: 0.06941971, a: 1}
+  hoveringColor: {r: 0, g: 1, b: 1, a: 0.3882353}
   bookRenderer: {fileID: 7363665124240063805}
   dummyPagesRenderer: {fileID: 190540430262654514}
-  hoveringPowerPerUpdate: 3
+  hoveringPowerPerUpdate: 2
 --- !u!1 &2199942264117765982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 317396669d8c77a4e9392f80f8194011,

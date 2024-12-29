@@ -10,7 +10,6 @@ namespace VFX.Book;
 public class BookMaterialDriver : MonoBehaviour
 {
     public Color dissolveColor = Color.white;
-    public Color pendingAccentColor = Color.yellow;
     public Color hoveringColor = Color.cyan;
 
     [Required]
@@ -24,26 +23,18 @@ public class BookMaterialDriver : MonoBehaviour
 #region IDForest
     private static readonly int DissolveFloatID = Shader.PropertyToID("_Dissolve");
     private static readonly int DissolveColorID = Shader.PropertyToID("_Dissolve_color");
-    private static readonly int AccentColorID = Shader.PropertyToID("_Accent_color");
     private static readonly int HoverColorID = Shader.PropertyToID("_Hover_color");
-    private static readonly int TextureDesaturationID = Shader.PropertyToID("_Texture_desaturation");
+    private static readonly int DegreeOfLockedID = Shader.PropertyToID("_Degree_of_locked");
 #endregion
 
     public void SetDefaults(bool isAvailable)
     {
-        bookRenderer.material.SetFloat(TextureDesaturationID, isAvailable ? 0f : 1f);
-        bookRenderer.material.SetColor(AccentColorID, isAvailable ? pendingAccentColor : Color.clear);
+        bookRenderer.material.SetFloat(DegreeOfLockedID, isAvailable ? 0f : 1f);
     }
 
     public void Unlock()
     {
         StartCoroutine(UnlockRoutine(1f));
-        bookRenderer.material.SetColor(AccentColorID, pendingAccentColor);
-    }
-    
-    public void SetViewed()
-    {
-        bookRenderer.material.SetColor(AccentColorID, Color.clear);
     }
     
     public void Forget(float duration)
@@ -71,9 +62,9 @@ public class BookMaterialDriver : MonoBehaviour
     {
         yield return CommonCoroutines.DoOverTime(duration, t =>
         {
-            bookRenderer.material.SetFloat(TextureDesaturationID, 1 - t / duration);
+            bookRenderer.material.SetFloat(DegreeOfLockedID, 1 - t / duration);
         });
-        bookRenderer.material.SetFloat(TextureDesaturationID, 0f);
+        bookRenderer.material.SetFloat(DegreeOfLockedID, 0f);
     }
     
     private IEnumerator DissolveRoutine(float duration)

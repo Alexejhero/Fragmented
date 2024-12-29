@@ -125,7 +125,7 @@ Material:
     - _Accent_strip_thickness: 0.3
     - _AlphaClip: 1
     - _AlphaToMask: 1
-    - _Ambient_occlusion: 0
+    - _Ambient_occlusion: 0.5
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -135,6 +135,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _Degree_of_locked: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _Dissolve: 0
@@ -176,8 +177,9 @@ Material:
     - _Color: {r: 0.011747932, g: 0.46607858, b: 0.8301887, a: 1}
     - _Dissolve_color: {r: 0.031772893, g: 0.9622642, b: 0.9434594, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Hover_color: {r: 0.22694907, g: 0.5660378, b: 0.5555394, a: 0}
+    - _Hover_color: {r: 0.226949, g: 0.5660378, b: 0.5555394, a: 0}
     - _Hover_direction_and_speed: {r: 0.03, g: 0.05, b: 0.1, a: 0}
+    - _LockedColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 0, g: 0, b: 0, a: 0}
     - _Strip_axis: {r: 0, g: 0, b: -1, a: 0}

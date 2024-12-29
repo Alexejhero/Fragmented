@@ -174,9 +174,7 @@ namespace Memories.Book
             state = State.Busy;
 
             normalContainer.SetActive(false);
-
-            materialDriver.SetViewed();
-
+            
             Advancing = true;
             animatorIsOpen = true;
 
