@@ -22,11 +22,6 @@ public sealed class Textbox : MonoBehaviour
     [FormerlySerializedAs("ellipsisPause")]
     public int ellipsisPauseCharacters = 15;
 
-    private void Awake()
-    {
-        TextboxManager.Instance.Register(this);
-    }
-
     public async UniTask Show(string text, DialogueActorData actor, CancellationToken ct = default)
     {
         await DisplayText(text, actor, ct);

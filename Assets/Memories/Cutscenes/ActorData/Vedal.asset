@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0789075136e24fcfbb86fe75d79970b0, type: 3}
   m_Name: Vedal
   m_EditorClassIdentifier: 
-  face: {fileID: 0}
-  font: {fileID: 0}
-  talker: {fileID: 0}
+  dialogueActorName: vedal
+  textColor: {r: 0.17412782, g: 0.8584906, b: 0.25720072, a: 1}
+  talkNoise:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

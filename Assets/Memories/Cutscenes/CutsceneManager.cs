@@ -61,7 +61,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine textLine:
             {
-                BookActor actor = _actors.Find(a => a.dialogueActorName == textLine.dialogueActorName);
+                BookActor actor = _actors.Find(a => a.dialogueData.dialogueActorName == textLine.dialogueActorName);
                 await TextboxManager.Instance.Show(actor, textLine.text, ct);
                 break;
             }
@@ -95,6 +95,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine:
             case Pause:
+            case PlaySfx:
             {
                 break;
             }
@@ -108,11 +109,6 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             {
                 foreach (DialogueInstruction inner in multi.instructions)
                     Skip(inner);
-                break;
-            }
-            case PlaySfx sfx:
-            {
-                // RuntimeManager.PlayOneShot(sfx.sound);
                 break;
             }
         }
