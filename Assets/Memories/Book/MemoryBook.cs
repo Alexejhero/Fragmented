@@ -35,6 +35,9 @@ namespace Memories.Book
         public BookActor[] actors;
         public CustomSequencer[] customSequences;
 
+        public GameObject fakeCover;
+        public GameObject realCover;
+
         [HideInInspector]
         public float pageSeparation;
 
@@ -69,6 +72,12 @@ namespace Memories.Book
             {
                 _cameraStartPos = cameraTransform.position;
                 _cameraStartRot = cameraTransform.eulerAngles;
+            }
+
+            if (fakeCover && realCover && state == State.OnShelf)
+            {
+                fakeCover.SetActive(true);
+                realCover.SetActive(false);
             }
         }
 
@@ -105,7 +114,10 @@ namespace Memories.Book
             await UniTask.Delay(700);
             cameraTransform.DOMove(cameraPreviewLocation.position, 0.5f);
             cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.5f);
-            await UniTask.Delay(500);
+            await UniTask.Delay(250);
+            if (fakeCover) fakeCover.SetActive(false);
+            if (realCover) realCover.SetActive(true);
+            await UniTask.Delay(250);
 
             state = State.Previewing;
             ArchiveManager.Instance.currentBook = this;
@@ -122,7 +134,10 @@ namespace Memories.Book
 
             transform.DOMove(offShelfPosition.position, 1);
             transform.DORotate(offShelfPosition.eulerAngles, 1);
-            await UniTask.Delay(1000);
+            await UniTask.Delay(250);
+            if (fakeCover) fakeCover.SetActive(true);
+            if (realCover) realCover.SetActive(false);
+            await UniTask.Delay(750);
 
             transform.DOMove(_startPos, 0.3f);
             transform.DORotate(_startRot, 0.3f);
