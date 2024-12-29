@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -37,10 +38,14 @@ namespace Memories.Book
         [HideInInspector]
         public float pageSeparation;
 
+        [HideInInspector]
         public bool open;
+
+        [HideInInspector]
         public int page;
 
-        public float pageSpreadProgress;
+        [NonSerialized]
+        public bool Advancing = true;
 
         [SerializeField]
         private State state = State.OnShelf;
@@ -76,6 +81,18 @@ namespace Memories.Book
             if (UnityEngine.Input.GetKeyDown(KeyCode.E) && state == State.Previewing) PutBack().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Previewing) Open().Forget();
             if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Opened) Close().Forget();
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened)
+            {
+                Advancing = true;
+                page = Mathf.Min(page + 1, 11);
+            }
+
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Z) && state == State.Opened)
+            {
+                Advancing = false;
+                page = Mathf.Max(page - 1, 0);
+            }
         }
 
         public async UniTask TakeOut()
@@ -120,6 +137,7 @@ namespace Memories.Book
             state = State.Moving;
 
             if (bookshelfObject) bookshelfObject.SetActive(false);
+            Advancing = true;
             open = true;
 
             if (cameraTransform)
@@ -138,6 +156,7 @@ namespace Memories.Book
         {
             state = State.Moving;
 
+            Advancing = false;
             open = false;
             await UniTask.Delay(500);
 
