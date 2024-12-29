@@ -1,27 +1,22 @@
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
 using Helpers;
 using Memories.Book;
 using Memories.Characters;
+using UnityEngine;
 
 namespace Memories.Cutscenes;
 
 public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
 {
     public Cutscene currentCutscene;
-    private readonly List<BookActor> _actors = new();
 
-    private CancellationTokenSource _cts;
+    private CancellationTokenSource _cts = new();
 
     private MemoryBook Book => ArchiveManager.Instance.currentBook;
-
-    public void Load(MemoryBook book)
-    {
-        book.GetComponentsInChildren(true, _actors);
-    }
 
     public async UniTask Play(Cutscene cutscene)
     {
@@ -63,28 +58,34 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine textLine:
             {
-                BookActor actor = _actors.Find(a => a.dialogueData.dialogueActorName == textLine.dialogueActorName);
+                BookActor actor = Book.actors.FirstOrDefault(a => a.dialogueData == textLine.actor)
+                    ?? throw new InvalidOperationException($"Missing actor {textLine.actor.dialogueActorName} on book {Book}");
+                Debug.Log($"[{textLine.actor.dialogueActorName}] {textLine.text}");
                 await TextboxManager.Instance.Show(actor, textLine.text, ct);
                 break;
             }
             case Pause pause:
             {
+                Debug.Log($"pause {pause.duration}");
                 await UniTask.Delay(TimeSpan.FromSeconds(pause.duration), cancellationToken: ct);
                 break;
             }
             case CustomSequence customSequence:
             {
+                Debug.Log($"running {customSequence.sequenceName}");
                 CustomSequencer sequence = Book.GetSequencer(customSequence.sequenceName);
                 await sequence.Play(ct);
                 break;
             }
             case MultipleWaitAll multi:
             {
+                Debug.Log($"multi ({string.Join(',', multi.instructions.Select(i => i.GetType().Name))})");
                 await UniTask.WhenAll(multi.instructions.Select(i => Execute(i, ct)));
                 break;
             }
             case PlaySfx sfx:
             {
+                Debug.Log($"sfx {sfx.sound.Path}");
                 RuntimeManager.PlayOneShot(sfx.sound);
                 break;
             }

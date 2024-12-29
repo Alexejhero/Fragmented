@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: scene
+  m_EditorClassIdentifier: Assembly-CSharp:Memories.Cutscenes:CutsceneData
+  cutsceneName: buh
+  repeatBehaviour: 2
+  mainLines:
+  - rid: 949997391457288221
+  - rid: 949997391457288222
+  - rid: 949997391457288223
+  - rid: 949997391457288225
+  repeatLines:
+  - rid: 949997391457288226
+  references:
+    version: 2
+    RefIds:
+    - rid: 949997391457288221
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: that's crazy... actually crazy. yeah
+    - rid: 949997391457288222
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 5
+    - rid: 949997391457288223
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: that's, actually crazy? you think,,,,,,,,, about it, during your, treavels
+    - rid: 949997391457288225
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 3e45a4ae322f47647806e61c384937bb, type: 2}
+        text: that's messed up
+    - rid: 949997391457288226
+      type: {class: LineSet, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        lines:
+        - rid: 949997391457288227
+    - rid: 949997391457288227
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 4780f907e22124144a2c89240dfe7f6d, type: 2}
+        text: get outta here..................................... thanks

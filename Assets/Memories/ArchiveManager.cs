@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -11,8 +12,8 @@ public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
 {
     [Header("Data")]
     [Tooltip("Memories are unlocked in this order")]
-    public List<Memory> allMemories;
-    public Memory[] unlockAtStart;
+    public List<Memory> allMemories = new();
+    public Memory[] unlockAtStart = Array.Empty<Memory>();
     public int coreCapacity;
 
     [Header("Runtime")]

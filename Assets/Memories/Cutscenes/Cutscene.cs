@@ -1,5 +1,7 @@
 using System;
-using FMODUnity;
+using Cysharp.Threading.Tasks;
+using Memories.Book;
+using TriInspector;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
@@ -7,6 +9,7 @@ namespace Memories.Cutscenes;
 [AddComponentMenu("Cutscenes/Cutscene")]
 public sealed class Cutscene : MonoBehaviour
 {
+    [HideInEditMode]
     public int timesPlayed;
     public CutsceneData data;
 
@@ -28,69 +31,34 @@ public sealed class Cutscene : MonoBehaviour
 
         return data.repeatLines[i].lines;
     }
-}
 
-[CreateAssetMenu(menuName = "Cutscenes/Cutscene Data")]
-public sealed class CutsceneData : ScriptableObject
-{
-    public string cutsceneName;
-
-    public enum RepeatBehaviour
+    private void Update()
     {
-        Last,
-        Random,
-        Loop,
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Return))
+        {
+            Play();
+        }
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Skip();
+        }
     }
-    public RepeatBehaviour repeatBehaviour;
 
-    [SerializeReference]
-    public DialogueInstruction[] mainLines;
-    [SerializeReference]
-    public LineSet[] repeatLines;
-}
+    public void Play()
+    {
+        if (CutsceneManager.Instance.currentCutscene) return;
 
-// unity is too weak to serialize a list of arrays
-[Serializable]
-public sealed class LineSet
-{
-    [SerializeReference]
-    public DialogueInstruction[] lines;
-}
+        // todo: temp for testing
+        ArchiveManager.Instance.currentBook = GameObject.FindObjectOfType<MemoryBook>();
 
-[Serializable]
-public abstract class DialogueInstruction
-{
-}
+        CutsceneManager.Instance.Play(this).Forget();
+    }
 
-[Serializable]
-public sealed class Pause : DialogueInstruction
-{
-    public float duration;
-}
+    public void Skip()
+    {
+        if (CutsceneManager.Instance.currentCutscene != this) return;
 
-[Serializable]
-public sealed class TextLine : DialogueInstruction
-{
-    public string dialogueActorName;
-    [TextArea]
-    public string text;
-}
-
-[Serializable]
-public sealed class CustomSequence : DialogueInstruction
-{
-    public string sequenceName;
-}
-
-[Serializable]
-public sealed class PlaySfx : DialogueInstruction
-{
-    public EventReference sound;
-}
-
-[Serializable]
-public sealed class MultipleWaitAll : DialogueInstruction
-{
-    [SerializeReference]
-    public DialogueInstruction[] instructions;
+        CutsceneManager.Instance.SkipCutscene();
+    }
 }

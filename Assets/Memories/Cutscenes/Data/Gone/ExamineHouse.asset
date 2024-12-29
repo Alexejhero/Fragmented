@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
   m_Name: ExamineHouse
   m_EditorClassIdentifier: Assembly-CSharp:Memories.Cutscenes:CutsceneData
   cutsceneName: examine_house
@@ -34,12 +34,12 @@ MonoBehaviour:
     - rid: 949997391457288202
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: neuro
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Hmm... Nobody's home.
     - rid: 949997391457288204
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: neuro
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Hello?
     - rid: 949997391457288205
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -87,7 +87,7 @@ MonoBehaviour:
     - rid: 949997391457288214
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: none
+        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
         text: (knock knock)
     - rid: 949997391457288215
       type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -102,7 +102,7 @@ MonoBehaviour:
     - rid: 949997391457288216
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: none
+        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
         text: (knock knock)
     - rid: 949997391457288217
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -111,15 +111,15 @@ MonoBehaviour:
     - rid: 949997391457288218
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: neuro
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Nobody's home.
     - rid: 949997391457288219
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: neuro
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Is anybody in there?...
     - rid: 949997391457288220
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        dialogueActorName: neuro
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Hello?...

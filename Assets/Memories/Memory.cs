@@ -46,8 +46,6 @@ public sealed class Memory : MonoBehaviour, IPointerClickHandler
         // play open book vfx/animation
         await book.TakeOut();
 
-        CutsceneManager.Instance.Load(book);
-
         await CutsceneManager.Instance.Play(intro);
     }
 
