@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{0fec4215-593f-4aba-b787-82bb99b86195}">
+		<property name="assetPath">
+			<value>sfx/barks/neuro/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a38cb77a-6793-41aa-bbd0-1cc729c8bbec}</destination>
+		</relationship>
+	</object>
+</objects>

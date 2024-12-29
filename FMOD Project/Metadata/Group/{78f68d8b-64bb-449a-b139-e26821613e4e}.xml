@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="MixerGroup" id="{78f68d8b-64bb-449a-b139-e26821613e4e}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="name">
-			<value>talk_noises</value>
+			<value>barks</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{e95e8d27-52e9-43d7-acf1-c831040d167a}</destination>

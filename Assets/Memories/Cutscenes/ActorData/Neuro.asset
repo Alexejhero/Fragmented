@@ -16,8 +16,9 @@ MonoBehaviour:
   textColor: {r: 0.9339623, g: 0.4273318, b: 0.79789364, a: 1}
   talkNoise:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1085329594
+      Data2: 1074517985
+      Data3: 1572653725
+      Data4: -1271019846
+    Path: event:/sfx/barks/neuro
+  textboxType: 0
