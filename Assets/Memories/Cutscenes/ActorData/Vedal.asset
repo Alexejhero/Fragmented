@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vedal
   m_EditorClassIdentifier: 
   dialogueActorName: vedal
-  textColor: {r: 0.17412782, g: 0.8584906, b: 0.25720072, a: 1}
+  textColor: {r: 0, g: 0.24528301, b: 0.030835582, a: 1}
   talkNoise:
     Guid:
       Data1: 0
