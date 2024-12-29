@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using Memories.Book;
 using TriInspector;
 using UnityEngine;
 
@@ -49,9 +48,6 @@ public sealed class Cutscene : MonoBehaviour
     public void Play()
     {
         if (CutsceneManager.Instance.currentCutscene) return;
-
-        // todo: temp for testing
-        ArchiveManager.Instance.currentBook = GameObject.FindObjectOfType<MemoryBook>();
 
         CutsceneManager.Instance.Play(this).Forget();
     }

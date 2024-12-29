@@ -22,8 +22,6 @@ namespace Memories.Book
 
         public Transform offShelfPosition;
 
-        [FormerlySerializedAs("memory")]
-        public MemoryProgression memoryProgression;
         public BookSpread[] pageSpreads;
 
         public GameObject fakeCover;
@@ -52,6 +50,7 @@ namespace Memories.Book
             Opened
         }
 
+        public GameObject normalContainer;
         public GameObject deleteButtonContainer;
 
         // private void OnMouseEnter()
@@ -86,7 +85,7 @@ namespace Memories.Book
             _animator.SetBool(_openProp, animatorIsOpen);
             _animator.SetInteger(_pageProp, animatorPage);
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close(true).Forget();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close().Forget();
         }
 
         public void TurnPages(int pages)
@@ -116,7 +115,6 @@ namespace Memories.Book
             await UniTask.Delay(250);
 
             state = State.Previewing;
-            ArchiveManager.Instance.currentBook = this;
         }
 
         public void PutBackEvent() => PutBack().Forget();
@@ -145,7 +143,6 @@ namespace Memories.Book
             await UniTask.Delay(300);
 
             state = State.OnShelf;
-            ArchiveManager.Instance.currentBook = null;
             mainSceneScript.activeBook = null;
         }
 
@@ -153,6 +150,8 @@ namespace Memories.Book
 
         private async UniTask Open()
         {
+            normalContainer.SetActive(false);
+
             materialDriver.SetViewed();
 
             state = State.Moving;
@@ -167,11 +166,9 @@ namespace Memories.Book
             state = State.Opened;
         }
 
-        private async UniTask Close(bool finished)
+        private async UniTask Close()
         {
             state = State.Moving;
-
-            if (finished) deleteButtonContainer.SetActive(true);
 
             Advancing = false;
             animatorIsOpen = false;
@@ -181,9 +178,9 @@ namespace Memories.Book
 
             await UniTask.Delay(2500 - 500);
 
+            deleteButtonContainer.SetActive(true);
+
             state = State.Previewing;
-            if (memoryProgression && memoryProgression.state == MemoryProgression.State.Pending)
-                await ArchiveManager.Instance.OnMemoryFinished(this);
         }
 
         public void DeleteEvent() => Delete().Forget();
@@ -196,7 +193,6 @@ namespace Memories.Book
 
             gameObject.SetActive(false);
             mainSceneScript.PutBackBook();
-            ArchiveManager.Instance.currentBook = null;
             mainSceneScript.activeBook = null;
         }
 

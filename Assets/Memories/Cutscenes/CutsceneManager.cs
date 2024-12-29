@@ -16,7 +16,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
 
     private CancellationTokenSource _cts = new();
 
-    private MemoryBook Book => ArchiveManager.Instance.currentBook;
+    private MemoryBook Book => FindObjectOfType<MainSceneScript>().activeBook;
 
     public async UniTask Play(Cutscene cutscene)
     {

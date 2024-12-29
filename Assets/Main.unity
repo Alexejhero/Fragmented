@@ -1293,9 +1293,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main testing book
       objectReference: {fileID: 0}
-    - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
+    - target: {fileID: 2199942264117765982, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903291858624668760, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7908894004009085061, guid: c0e268acb74b453449a64ef99824989e,
@@ -1536,6 +1541,11 @@ PrefabInstance:
       value: Fake cover thick
       objectReference: {fileID: 0}
     - target: {fileID: 3091563197047983463, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764682368530531153, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2305,6 +2315,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3091563197047983463, guid: c0e268acb74b453449a64ef99824989e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764682368530531153, guid: c0e268acb74b453449a64ef99824989e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
