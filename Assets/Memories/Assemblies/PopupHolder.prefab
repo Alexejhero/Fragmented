@@ -189,6 +189,8 @@ MonoBehaviour:
   collider: {fileID: 1643342096841720512}
   initializeCounterRotation: 0
   ignoreBooks: 0
+  reverseRotation: 0
+  tmp: {fileID: 1348332081933033048}
 --- !u!1 &8006569486139982289
 GameObject:
   m_ObjectHideFlags: 0

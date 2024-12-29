@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 namespace Memories.Book
@@ -21,11 +22,17 @@ namespace Memories.Book
         [SerializeField]
         private bool ignoreBooks = false;
 
+        [SerializeField]
+        private bool reverseRotation = false;
+
+        [SerializeField]
+        private TMP_Text tmp;
+
 		protected void Awake()
         {
             if (!book && !ignoreBooks) book = transform.GetComponentInParent<MemoryBook>();
             if (collider != null) collider.enabled = false;
-            if (initializeCounterRotation) transform.Rotate(maxLiftAngle);
+            if (initializeCounterRotation) transform.Rotate(reverseRotation ? -maxLiftAngle : maxLiftAngle);
 		}
 
         private void Update()
@@ -43,10 +50,11 @@ namespace Memories.Book
 			// X-axis temporary for now
 			var liftDiff = lift - lastLift;
 			if (Mathf.Approximately(liftDiff, 0)) return;
-			transform.Rotate(-maxLiftAngle * liftDiff);
+			transform.Rotate((reverseRotation ? maxLiftAngle : -maxLiftAngle) * liftDiff);
             lastLift = lift; // book.pageSeparation;
 
 			if (collider != null) collider.enabled = lift > 0.9;
+            if (tmp != null) tmp.enabled = collider.enabled;
 		}
 	}
 }
