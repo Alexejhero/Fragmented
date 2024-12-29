@@ -17,7 +17,7 @@ public sealed class Cutscene : MonoBehaviour
 
     public DialogueInstruction[] GetLines()
     {
-        if (timesPlayed == 0)
+        if (timesPlayed == 0 || !data.repeatable)
             return data.mainLines;
 
         int i = _repeatLoopIndex++;
@@ -45,6 +45,7 @@ public sealed class Cutscene : MonoBehaviour
         }
     }
 
+    [Button, ShowInPlayMode]
     public void Play()
     {
         if (CutsceneManager.Instance.currentCutscene) return;
@@ -55,6 +56,7 @@ public sealed class Cutscene : MonoBehaviour
         CutsceneManager.Instance.Play(this).Forget();
     }
 
+    [Button, ShowInPlayMode]
     public void Skip()
     {
         if (CutsceneManager.Instance.currentCutscene != this) return;

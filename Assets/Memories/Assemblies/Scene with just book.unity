@@ -234,6 +234,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1925aa0a98104c3d8f9132adea142aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &576810824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576810825}
+  - component: {fileID: 576810826}
+  m_Layer: 0
+  m_Name: Divorce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576810825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576810824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 192141233}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576810826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576810824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea79822226df45eab18299562349b6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timesPlayed: 0
+  data: {fileID: 11400000, guid: 0d825af458817424dafc834b02d986db, type: 2}
 --- !u!1 &585214552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1241,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 585214553}
+    - targetCorrespondingSourceObject: {fileID: 1564301460736058751, guid: d1e0753a08fff5d4cba989b258b6301b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 576810825}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1465510542707877442, guid: d1e0753a08fff5d4cba989b258b6301b,
         type: 3}

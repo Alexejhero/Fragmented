@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Divorce
+  m_EditorClassIdentifier: 
+  cutsceneName: divorce
+  skippable: 1
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 949997391457288267
+  - rid: 949997391457288268
+  - rid: 949997391457288269
+  - rid: 949997391457288270
+  - rid: 949997391457288271
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 949997391457288267
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Vedal? Are you drinking alone? Where's Evil?
+    - rid: 949997391457288268
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: 'She took the kids, Neuro.
+
+          She took the fucking kids'
+    - rid: 949997391457288269
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Er... What?
+    - rid: 949997391457288270
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: 'It was the happiest day of my life, Neuro.
+
+          Or at least
+          it was supposed to be.'
+    - rid: 949997391457288271
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: The <i>fabled</i> marriage stream.

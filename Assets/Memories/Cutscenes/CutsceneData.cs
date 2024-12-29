@@ -18,6 +18,7 @@ public sealed class CutsceneData : ScriptableObject
         Random,
         Loop,
     }
+    [ShowIf(nameof(repeatable))]
     public RepeatBehaviour repeatBehaviour;
 
     [SerializeReference]
