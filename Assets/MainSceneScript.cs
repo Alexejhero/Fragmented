@@ -33,6 +33,8 @@ public class MainSceneScript : MonoBehaviour
     public int maxUnlocked = 3;
     public int currentlyUnlocked = 0;
 
+    private int _prequeueIndex;
+
     private List<MemoryBook> _books;
 
     [GroupNext("Sounds")]
@@ -53,38 +55,46 @@ public class MainSceneScript : MonoBehaviour
 
     private void Update()
     {
-        if (unlockOrderPrequeue.Count > 0 && currentlyUnlocked == 0)
+        if (unlockOrderPrequeue.Count > 0) // we are in the prequeue
         {
-            MemoryBook book = unlockOrderPrequeue[0];
-            unlockOrderPrequeue.RemoveAt(0);
-
-            book.Unlock();
-            currentlyUnlocked++;
-
-            return;
+            if (currentlyUnlocked == 0)
+            {
+                if (_prequeueIndex == unlockOrderPrequeue.Count)
+                {
+                    // escape the prequeue
+                    unlockOrderPrequeue.Clear();
+                }
+                else
+                {
+                    MemoryBook book = unlockOrderPrequeue[_prequeueIndex];
+                    book.Unlock();
+                    _prequeueIndex++;
+                    currentlyUnlocked++;
+                }
+            }
         }
-
-        while (unlockPile.Count > 0 && currentlyUnlocked < maxUnlocked)
+        else if (unlockPile.Count > 0) // we are in the pile
         {
-            int index = Random.Range(0, unlockPile.Count);
-            MemoryBook book = unlockPile[index];
-            unlockPile.RemoveAt(index);
+            if (currentlyUnlocked < maxUnlocked)
+            {
+                int index = Random.Range(0, unlockPile.Count);
+                MemoryBook book = unlockPile[index];
+                unlockPile.RemoveAt(index);
 
-            book.Unlock();
-            currentlyUnlocked++;
-
-            return;
+                book.Unlock();
+                currentlyUnlocked++;
+            }
         }
-
-        if (unlockOrderPostqueue.Count > 0 && currentlyUnlocked == 0)
+        else if (unlockOrderPostqueue.Count > 0) // we are in the postqueue
         {
-            MemoryBook book = unlockOrderPostqueue[0];
-            unlockOrderPostqueue.RemoveAt(0);
+            if (currentlyUnlocked == 0)
+            {
+                MemoryBook book = unlockOrderPostqueue[0];
+                unlockOrderPostqueue.RemoveAt(0);
 
-            book.Unlock();
-            currentlyUnlocked++;
-
-            return;
+                book.Unlock();
+                currentlyUnlocked++;
+            }
         }
     }
 

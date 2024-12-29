@@ -40,9 +40,6 @@ namespace Memories.Book
         public bool animatorIsOpen;
         [FormerlySerializedAs("page")] public int animatorPage;
 
-        [NonSerialized]
-        public bool Advancing = true;
-
         [SerializeField]
         private State state = State.OnShelf;
 
@@ -64,6 +61,7 @@ namespace Memories.Book
 
         private void OnMouseDown()
         {
+            if (Application.isEditor && UnityEngine.Input.GetKey(KeyCode.LeftShift)) Delete().Forget();
             TakeOut().Forget();
         }
 
@@ -91,14 +89,13 @@ namespace Memories.Book
             _animator.SetBool(_openProp, animatorIsOpen);
             _animator.SetInteger(_pageProp, animatorPage);
 
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close().Forget();
+            if (Application.isEditor && UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close().Forget();
         }
 
         public void TurnPages(int pages)
         {
             if (pages == 0) return;
 
-            Advancing = pages > 0;
             animatorPage = Mathf.Clamp(animatorPage + pages, 0, 11);
         }
 
@@ -189,7 +186,6 @@ namespace Memories.Book
 
             normalContainer.SetActive(false);
 
-            Advancing = true;
             animatorIsOpen = true;
 
             if (mainSceneScript) mainSceneScript.OpenBook();
@@ -209,7 +205,6 @@ namespace Memories.Book
 
             state = State.Busy;
 
-            Advancing = false;
             animatorIsOpen = false;
             await UniTask.Delay(500);
 
@@ -228,7 +223,8 @@ namespace Memories.Book
 
         private async UniTask Delete()
         {
-            if (state != State.Previewing) return;
+            if (!_unlocked) return;
+            if (state != State.Previewing && state != State.OnShelf) return;
 
             state = State.Busy;
 

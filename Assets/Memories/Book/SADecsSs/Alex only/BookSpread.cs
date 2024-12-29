@@ -43,9 +43,12 @@ public class BookSpread : MonoBehaviour
             return;
         }
 
-        float popupProgress = Math.Abs(_leftPage.localEulerAngles.y - _rightPage.localEulerAngles.y) % 360 / 180;
+        float popupProgress = Vector3.Angle(_leftPage.forward, _rightPage.forward) / 180;
 
-        if (!_book.Advancing) popupProgress *= -1;
+        float leftAngle = Vector3.Angle(_leftPage.forward, Vector3.up);
+        float rightAngle = 180 - Vector3.Angle(_rightPage.forward, Vector3.up);
+
+        if (rightAngle > leftAngle) popupProgress *= -1;
 
         if (Mathf.Approximately(popupProgress, _lastValue)) return;
         _lastValue = popupProgress;
