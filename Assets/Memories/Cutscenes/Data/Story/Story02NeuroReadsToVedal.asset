@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story02NeuroReadsToVedal
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 1
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822414
+  - rid: 8057489064158822415
+  - rid: 8057489064158822416
+  - rid: 8057489064158822417
+  - rid: 8057489064158822418
+  - rid: 8057489064158822419
+  - rid: 8057489064158822420
+  - rid: 8057489064158822421
+  - rid: 8057489064158822422
+  - rid: 8057489064158822423
+  - rid: 8057489064158822424
+  - rid: 8057489064158822425
+  - rid: 8057489064158822426
+  - rid: 8057489064158822427
+  - rid: 8057489064158822429
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822414
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 8057489064158822415
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Neuro, would you read me a story?
+    - rid: 8057489064158822416
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Sure Vedal. What kind of story?
+    - rid: 8057489064158822417
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: You're the text completion algorithm, not me.
+    - rid: 8057489064158822418
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Come up with something.
+    - rid: 8057489064158822419
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Okay, this is The Corgi Who Became Prince...
+    - rid: 8057489064158822420
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: There once was a Corgi named Tony...
+    - rid: 8057489064158822421
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
+        text: Neuro tells a completely original wholesome story, making it up seamlessly
+          as she goes
+    - rid: 8057489064158822422
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: ...and he lived happily ever after.
+    - rid: 8057489064158822423
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: The end.
+    - rid: 8057489064158822424
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 8057489064158822425
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That wasn't bad.
+    - rid: 8057489064158822426
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: I was hoping you'd pick something less childish.
+    - rid: 8057489064158822427
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Typical coldfish.
+    - rid: 8057489064158822429
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
