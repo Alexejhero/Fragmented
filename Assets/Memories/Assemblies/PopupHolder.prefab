@@ -184,13 +184,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 0}
-  maxLiftAngle: {x: 88, y: 0, z: 0}
+  maxLiftAngle: {x: 90, y: 0, z: 0}
   lastLift: 0
   collider: {fileID: 1643342096841720512}
   initializeCounterRotation: 0
   ignoreBooks: 0
   reverseRotation: 0
+  enableLabel: 1
   tmp: {fileID: 1348332081933033048}
+  subPivots: []
 --- !u!1 &8006569486139982289
 GameObject:
   m_ObjectHideFlags: 0
