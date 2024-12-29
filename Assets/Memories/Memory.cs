@@ -3,6 +3,7 @@ using Memories.Book;
 using Memories.Cutscenes;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace Memories;
 
@@ -24,7 +25,7 @@ public sealed class Memory : MonoBehaviour, IPointerClickHandler
     public Cutscene intro;
 
     [Tooltip("Plays on closing the book in the main archive (followup neuro monologue etc)")]
-    public Cutscene outro;
+    public Cutscene epilog;
 
     public Cutscene forget;
 
@@ -36,28 +37,24 @@ public sealed class Memory : MonoBehaviour, IPointerClickHandler
         Debug.Assert(state is State.Locked);
 
         // play vfx/animation
-        await CutsceneManager.Instance.Play(unlock);
+        if (unlock) await CutsceneManager.Instance.Play(unlock);
+
+        state = State.New;
     }
 
     public async UniTask Open()
     {
         Debug.Assert(ArchiveManager.Instance.CanView(this));
 
-        // play open book vfx/animation
-        await book.TakeOut();
-
-        await CutsceneManager.Instance.Play(intro);
+        if (intro) await CutsceneManager.Instance.Play(intro);
     }
 
-    public async UniTask Close()
+    public async UniTask FirstClose()
     {
-        Debug.Assert(ArchiveManager.Instance.CanView(this));
+        Debug.Assert(state == State.New);
         state = State.Core;
 
-        // play close book vfx/animation
-        // await book.PutBack();
-
-        await CutsceneManager.Instance.Play(outro);
+        if (epilog) await CutsceneManager.Instance.Play(epilog);
 
         ArchiveManager.Instance.coreMemories.Add(this);
     }
@@ -68,7 +65,7 @@ public sealed class Memory : MonoBehaviour, IPointerClickHandler
         state = State.Forgotten;
 
         // play burn vfx/animation
-        await CutsceneManager.Instance.Play(forget);
+        if (forget) await CutsceneManager.Instance.Play(forget);
     }
 
     public void OnPointerClick(PointerEventData eventData)

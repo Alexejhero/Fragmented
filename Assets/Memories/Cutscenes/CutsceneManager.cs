@@ -42,6 +42,8 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
         }
 
+        Debug.Log($"Done cutscene: {currentCutscene.data.cutsceneName}");
+
         cutscene.timesPlayed++;
         currentCutscene = null;
     }

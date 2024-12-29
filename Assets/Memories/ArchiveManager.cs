@@ -14,7 +14,7 @@ public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
     [Tooltip("Memories are unlocked in this order")]
     public List<Memory> allMemories = new();
     public Memory[] unlockAtStart = Array.Empty<Memory>();
-    public int coreCapacity;
+    public int coreCapacity = 3;
 
     [Header("Runtime")]
     public List<Memory> coreMemories = new();
@@ -32,6 +32,7 @@ public sealed class ArchiveManager : MonoSingleton<ArchiveManager>
 
     public bool CanView(Memory memory)
     {
+        Debug.Log($"CanView: {memory} {memory.state} {memory.IsAvailable}");
         return memory.IsAvailable && coreMemories.Count < coreCapacity;
     }
 }

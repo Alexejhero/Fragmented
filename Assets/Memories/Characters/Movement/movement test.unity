@@ -960,6 +960,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
   textbox: {fileID: 519854771}
+--- !u!1 &1142195791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142195793}
+  - component: {fileID: 1142195792}
+  m_Layer: 0
+  m_Name: static
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1142195792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142195791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0801c3917f354eb2a782e180eb342bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allMemories:
+  - {fileID: 1367552422}
+  unlockAtStart:
+  - {fileID: 1367552422}
+  coreCapacity: 3
+  coreMemories: []
+  currentBook: {fileID: 1367552420}
+--- !u!4 &1142195793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142195791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.7530015, y: -4.320392, z: 8.406997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1367552415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1025,6 +1076,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
+      propertyPath: open
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: state
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: memory
+      value: 
+      objectReference: {fileID: 1367552422}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
       propertyPath: bookshelfObject
       value: 
       objectReference: {fileID: 401833526}
@@ -1076,6 +1142,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1367552418}
+    - targetCorrespondingSourceObject: {fileID: 1693508223542154709, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367552422}
   m_SourcePrefab: {fileID: 100100000, guid: ee5ea34ec88a7784282b79ea95f4b5f0, type: 3}
 --- !u!1 &1367552416 stripped
 GameObject:
@@ -1097,6 +1167,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timesPlayed: 0
   data: {fileID: 11400000, guid: 58f7622c980f73543b7821e9b5d13197, type: 2}
+--- !u!114 &1367552420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1367552415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367552416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367552422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367552416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcae7ddae11498dbe0b42e247d27ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  book: {fileID: 1367552420}
+  unlock: {fileID: 0}
+  intro: {fileID: 1367552418}
+  epilog: {fileID: 0}
+  forget: {fileID: 0}
+  state: 0
 --- !u!1001 &1426594134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1295,3 +1395,4 @@ SceneRoots:
   - {fileID: 1581623513}
   - {fileID: 798807840}
   - {fileID: 1885694205}
+  - {fileID: 1142195793}

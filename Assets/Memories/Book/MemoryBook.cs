@@ -30,6 +30,7 @@ namespace Memories.Book
         public Transform cameraReadingLocation;
         public GameObject bookshelfObject;
 
+        public Memory memory;
         public BookActor[] actors;
         public CustomSequencer[] customSequences;
 
@@ -90,6 +91,7 @@ namespace Memories.Book
             await UniTask.Delay(500);
 
             state = State.Previewing;
+            ArchiveManager.Instance.currentBook = this;
         }
 
         public async UniTask PutBack()
@@ -110,6 +112,7 @@ namespace Memories.Book
             await UniTask.Delay(300);
 
             state = State.OnShelf;
+            ArchiveManager.Instance.currentBook = null;
         }
 
         private async UniTask Open()
@@ -128,6 +131,7 @@ namespace Memories.Book
             await UniTask.Delay(2500);
 
             state = State.Opened;
+            if (memory) await memory.Open();
         }
 
         private async UniTask Close()
@@ -148,6 +152,8 @@ namespace Memories.Book
             await UniTask.Delay(2500 - 500 - 700);
 
             state = State.Previewing;
+            if (memory && memory.state == Memory.State.New)
+                await memory.FirstClose();
         }
 
         public CustomSequencer GetSequencer(string sequenceName)
