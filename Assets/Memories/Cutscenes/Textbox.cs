@@ -1,7 +1,9 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Memories.Cutscenes;
 
@@ -11,10 +13,14 @@ public sealed class Textbox : MonoBehaviour
     [Tooltip("Characters revealed per second")]
     public int speed = 10;
 
-    // todo adjust
-    public float commaPause = 0.5f;
-    public float sentencePause = 0.7f;
-    public float ellipsisPause = 1.5f;
+    // delay equivalent to x characters
+    // todo: adjust
+    [FormerlySerializedAs("commaPause")]
+    public int commaPauseCharacters = 5;
+    [FormerlySerializedAs("sentencePause")]
+    public int sentencePauseCharacters = 7;
+    [FormerlySerializedAs("ellipsisPause")]
+    public int ellipsisPauseCharacters = 15;
 
     private void Awake()
     {
@@ -33,12 +39,13 @@ public sealed class Textbox : MonoBehaviour
         CancellationTokenSource linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
         // skip and display all
         WaitForAdvance(linkedCts.Token).ContinueWith(() => linkedCts.Cancel()).Forget();
-        await TickCharacters(text, linkedCts.Token);
+        await TickCharacters(text, actor, linkedCts.Token);
         linkedCts.Cancel();
     }
 
-    private async UniTask TickCharacters(string text, CancellationToken ct = default)
+    private async UniTask TickCharacters(string text, DialogueActorData actor, CancellationToken ct = default)
     {
+        tmp.color = actor.textColor;
         tmp.text = text;
         for (int i = 0; i < text.Length; i++)
         {
@@ -48,16 +55,21 @@ public sealed class Textbox : MonoBehaviour
                 return;
             }
             tmp.maxVisibleCharacters = i;
-            float delay = text[i] switch
+            float delayPerCharacter = 1f / speed;
+            float delayCharacters = delayPerCharacter * text[i] switch
             {
-                ',' => commaPause,
+                ',' => commaPauseCharacters,
                 '.' when i>1 && text[i-1] == '.' && text[i-2] == '.'
-                    => ellipsisPause,
+                    => ellipsisPauseCharacters,
                 '.' or '!' or '?' when i+1 < text.Length && !char.IsPunctuation(text[i+1])
-                    => sentencePause,
-                _ => 1f / speed,
+                    => sentencePauseCharacters,
+                _ => 1,
             };
-            await UniTask.Delay(Mathf.RoundToInt(1000 * delay), cancellationToken: ct);
+            if (!actor.talkNoise.IsNull)
+            {
+                RuntimeManager.PlayOneShot(actor.talkNoise);
+            }
+            await UniTask.Delay(Mathf.RoundToInt(1000 * delayCharacters), cancellationToken: ct);
         }
     }
 
