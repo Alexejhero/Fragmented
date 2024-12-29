@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8912194705227340339}
   - component: {fileID: 1751148780440423585}
   - component: {fileID: 2876225718064664065}
-  - component: {fileID: 5264071306140272370}
+  - component: {fileID: 1643342096841720512}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5264071306140272370
-MeshCollider:
+--- !u!65 &1643342096841720512
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,10 +102,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1.0000004, z: 0.00000016763806}
+  m_Center: {x: -0.00000011920929, y: 0.00000017881393, z: 0.000000059604645}
 --- !u!1 &4817097302073998327
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,8 +186,9 @@ MonoBehaviour:
   book: {fileID: 0}
   maxLiftAngle: {x: 88, y: 0, z: 0}
   lastLift: 0
-  collider: {fileID: 5264071306140272370}
+  collider: {fileID: 1643342096841720512}
   initializeCounterRotation: 0
+  ignoreBooks: 0
 --- !u!1 &8006569486139982289
 GameObject:
   m_ObjectHideFlags: 0
