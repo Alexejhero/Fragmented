@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: New Cutscene Data
+  m_EditorClassIdentifier: 
+  cutsceneName: cave_vedal
+  skippable: 1
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 949997391457288244
+  - rid: 949997391457288241
+  - rid: 949997391457288243
+  - rid: 949997391457288242
+  - rid: 949997391457288245
+  - rid: 949997391457288246
+  - rid: 949997391457288247
+  - rid: 949997391457288248
+  - rid: 949997391457288249
+  - rid: 949997391457288250
+  - rid: 949997391457288252
+  - rid: 949997391457288254
+  - rid: 949997391457288256
+  - rid: 949997391457288259
+  - rid: 949997391457288260
+  - rid: 949997391457288261
+  - rid: 949997391457288262
+  - rid: 949997391457288263
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 949997391457288241
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Chat, I have saved this to the very end. I have something *very* important
+          to announce to you.
+    - rid: 949997391457288242
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: They said it couldn't be done. They said - "Vedal, you're insane. You
+          cannot plan a stream this good. You're going to break every streaming platform
+          in existence."
+    - rid: 949997391457288243
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: All of you here right now? You are going to witness history being made
+          right before your eyes.
+    - rid: 949997391457288244
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: We hit 2 hours and 15 minutes? Well. Another successful dev stream,
+          if I do say so myself.
+    - rid: 949997391457288245
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Well, I don't care. You better make damn sure you watch this stream,
+          because after it is over, you will have to go the rest of your life knowing
+          that you can't experience anything like it ever again.
+    - rid: 949997391457288246
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 0}
+        text: You don't wanna miss it. Mark your calendars, tomorrow 7pm GMT. Be
+          there or be square.
+    - rid: 949997391457288247
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 949997391457288248
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1
+    - rid: 949997391457288249
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 4
+    - rid: 949997391457288250
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1
+    - rid: 949997391457288252
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 4
+    - rid: 949997391457288254
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1
+    - rid: 949997391457288256
+      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sequenceName: cave_stream_7
+    - rid: 949997391457288259
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+    - rid: 949997391457288260
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That's right, ladies and gentlemen. The most requested stream of the
+          decade since Cave Stream 6. You've all asked for it, and I am here to deliver.
+    - rid: 949997391457288261
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Neuro, take it away.
+    - rid: 949997391457288262
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+    - rid: 949997391457288263
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Vedal is officially creatively bankrupt as of today. I watched him
+          file the paperwork as he sobbed into his beige patternless handkerchief.

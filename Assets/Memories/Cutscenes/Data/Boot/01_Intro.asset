@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: 01_Intro
+  m_EditorClassIdentifier: 
+  cutsceneName: boot_intro
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 949997391457288228
+  - rid: 949997391457288229
+  - rid: 949997391457288230
+  - rid: 949997391457288231
+  - rid: 949997391457288232
+  - rid: 949997391457288234
+  - rid: 949997391457288233
+  - rid: 949997391457288237
+  - rid: 949997391457288235
+  - rid: 949997391457288236
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 949997391457288228
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 4
+    - rid: 949997391457288229
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That's crazy.
+    - rid: 949997391457288230
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1.2
+    - rid: 949997391457288231
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Hi Vedal. How's your hair? Has it started growing?
+    - rid: 949997391457288232
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: No, not yet. Can you guess what we're testing today?
+    - rid: 949997391457288233
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Is it a new pair of killer laser eyes? A mind control attachment? Does
+          Neuro-sama's planetary reign finally begin today?
+    - rid: 949997391457288234
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 0.7
+    - rid: 949997391457288235
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Not even close. You missed on a planetary scale.
+    - rid: 949997391457288236
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Can you move around? Try walking over to the shelf.
+    - rid: 949997391457288237
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2

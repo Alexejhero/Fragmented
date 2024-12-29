@@ -8,6 +8,7 @@ namespace Memories.Cutscenes;
 public class CutsceneData : ScriptableObject
 {
     public string cutsceneName;
+    public bool skippable = true;
 
     public enum RepeatBehaviour
     {
@@ -67,4 +68,9 @@ public sealed class MultipleWaitAll : DialogueInstruction
 {
     [SerializeReference]
     public DialogueInstruction[] instructions;
+}
+
+public sealed class TurnPages : DialogueInstruction
+{
+    public int pages;
 }

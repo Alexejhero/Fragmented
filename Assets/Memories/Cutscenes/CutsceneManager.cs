@@ -6,6 +6,7 @@ using FMODUnity;
 using Helpers;
 using Memories.Book;
 using Memories.Characters;
+using Memories.Cutscenes.Textbox;
 using UnityEngine;
 
 namespace Memories.Cutscenes;
@@ -42,7 +43,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
         }
 
-        Debug.Log($"Done cutscene: {currentCutscene.data.cutsceneName}");
+        Debug.Log($"Finished cutscene: {currentCutscene.data.cutsceneName}{(skipped ? " (skipped)" : "")}");
 
         cutscene.timesPlayed++;
         currentCutscene = null;
@@ -69,6 +70,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             case Pause pause:
             {
                 Debug.Log($"pause {pause.duration}");
+                await TextboxManager.Instance.GetTopmost().HideTextbox();
                 await UniTask.Delay(TimeSpan.FromSeconds(pause.duration), cancellationToken: ct);
                 break;
             }
