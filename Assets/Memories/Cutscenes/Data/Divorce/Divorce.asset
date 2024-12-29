@@ -22,6 +22,7 @@ MonoBehaviour:
   - rid: 949997391457288269
   - rid: 949997391457288270
   - rid: 949997391457288271
+  - rid: 949997391457288273
   repeatLines: []
   references:
     version: 2
@@ -56,3 +57,7 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: The <i>fabled</i> marriage stream.
+    - rid: 949997391457288273
+      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sequenceName: intro_move_1
