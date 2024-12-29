@@ -36,7 +36,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         CancellationToken ct = _cts.Token;
         bool skipped = false;
 
-        foreach (var instr in cutscene.data.mainLines)
+        foreach (DialogueInstruction instr in cutscene.data.mainLines)
         {
             if (skipped)
             {
@@ -62,7 +62,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
         {
             case TextLine textLine:
             {
-                var actor = _actors.Find(a => a.dialogueActorName == textLine.dialogueActorName);
+                BookActor actor = _actors.Find(a => a.dialogueActorName == textLine.dialogueActorName);
                 await TextboxManager.Instance.Show(actor, textLine.text, ct);
                 break;
             }
@@ -73,7 +73,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case CustomSequence customSequence:
             {
-                var sequence = Book.GetSequencer(customSequence.sequenceName);
+                CustomSequencer sequence = Book.GetSequencer(customSequence.sequenceName);
                 await sequence.Play(ct);
                 break;
             }
@@ -101,7 +101,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case CustomSequence seq:
             {
-                var sequence = Book.GetSequencer(seq.sequenceName);
+                CustomSequencer sequence = Book.GetSequencer(seq.sequenceName);
                 sequence.Skip();
                 break;
             }

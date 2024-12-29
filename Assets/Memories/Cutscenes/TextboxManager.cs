@@ -14,6 +14,6 @@ public class TextboxManager : MonoSingleton<TextboxManager>
 
     public UniTask Show(BookActor actor, string text, CancellationToken ct = default)
     {
-        return actor.textbox.Show(text, ct);
+        return actor.textbox.Show(text, actor.dialogueData, ct);
     }
 }
