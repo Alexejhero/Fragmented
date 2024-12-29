@@ -78,14 +78,6 @@ namespace Memories.Book
         {
             _animator.SetBool(_openProp, animatorIsOpen);
             _animator.SetInteger(_pageProp, animatorPage);
-
-            if (UnityEngine.Input.GetKeyDown(KeyCode.O) && state == State.Opened) Close().Forget();
-
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened)
-                TurnPages(1);
-
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Z) && state == State.Opened)
-                TurnPages(-1);
         }
 
         public void TurnPages(int pages)
@@ -164,7 +156,7 @@ namespace Memories.Book
             state = State.Opened;
         }
 
-        private async UniTask Close()
+        private async UniTask Close(bool finished)
         {
             state = State.Moving;
 
