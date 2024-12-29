@@ -77,7 +77,7 @@ namespace Memories.Book
                 realArmature.SetActive(false);
             }
 
-            materialDriver.SetDefaults(true); // TODO: maybe not available
+            materialDriver.SetDefaults(false);
         }
 
         private void Update()
@@ -187,7 +187,10 @@ namespace Memories.Book
 
         private async UniTask Delete()
         {
-            // TODO: switch to fake book
+            fakeCover.SetActive(true);
+            realCover.SetActive(false);
+            realArmature.SetActive(false);
+
             materialDriver.Forget(1f);
             await UniTask.Delay(1000);
 

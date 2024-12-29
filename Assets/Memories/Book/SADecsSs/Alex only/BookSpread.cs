@@ -17,6 +17,9 @@ public class BookSpread : MonoBehaviour
     public Cutscene playBeforeClose;
     public CustomSequencer[] customSequences;
 
+    public Color lightColor = new Color32(255, 244, 214, 255);
+    public float lightIntensity = 1;
+
     private Transform _leftPage;
     private Transform _rightPage;
 

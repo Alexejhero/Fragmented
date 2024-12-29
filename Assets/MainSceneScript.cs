@@ -15,8 +15,6 @@ public class MainSceneScript : MonoBehaviour
     public Transform cameraPreviewLocation;
     public Transform cameraReadingLocation;
 
-    public new Light light;
-
     public bool busy = true;
 
     [HideInInspector]
@@ -39,14 +37,12 @@ public class MainSceneScript : MonoBehaviour
     {
         cameraTransform.DOMove(cameraPreviewLocation.position, 0.5f);
         cameraTransform.DORotate(cameraPreviewLocation.eulerAngles, 0.5f);
-        if (light) light.DOIntensity(0, 0.5f);
     }
 
     public void PutBackBook()
     {
         cameraTransform.DOMove(_cameraStartPos, 0.5f);
         cameraTransform.DORotate(_cameraStartRot, 0.5f);
-        if (light) light.DOIntensity(1, 0.5f);
     }
 
     public void OpenBook()
