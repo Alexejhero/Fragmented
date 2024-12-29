@@ -5,6 +5,8 @@ public class BookSpread : MonoBehaviour
 {
     public int number;
 
+    public MemoryCeiling ceiling;
+
     private MemoryBook _book;
     private BasePopup[] _popups;
 
@@ -12,6 +14,7 @@ public class BookSpread : MonoBehaviour
     private Transform _rightPage;
 
     private float _lastValue;
+    private bool _firstFrame = true;
 
     private void Awake()
     {
@@ -24,6 +27,12 @@ public class BookSpread : MonoBehaviour
 
     private void Update()
     {
+        if (_firstFrame)
+        {
+            _firstFrame = false;
+            return;
+        }
+
         float popupProgress = (_leftPage.localEulerAngles.y - _rightPage.localEulerAngles.y + 360) % 360 / 180;
         if (Mathf.Abs(popupProgress) < 0.01f) popupProgress = 0;
         if (popupProgress > 1.7f) popupProgress = 0;
@@ -38,5 +47,7 @@ public class BookSpread : MonoBehaviour
         {
             popup.DoRotate(popupProgress);
         }
+
+        if (ceiling) ceiling.DoAction(popupProgress);
     }
 }
