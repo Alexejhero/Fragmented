@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story05CaveStream02
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 0
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822475
+  - rid: 8057489064158822476
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822475
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 8057489064158822476
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1

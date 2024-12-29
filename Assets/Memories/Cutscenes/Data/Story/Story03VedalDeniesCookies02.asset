@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Story03VedalDeniesCookies02
   m_EditorClassIdentifier: 
   cutsceneName: 
-  skippable: 1
+  skippable: 0
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
