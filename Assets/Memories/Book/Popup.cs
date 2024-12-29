@@ -26,7 +26,13 @@ namespace Memories.Book
         private bool reverseRotation = false;
 
         [SerializeField]
+        private bool enableLabel = true;
+
+		[SerializeField]
         private TMP_Text tmp;
+
+        [SerializeField]
+        private GameObject[] subPivots;
 
 		protected void Awake()
         {
@@ -51,11 +57,21 @@ namespace Memories.Book
 			// X-axis temporary for now
 			var liftDiff = lift - lastLift;
 			if (Mathf.Approximately(liftDiff, 0)) return;
-			transform.Rotate((reverseRotation ? maxLiftAngle : -maxLiftAngle) * liftDiff);
-            lastLift = lift; // book.pageSeparation;
+            Vector3 rotateAmount = (reverseRotation ? maxLiftAngle : -maxLiftAngle) * liftDiff;
+			transform.Rotate(rotateAmount);
+            DoSubrotate(rotateAmount);
+			lastLift = lift; // book.pageSeparation;
 
 			if (collider != null) collider.enabled = lift > 0.9;
-            if (tmp != null) tmp.enabled = collider.enabled;
+            if ((tmp != null) && enableLabel) tmp.enabled = collider.enabled;
+		}
+
+        private void DoSubrotate(Vector3 subRotation)
+        {
+			foreach (GameObject sp in subPivots)
+            {
+                sp.transform.Rotate(subRotation);
+            }
 		}
 	}
 }
