@@ -55,6 +55,7 @@ MonoBehaviour:
   enableLabel: 1
   tmp: {fileID: 0}
   subPivots: []
+  speed: 1
 --- !u!1 &7483755889505758119
 GameObject:
   m_ObjectHideFlags: 0

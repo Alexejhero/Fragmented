@@ -34,6 +34,9 @@ namespace Memories.Book
         [SerializeField]
         private GameObject[] subPivots;
 
+        [SerializeField]
+        private float speed = 1;
+
 		protected void Awake()
         {
             if (!book && !ignoreBooks) book = transform.GetComponentInParent<MemoryBook>();
@@ -52,6 +55,7 @@ namespace Memories.Book
         public override void DoRotate(float lift)
         {
 	        lift = Mathf.Abs(lift); // we don't care about the direction
+	        lift = Mathf.Pow(lift, speed);
 
 			// animator can rotate whatever axis
 			// animator.SetFloat("PopupLift", lift);
