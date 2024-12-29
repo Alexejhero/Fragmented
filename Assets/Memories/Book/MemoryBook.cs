@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
+using VFX.Book;
 
 namespace Memories.Book
 {
@@ -28,6 +29,8 @@ namespace Memories.Book
         public GameObject fakeCover;
         public GameObject realCover;
         public GameObject realArmature;
+
+        public BookMaterialDriver materialDriver;
 
         [HideInInspector]
         public float pageSeparation;
@@ -74,6 +77,8 @@ namespace Memories.Book
                 realCover.SetActive(false);
                 realArmature.SetActive(false);
             }
+
+            materialDriver.SetDefaults(true); // TODO: maybe not available
         }
 
         private void Update()
@@ -148,6 +153,8 @@ namespace Memories.Book
 
         private async UniTask Open()
         {
+            materialDriver.SetViewed();
+
             state = State.Moving;
 
             Advancing = true;
@@ -183,7 +190,10 @@ namespace Memories.Book
 
         private async UniTask Delete()
         {
-            // TODO: winter
+            // TODO: switch to fake book
+            materialDriver.Forget(1f);
+            await UniTask.Delay(1000);
+
             gameObject.SetActive(false);
             mainSceneScript.PutBackBook();
             ArchiveManager.Instance.currentBook = null;
