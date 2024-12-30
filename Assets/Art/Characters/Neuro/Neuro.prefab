@@ -52,10 +52,10 @@ MonoBehaviour:
   initializeCounterRotation: 1
   ignoreBooks: 1
   reverseRotation: 0
-  enableLabel: 1
+  enableLabel: 0
   tmp: {fileID: 0}
   subPivots: []
-  speed: 1
+  speed: 2
 --- !u!1 &7483755889505758119
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +65,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 552856074226169393}
+  - component: {fileID: 5262491883693173669}
   - component: {fileID: 33516963096888219}
   - component: {fileID: 7394644498612428623}
   - component: {fileID: 2322004528421505944}
@@ -97,6 +98,20 @@ Transform:
   - {fileID: 930092688587083982}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5262491883693173669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7483755889505758119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a4a2fa214f4a70b75fca0479f9e620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftThreshold: -0.05
+  rightThreshold: 0.05
 --- !u!114 &33516963096888219
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3150,16 +3150,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Neuro
       objectReference: {fileID: 0}
-    - target: {fileID: 7617098642769553870, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: enableLabel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617098642769553870, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: reverseRotation
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3905,6 +3895,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Stream PC
       objectReference: {fileID: 0}
+    - target: {fileID: 1643342096841720512, guid: 965f914806f29f1409d453f7dc2d74cf,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.40594286
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643342096841720512, guid: 965f914806f29f1409d453f7dc2d74cf,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.000000100036374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643342096841720512, guid: 965f914806f29f1409d453f7dc2d74cf,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.00000025795208
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643342096841720512, guid: 965f914806f29f1409d453f7dc2d74cf,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.20297253
+      objectReference: {fileID: 0}
     - target: {fileID: 2876225718064664065, guid: 965f914806f29f1409d453f7dc2d74cf,
         type: 3}
       propertyPath: m_Enabled
@@ -4481,21 +4491,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 552856074226169393, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 552856074226169393, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 552856074226169393, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 552856074226169393, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.43
       objectReference: {fileID: 0}
@@ -4544,70 +4539,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 554967489258249119, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 554967489258249119, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+      propertyPath: leftPage
+      value: 
+      objectReference: {fileID: 1527508787081925637}
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
-      propertyPath: ignoreBooks
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322004528421505944, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322004528421505944, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484964003725931983, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3922153861998976229, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7093946013717279300, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: rightPage
+      value: 
+      objectReference: {fileID: 6922636245040702243}
     - target: {fileID: 7483755889505758119, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
       propertyPath: m_Name
       value: Neuro
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617098642769553870, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: enableLabel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617098642769553870, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: ignoreBooks
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617098642769553870, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: reverseRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197193222760912307, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197193222760912307, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
