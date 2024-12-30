@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using FMODUnity;
@@ -48,6 +49,9 @@ public class MainSceneScript : MonoBehaviour
     public EventReference bookDelete;
     [UnGroupNext]
 
+    public StudioEventEmitter endTrack;
+    private bool _endgame;
+
     private void Awake()
     {
         _cameraStartPos = cameraTransform.position;
@@ -92,6 +96,12 @@ public class MainSceneScript : MonoBehaviour
         {
             if (currentlyUnlocked == 0)
             {
+                if (!_endgame)
+                {
+                    _endgame = true;
+                    BackgroundMusic.Instance.SetTrack(endTrack);
+                }
+
                 MemoryBook book = unlockOrderPostqueue[0];
                 unlockOrderPostqueue.RemoveAt(0);
 

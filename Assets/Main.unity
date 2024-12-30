@@ -3350,6 +3350,7 @@ MonoBehaviour:
       Data3: -1460303940
       Data4: -714276047
     Path: event:/sfx/book/delete
+  endTrack: {fileID: 1844591106}
 --- !u!4 &1429647746
 Transform:
   m_ObjectHideFlags: 0
@@ -4046,6 +4047,7 @@ GameObject:
   - component: {fileID: 1844591101}
   - component: {fileID: 1844591104}
   - component: {fileID: 1844591105}
+  - component: {fileID: 1844591106}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -4108,6 +4110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1844591105}
+  fadeTime: 1
 --- !u!114 &1844591105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4138,6 +4141,37 @@ MonoBehaviour:
   Params:
   - Name: Track
     Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1844591106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844591100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -900564927
+      Data2: 1217097338
+      Data3: 780948644
+      Data4: 570647979
+    Path: event:/music/end
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
