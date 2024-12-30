@@ -58,6 +58,27 @@ public class Logger : MonoBehaviour
         await UniTask.Delay(2000);
     }
 
+    public async UniTask RunEnding()
+    {
+        int seconds = (int) (Time.realtimeSinceStartup % 60);
+        int minutes = (int) (Time.realtimeSinceStartup / 60 % 60);
+        int hours = (int) (Time.realtimeSinceStartup / 3600 % 24);
+
+        _second += seconds;
+        _minute += minutes;
+        _hour += hours;
+
+        await UniTask.Delay(500);
+        Log("disk space cleared");
+        await UniTask.Delay(500);
+        Log("shutting down");
+        await UniTask.Delay(500);
+        LogWarning("next startup: 2176-03-19 19:00:00");
+        LogWarning("type: tuesday stream\n");
+        await UniTask.Delay(500);
+        LogInternal("white", "Press any key to exit...");
+    }
+
     private void Log(string message)
     {
         LogInternal("white", message);

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Memories.Book;
 using Memories.Characters.Movement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using VFX.Last_scene;
 
@@ -19,7 +22,7 @@ public class Outro : MonoBehaviour
         _started = true;
 
         OutroSequence().Forget();
-        
+
     }
 
     private async UniTask OutroSequence()
@@ -43,8 +46,16 @@ public class Outro : MonoBehaviour
                 rend.enabled = false;
             }
         }
-        
+
         eff.Play();
-        await UniTask.Delay((int) eff.DurationSeconds * 1000);
+        // await UniTask.Delay(3000);
+        await UniTask.Delay((int) (eff.DurationSeconds * 1000));
+        await UniTask.Delay(2000);
+
+        DOVirtual.Float(1, 0, 2, v => BackgroundMusic.Instance.player.SetParameter("Fade", v));
+
+        await UniTask.Delay(2000);
+
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

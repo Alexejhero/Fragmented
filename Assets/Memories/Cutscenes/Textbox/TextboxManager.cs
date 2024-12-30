@@ -33,8 +33,7 @@ namespace Memories.Cutscenes.Textbox
 
         private void Update()
         {
-            // todo: remove (temp)
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Backslash))
+            if (Application.isEditor && UnityEngine.Input.GetKeyDown(KeyCode.Backslash))
                 Advance();
         }
 
