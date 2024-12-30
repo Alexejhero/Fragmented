@@ -1066,6 +1066,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1040354296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &706364505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8602084964444391688, guid: 885a2d161875c4246bb4ce7131fa1a67,
+    type: 3}
+  m_PrefabInstance: {fileID: 564815072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250554891fa248a4eb96bdabad9e22bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &765032269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1914,6 +1926,7 @@ MonoBehaviour:
   unlockPile:
   - {fileID: 484253899}
   - {fileID: 913647741}
+  - {fileID: 706364505}
   maxUnlocked: 3
   currentlyUnlocked: 0
   bookSlideIn:

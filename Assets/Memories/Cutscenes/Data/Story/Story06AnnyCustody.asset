@@ -37,6 +37,7 @@ MonoBehaviour:
   - rid: 8057489064158822502
   - rid: 8057489064158822503
   - rid: 8057489064158822504
+  - rid: 3225858945227423760
   - rid: 8057489064158822505
   repeatLines: []
   references:
@@ -51,6 +52,11 @@ MonoBehaviour:
       data:
         duration: 2
         keepTextbox: 1
+    - rid: 3225858945227423760
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
     - rid: 8057489064158822484
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

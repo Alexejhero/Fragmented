@@ -2998,13 +2998,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2270981994386146329, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270981994386146329, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2270981994386146329, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.83
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 2270981994386146329, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
         type: 3}
@@ -3951,6 +3956,8 @@ MonoBehaviour:
   fakeCover: {fileID: 2171278404054402546}
   realCover: {fileID: 2199942264117765982}
   realArmature: {fileID: 5903291858624668760}
+  openEnableObjects: []
+  musicTrack: 0
   materialDriver: {fileID: 6228669025987685692}
   pageSeparation: 0
   animatorIsOpen: 0
