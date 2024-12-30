@@ -110,7 +110,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case PlaySfx sfx:
             {
-                Debug.Log($"sfx {sfx.sound.Path}");
+                Debug.Log($"sfx {sfx.sound.Guid}");
                 RuntimeManager.PlayOneShot(sfx.sound);
                 break;
             }
@@ -135,7 +135,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             }
             case SetGlobalFmodParameter sgfp:
             {
-                Debug.Log($"SetGlobalFmodParameter [{sgfp.soundEvent.Path}] {sgfp.parameterName}={sgfp.value}");
+                Debug.Log($"SetGlobalFmodParameter [{sgfp.soundEvent.Guid}] {sgfp.parameterName}={sgfp.value}");
                 RuntimeManager.StudioSystem.setParameterByName(sgfp.parameterName, sgfp.value);
                 break;
             }
