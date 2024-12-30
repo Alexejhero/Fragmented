@@ -92,7 +92,10 @@ namespace Memories.Book
 
             materialDriver.SetDefaults(false);
             MonitorAnimatorPage().Forget();
-            PageChanged += _ => mainSceneScript.bookPage.PlayOneShot();
+            PageChanged += _ =>
+            {
+                if (mainSceneScript) mainSceneScript.bookPage.PlayOneShot();
+            };
         }
 
 
