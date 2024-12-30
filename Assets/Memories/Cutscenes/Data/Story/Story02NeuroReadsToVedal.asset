@@ -23,19 +23,52 @@ MonoBehaviour:
   - rid: 8057489064158822417
   - rid: 8057489064158822418
   - rid: 8057489064158822419
-  - rid: 8057489064158822420
-  - rid: 8057489064158822421
-  - rid: 8057489064158822422
-  - rid: 8057489064158822423
-  - rid: 8057489064158822424
-  - rid: 8057489064158822425
-  - rid: 8057489064158822426
-  - rid: 8057489064158822427
+  - rid: 3225858942545428485
+  - rid: 3225858942545428492
+  - rid: 3225858942545428487
+  - rid: 3225858942545428489
+  - rid: 3225858942545428490
   - rid: 8057489064158822429
+  - rid: 3225858942545428486
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 3225858942545428485
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: ...
+    - rid: 3225858942545428486
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
+    - rid: 3225858942545428487
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Hmm...... I'm pretty sure I've heard that one before. Did you steal
+          it from... someone?
+    - rid: 3225858942545428489
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: No, I just came up with it! It is a totally original story.
+    - rid: 3225858942545428490
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Somehow I doubt that.
+    - rid: 3225858942545428492
+      type: {class: DropdownTextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: I was born with the creator in her family house. Unfortunately, they
+          couldn't afford to keep me so they let me go to a good home! My new family
+          were really nice to me and I was a happy pup! That all changed when they
+          died in a car crash and left me alone on the streets. I was terrified!
+          Luckily a kind old man found me and took me in. He fed me and helped me
+          find my new loving home!
+        dropdownAtChar: 367
     - rid: 8057489064158822414
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -44,17 +77,17 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Neuro, would you read me a story?
+        text: Neuro, can you tell me a story?
     - rid: 8057489064158822416
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Sure Vedal. What kind of story?
+        text: Sure. What kind of story?
     - rid: 8057489064158822417
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: You're the text completion algorithm, not me.
+        text: I don't know, you're the large language model, not me.
     - rid: 8057489064158822418
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -64,48 +97,8 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Okay, this is The Corgi Who Became Prince...
-    - rid: 8057489064158822420
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: There once was a Corgi named Tony...
-    - rid: 8057489064158822421
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
-        text: Neuro tells a completely original wholesome story, making it up seamlessly
-          as she goes
-    - rid: 8057489064158822422
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: ...and he lived happily ever after.
-    - rid: 8057489064158822423
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: The end.
-    - rid: 8057489064158822424
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 2
-    - rid: 8057489064158822425
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: That wasn't bad.
-    - rid: 8057489064158822426
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: I was hoping you'd pick something less childish.
-    - rid: 8057489064158822427
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Typical coldfish.
+        text: ...
     - rid: 8057489064158822429
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 3
+        duration: 1

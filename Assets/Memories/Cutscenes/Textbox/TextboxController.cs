@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
@@ -14,6 +15,9 @@ namespace Memories.Cutscenes.Textbox
         [Tooltip("Characters revealed per second")]
         public int speed = 16;
 
+        [NonSerialized]
+        public int LastCharacterDropdown = -1;
+
         // delay equivalent to x characters
         public int spacersPauseCharacters = 5;
         public int sentencePauseCharacters = 8;
@@ -25,19 +29,20 @@ namespace Memories.Cutscenes.Textbox
 
         public void Clear() => tmp.text = "";
 
-        public async UniTask Show(string text, DialogueActorData actor, CancellationToken ct = default)
+        public async UniTask Show(string text, DialogueActorData actor, int dropdownAt = -1, CancellationToken ct = default)
         {
             Clear();
             await ShowTextbox();
-            await DisplayText(text, actor, ct);
+            await DisplayText(text, actor, dropdownAt, ct);
             await WaitForAdvance(ct);
         }
 
-        public async UniTask DisplayText(string text, DialogueActorData actor, CancellationToken ct = default)
+        public async UniTask DisplayText(string text, DialogueActorData actor, int dropdownAt = -1, CancellationToken ct = default)
         {
             CancellationTokenSource linkedCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
             try
             {
+                LastCharacterDropdown = dropdownAt;
                 tmp.font = actor.fontAsset;
                 tmp.color = actor.textColor;
                 tmp.text = text;

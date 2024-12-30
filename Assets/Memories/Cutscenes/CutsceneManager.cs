@@ -76,7 +76,7 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                 if (!textLine.actor) throw new InvalidOperationException($"Actor not assigned to \"{textLine.text}\"");
 
                 Debug.Log($"[{textLine.actor.dialogueActorName}] {textLine.text}");
-                await TextboxManager.Instance.Show(textLine.actor, textLine.text, ct);
+                await TextboxManager.Instance.Show(textLine.actor, textLine.text, dropdownAt: textLine is DropdownTextLine d ? d.dropdownAtChar : -1, ct: ct);
                 break;
             }
             case Pause pause:

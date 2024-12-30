@@ -15,12 +15,12 @@ namespace Memories.Cutscenes.Textbox
     {
         public BookTextbox bookTextbox;
         public MetaTextbox metaTextbox;
-        public UniTask Show(DialogueActorData actor, string text, CancellationToken ct = default)
+        public UniTask Show(DialogueActorData actor, string text, int dropdownAt = -1, CancellationToken ct = default)
         {
             TextboxController textbox = GetByType(actor.textboxType);
             if (!textbox) textbox = bookTextbox;
 
-            return textbox.Show(text, actor, ct);
+            return textbox.Show(text, actor, dropdownAt, ct);
         }
 
         private void Update()

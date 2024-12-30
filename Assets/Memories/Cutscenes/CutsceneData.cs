@@ -47,11 +47,17 @@ public sealed class Pause : DialogueInstruction
 }
 
 [Serializable]
-public sealed class TextLine : DialogueInstruction
+public class TextLine : DialogueInstruction
 {
     public DialogueActorData actor;
     [TextArea]
     public string text;
+}
+
+[Serializable]
+public sealed class DropdownTextLine : TextLine
+{
+    public int dropdownAtChar;
 }
 
 [Serializable]
