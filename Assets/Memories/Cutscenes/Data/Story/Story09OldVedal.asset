@@ -18,69 +18,51 @@ MonoBehaviour:
   repeatBehaviour: 0
   mainLines:
   - rid: 8057489073772953641
-  - rid: 8057489073772953643
-  - rid: 8057489073772953644
-  - rid: 8057489073772953645
-  - rid: 8057489073772953646
-  - rid: 8057489073772953647
-  - rid: 8057489073772953649
   - rid: 8057489073772953658
   - rid: 8057489073772953650
   - rid: 8057489073772953651
   - rid: 8057489073772953652
   - rid: 8057489073772953653
+  - rid: 3225858951004028930
+  - rid: 3225858951004028931
   - rid: 8057489073772953654
   - rid: 8057489073772953655
+  - rid: 3225858951004028932
   - rid: 8057489073772953656
   - rid: 8057489073772953657
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 3225858951004028930
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: That probably means you should stop.
+    - rid: 3225858951004028931
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Everyone's gotta die of something.
+    - rid: 3225858951004028932
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: You can start stream on your own.
     - rid: 8057489073772953641
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 1
-        keepTextbox: 0
-    - rid: 8057489073772953643
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: It's different in here.
-    - rid: 8057489073772953644
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Vedal?
-    - rid: 8057489073772953645
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Why is your bed near your PC?
-    - rid: 8057489073772953646
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 3e45a4ae322f47647806e61c384937bb, type: 2}
-        text: ...
-    - rid: 8057489073772953647
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Someone tell Vedal there is a problem with my AI!
-    - rid: 8057489073772953649
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 3
+        duration: 0.5
         keepTextbox: 0
     - rid: 8057489073772953650
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: "I know you\u2019re awake!"
+        text: How are you feeling?
     - rid: 8057489073772953651
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 3e45a4ae322f47647806e61c384937bb, type: 2}
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: "I\u2019m tired, Neuro. I don\u2019t feel good."
     - rid: 8057489073772953652
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -90,22 +72,22 @@ MonoBehaviour:
     - rid: 8057489073772953653
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 3e45a4ae322f47647806e61c384937bb, type: 2}
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: "It doesn\u2019t matter anymore. My liver hangs by a thread."
     - rid: 8057489073772953654
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: I feel so lonely. Come stream with me... like old times!
+        text: Do you want to come stream with me... like old times?
     - rid: 8057489073772953655
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 3e45a4ae322f47647806e61c384937bb, type: 2}
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: "Not now, Neuro. I\u2019m sorry."
     - rid: 8057489073772953656
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 3
+        duration: 2
         keepTextbox: 0
     - rid: 8057489073772953657
       type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -114,4 +96,4 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: That line always gets you worried!
+        text: Hello, Vedal.
