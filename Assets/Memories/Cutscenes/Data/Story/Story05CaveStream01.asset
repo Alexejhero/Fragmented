@@ -21,36 +21,68 @@ MonoBehaviour:
   - rid: 8057489064158822470
   - rid: 8057489064158822471
   - rid: 8057489064158822472
-  - rid: 8057489064158822473
-  - rid: 8057489064158822474
+  - rid: 3225858945227423748
+  - rid: 3225858945227423749
+  - rid: 3225858945227423750
+  - rid: 3225858945227423751
+  - rid: 3225858945227423754
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 3225858945227423748
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "They said it couldn't be done. They said - \"Vedal, you're insane.
+          You cannot plan a stream this good. You're going to break every streaming
+          platform in existence.\"\r"
+    - rid: 3225858945227423749
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "Well, I don't care. You better make damn sure you watch this stream,
+          because after it is over, you will have to go the rest of your life knowing
+          that you can't experience anything like it ever again.\r"
+    - rid: 3225858945227423750
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "You don't wanna miss it. Mark your calendars, tomorrow 7pm GMT. Be
+          there or be squared.\r"
+    - rid: 3225858945227423751
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+        keepTextbox: 0
+    - rid: 3225858945227423754
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 2
     - rid: 8057489064158822469
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 2
+        keepTextbox: 0
     - rid: 8057489064158822470
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Chat, MAKE SURE YOU ARE HERE tomorrow!
+        text: "2 hours and 15 minutes. Another successful dev stream, if I do say
+          so myself.\r"
     - rid: 8057489064158822471
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: You do not want to miss this, mark your calendars!
+        text: 'Chat, I saved this for the end. I have something *very* important
+          to announce to you all.
+
+'
     - rid: 8057489064158822472
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Tomorrow 7 pm GMT. Best stream EVER!
-    - rid: 8057489064158822473
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
-    - rid: 8057489064158822474
-      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        pages: 1
+        text: 'All of you here right now? You are going to witness history being
+          made right before your eyes.
+
+'
