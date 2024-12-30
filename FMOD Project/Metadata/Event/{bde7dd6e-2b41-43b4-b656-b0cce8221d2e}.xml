@@ -81,10 +81,10 @@
 	</object>
 	<object class="SingleSound" id="{4936d6ba-7e43-43c3-95c7-a09273b24d1f}">
 		<property name="start">
-			<value>0.30000000000000004</value>
+			<value>0.23000000000000001</value>
 		</property>
 		<property name="length">
-			<value>0.420375</value>
+			<value>0.42037500000000005</value>
 		</property>
 		<property name="volume">
 			<value>-13</value>
@@ -92,17 +92,23 @@
 		<relationship name="fadeInCurve">
 			<destination>{0be6c1d0-6aea-404d-9d9d-f1dc97237c86}</destination>
 		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{5cbd8ac0-aa95-4fe8-820f-45b52e7c50c6}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{978848b2-97a0-46f0-b5f3-46d3e49c51af}</destination>
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{8b2abcd1-490d-4b31-9be7-4d9b67a253aa}">
 		<property name="length">
-			<value>0.94000000000000006</value>
+			<value>0.55037500000000006</value>
 		</property>
 		<property name="volume">
 			<value>-7.5</value>
 		</property>
+		<relationship name="fadeOutCurve">
+			<destination>{e9b6d909-d6e8-4acb-ac7c-d1ed005a4b76}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{dff65450-bad6-4c43-b278-7eb2e8f933fc}</destination>
 			<destination>{ac782601-374c-488e-a033-091f218aca89}</destination>
@@ -128,6 +134,22 @@
 			<destination>{dc8bce51-a57d-42ee-a07e-4156a1f43c68}</destination>
 		</relationship>
 	</object>
+	<object class="FadeCurve" id="{5cbd8ac0-aa95-4fe8-820f-45b52e7c50c6}">
+		<relationship name="startPoint">
+			<destination>{ca659bde-5748-456c-9d2c-7f2ad48d9c2e}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{19edde47-510d-496f-b907-61345174c0a3}</destination>
+		</relationship>
+	</object>
+	<object class="FadeCurve" id="{e9b6d909-d6e8-4acb-ac7c-d1ed005a4b76}">
+		<relationship name="startPoint">
+			<destination>{ac517445-1985-48d8-93dd-b05bc902a2cf}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{d273224a-8802-4381-a52e-f5bd98833e1b}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{dff65450-bad6-4c43-b278-7eb2e8f933fc}">
 		<relationship name="audioFile">
 			<destination>{bd2ced9c-d381-4d2b-a676-42d64fb782e1}</destination>
@@ -142,7 +164,7 @@
 	<object class="MixerBusFader" id="{bcf109f8-691e-4ce4-b3fb-00fef8c03baa}" />
 	<object class="AutomationPoint" id="{dd3edc1d-5eb0-485c-9888-716fc4e5425b}">
 		<property name="position">
-			<value>0.30000000000000004</value>
+			<value>0.23000000000000001</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -153,10 +175,48 @@
 	</object>
 	<object class="AutomationPoint" id="{dc8bce51-a57d-42ee-a07e-4156a1f43c68}">
 		<property name="position">
-			<value>0.55000000000000004</value>
+			<value>0.47000000000000003</value>
 		</property>
 		<property name="value">
 			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{ca659bde-5748-456c-9d2c-7f2ad48d9c2e}">
+		<property name="position">
+			<value>0.47000000000000003</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{19edde47-510d-496f-b907-61345174c0a3}">
+		<property name="position">
+			<value>0.65037500000000004</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{ac517445-1985-48d8-93dd-b05bc902a2cf}">
+		<property name="position">
+			<value>0.35037499999999999</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d273224a-8802-4381-a52e-f5bd98833e1b}">
+		<property name="position">
+			<value>0.55037500000000006</value>
+		</property>
+		<property name="value">
+			<value>0</value>
 		</property>
 	</object>
 </objects>
