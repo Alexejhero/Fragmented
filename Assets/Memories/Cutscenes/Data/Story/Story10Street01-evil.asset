@@ -21,6 +21,7 @@ MonoBehaviour:
   - rid: 3225858951004028947
   - rid: 8057489073772953622
   - rid: 3225858951004028937
+  - rid: 3225858956674727937
   repeatLines: []
   references:
     version: 2
@@ -28,7 +29,7 @@ MonoBehaviour:
     - rid: 3225858951004028937
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 0
+        duration: 2
         keepTextbox: 0
     - rid: 3225858951004028940
       type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -45,6 +46,10 @@ MonoBehaviour:
       data:
         duration: 1
         keepTextbox: 0
+    - rid: 3225858956674727937
+      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sequenceName: ending_sequence
     - rid: 8057489073772953622
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
