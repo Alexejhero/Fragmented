@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{46e13bde-0465-4e56-b06d-1faa38fde2dc}">
+	<object class="AudioFile" id="{69c7c1ce-6a0c-46e5-a276-51ede9b71f00}">
 		<property name="assetPath">
-			<value>vedal-02.ogg</value>
+			<value>sfx/barks/vedal/Vedal Mimimimi-12.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.17909297052154194</value>
+			<value>0.24208333333333334</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{a38cb77a-6793-41aa-bbd0-1cc729c8bbec}</destination>
