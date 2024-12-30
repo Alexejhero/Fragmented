@@ -14,6 +14,8 @@ public class AnimatorPopup : BasePopup
     private Animator _animator;
 
 	private float lastLift = 0;
+	private bool openOnce = true;
+	private bool openedOnce = false;
 
 	private void Awake()
 	{
@@ -23,10 +25,11 @@ public class AnimatorPopup : BasePopup
 	public override void DoRotate(float lift)
     {
 		bool setvalue = lift < leftThreshold || lift > rightThreshold;
-		if (lift < lastLift)
+		if ((lift < lastLift)||(openedOnce && openOnce))
 		{
 			//Debug.Log("AnimatorPopup: Reverse flip detected, settings value to false");
 			setvalue = false;
+			openedOnce = true;
 		}
 
 		_animator.SetBool(animatorParam, !setvalue);
