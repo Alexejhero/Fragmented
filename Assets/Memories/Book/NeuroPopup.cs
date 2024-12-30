@@ -46,7 +46,7 @@ public class NeuroPopup : BasePopup
             }
         }
 
-        Debug.Log(transform.localPosition.x);
+        // Debug.Log(transform.localPosition.x);
     }
 
     public override void DoRotate(float lift)

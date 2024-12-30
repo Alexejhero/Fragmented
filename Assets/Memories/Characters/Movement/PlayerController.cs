@@ -1,4 +1,5 @@
 using Helpers;
+using JetBrains.Annotations;
 using Memories.Input;
 using TriInspector;
 using UnityEditor;
@@ -27,10 +28,9 @@ namespace Memories.Characters.Movement
 
         private Inputs _input;
         private Vector2 _move;
-        [ShowInInspector]
+        [ShowInPlayMode, UsedImplicitly]
         private Vector3 _lastDeltaV;
-
-        [ShowInInspector]
+        [ShowInPlayMode, UsedImplicitly]
         private Vector3 _rbVelocity;
 
         private bool _jumpPressQueued;
@@ -254,15 +254,16 @@ namespace Memories.Characters.Movement
         {
             Vector2 moveProportion = _move;
 
-            if (moveProportion.sqrMagnitude < 0.01f) // todo configurable deadzone (surely in a future patch (clueless))
-            {
-                float decel = IsGrounded
-                    ? stats.idleDeceleration
-                    : stats.idleAirDeceleration;
-                Vector2 deceleration = new(decel, decel);
-                Accelerate(-new Vector2(rb.velocity.x, rb.velocity.z) / stats.maxDirectionalSpeed, deceleration);
-                return;
-            }
+            float decel = IsGrounded
+                ? stats.idleDeceleration
+                : stats.idleAirDeceleration;
+            decel *= Time.deltaTime;
+            if (Mathf.Abs(moveProportion.x) < 0.01f)
+                rb.velocity -= new Vector3(rb.velocity.x.AbsMin(decel), 0, 0);
+            if (Mathf.Abs(moveProportion.y) < 0.01f)
+                rb.velocity -= new Vector3(0, 0, rb.velocity.z.AbsMin(decel));
+
+            if (moveProportion.sqrMagnitude < 0.01f) return;
             if (!canMove) return;
 
             float accel = IsGrounded
@@ -289,24 +290,10 @@ namespace Memories.Characters.Movement
             _lastDeltaV = deltaV;
 
             Vector2 targetSpeed = stats.maxDirectionalSpeed * proportion.Abs();
-            Vector2 rbHorizVel = rb.velocity.XZ();
-            Vector2 speedRoomLeft = targetSpeed - rbHorizVel.Abs();
 
-            if (Mathf.Sign(proportion.x) == Mathf.Sign(rb.velocity.x))
-            {
-                // Min() on magnitude while preserving sign
-                deltaV.x = speedRoomLeft.x < 0.01f ? 0
-                    : Mathf.Sign(deltaV.x) * Mathf.Min(Mathf.Abs(deltaV.x), speedRoomLeft.x);
-            }
-
-            if (Mathf.Sign(proportion.y) == Mathf.Sign(rb.velocity.z))
-            {
-                // Min() on magnitude while preserving sign
-                deltaV.y = speedRoomLeft.y < 0.01f ? 0
-                    : Mathf.Sign(deltaV.y) * Mathf.Min(Mathf.Abs(deltaV.y), speedRoomLeft.y);
-            }
-
+            // Debug.Log($"{deltaV} {targetSpeed} {proportion} {acceleration}");
             rb.velocity += deltaV.XZ() * Time.deltaTime;
+            rb.velocity = new Vector3(rb.velocity.x.AbsMin(targetSpeed.x), rb.velocity.y, rb.velocity.z.AbsMin(targetSpeed.y));
             _rbVelocity = rb.velocity;
         }
 

@@ -15,4 +15,10 @@ public static class VectorHelpers
 
     public static Vector2 XZ(this Vector3 vec3)
         => new(vec3.x, vec3.z);
+
+    public static float AbsMin(this float a, float b)
+        => Mathf.Sign(a) * Mathf.Min(Mathf.Abs(a), Mathf.Abs(b));
+
+    public static float AbsMax(this float a, float b)
+        => Mathf.Sign(a) * Mathf.Max(Mathf.Abs(a), Mathf.Abs(b));
 }
