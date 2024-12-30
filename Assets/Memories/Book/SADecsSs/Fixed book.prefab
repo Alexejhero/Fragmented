@@ -49,7 +49,6 @@ MonoBehaviour:
   number: 4
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -494,7 +493,6 @@ MonoBehaviour:
   number: 1
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -723,7 +721,6 @@ MonoBehaviour:
   number: 7
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -776,7 +773,6 @@ MonoBehaviour:
   number: 6
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -829,7 +825,6 @@ MonoBehaviour:
   number: 10
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -1374,7 +1369,6 @@ MonoBehaviour:
   number: 11
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -1731,7 +1725,6 @@ MonoBehaviour:
   number: 2
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2231,7 +2224,6 @@ MonoBehaviour:
   number: 9
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2316,7 +2308,6 @@ MonoBehaviour:
   number: 3
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2465,7 +2456,6 @@ MonoBehaviour:
   number: 5
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2518,7 +2508,6 @@ MonoBehaviour:
   number: 8
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2737,7 +2726,6 @@ MonoBehaviour:
   number: 0
   ceiling: {fileID: 0}
   playOnOpen: {fileID: 0}
-  playBeforeClose: {fileID: 0}
   customSequences: []
   lightColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   lightIntensity: 1
@@ -2897,7 +2885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.011764706}
+  m_Color: {r: 0.102, g: 0.102, b: 0.102, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

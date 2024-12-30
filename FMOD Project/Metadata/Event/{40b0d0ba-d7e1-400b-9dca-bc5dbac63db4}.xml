@@ -201,10 +201,10 @@
 	<object class="MixerBusFader" id="{7cb027f8-0597-4fd6-a4ed-e8fbe08f9787}" />
 	<object class="SFXReverbEffect" id="{e9a7a821-8e55-45ac-99d4-a8c815373ded}">
 		<property name="decayTime">
-			<value>2100</value>
+			<value>1900</value>
 		</property>
 		<property name="earlyLateMix">
-			<value>71</value>
+			<value>55</value>
 		</property>
 		<property name="wetLevel">
 			<value>-80</value>
