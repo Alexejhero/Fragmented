@@ -1865,6 +1865,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
+      propertyPath: dissolveColor.b
+      value: 0.7370309
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: dissolveColor.g
+      value: 0.0705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: dissolveColor.r
+      value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: hoveringColor.b
+      value: 0.87216026
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: hoveringColor.g
+      value: 0.07075471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: hoveringColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
       propertyPath: coverRenderers.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1933,6 +1963,16 @@ PrefabInstance:
       propertyPath: openEnableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1550939193910046766}
+    - target: {fileID: 7528535488344916099, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd7713acd80f8b84b8f4febeec08c170, type: 2}
+    - target: {fileID: 8039379018175212826, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd7713acd80f8b84b8f4febeec08c170, type: 2}
     - target: {fileID: 8758350960407476805, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_IsActive

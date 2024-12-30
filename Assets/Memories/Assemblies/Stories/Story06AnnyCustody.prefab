@@ -823,6 +823,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
+      propertyPath: dissolveColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: dissolveColor.g
+      value: 0.5334942
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: dissolveColor.r
+      value: 0.1462264
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
       propertyPath: coverRenderers.Array.size
       value: 2
       objectReference: {fileID: 0}

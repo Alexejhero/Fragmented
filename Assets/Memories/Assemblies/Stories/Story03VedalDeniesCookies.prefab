@@ -2089,6 +2089,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
+      propertyPath: hoveringColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: hoveringColor.g
+      value: 0.42549497
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: hoveringColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
       propertyPath: coverRenderers.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2152,6 +2167,16 @@ PrefabInstance:
       propertyPath: openEnableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 3494051856523473082}
+    - target: {fileID: 7528535488344916099, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d2ef7cfcd4768f4799857255efd2c97, type: 2}
+    - target: {fileID: 8039379018175212826, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d2ef7cfcd4768f4799857255efd2c97, type: 2}
     - target: {fileID: 8544223236994970958, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_IsActive
