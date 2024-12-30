@@ -7699,7 +7699,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7066622415733273313}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8544223236994970958, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8833529354137700534}
   m_SourcePrefab: {fileID: 100100000, guid: ee5ea34ec88a7784282b79ea95f4b5f0, type: 3}
 --- !u!4 &608913814591873919 stripped
 Transform:
@@ -7731,6 +7735,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4830636285498801137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3862667740921564863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8544223236994970958, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4830636285498801137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8833529354137700534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862667740921564863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2016636428
+      Data2: 1244410331
+      Data3: -1991696218
+      Data4: -1361519345
+    Path: event:/sfx/ambient/street
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &4447158234216074885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9132918245440075124, guid: ee5ea34ec88a7784282b79ea95f4b5f0,

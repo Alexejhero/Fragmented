@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{02020211-6362-4dae-bc29-c444e7d4e39a}">
+		<property name="assetPath">
+			<value>sfx/ambience/ambience-wind-blowing-through-trees-01-186986.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>90.239999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a38cb77a-6793-41aa-bbd0-1cc729c8bbec}</destination>
+		</relationship>
+	</object>
+</objects>
