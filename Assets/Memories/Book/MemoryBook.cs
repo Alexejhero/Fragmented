@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -90,7 +91,10 @@ namespace Memories.Book
             }
 
             materialDriver.SetDefaults(false);
+            MonitorAnimatorPage().Forget();
+            PageChanged += _ => mainSceneScript.bookPage.PlayOneShot();
         }
+
 
         private void Update()
         {
@@ -98,6 +102,21 @@ namespace Memories.Book
             _animator.SetInteger(_pageProp, animatorPage);
 
             if (Application.isEditor && UnityEngine.Input.GetKeyDown(KeyCode.C) && state == State.Opened) Close().Forget();
+        }
+
+        private int _estimatedAnimatorPage;
+        public event Action<int> PageChanged = delegate { };
+        private async UniTask MonitorAnimatorPage()
+        {
+            while (this && enabled)
+            {
+                await UniTask.WaitUntil(() => animatorPage != _estimatedAnimatorPage);
+                int diff = animatorPage - _estimatedAnimatorPage;
+                _estimatedAnimatorPage += Math.Sign(diff);
+                // Debug.Log($"{diff}, {_estimatedAnimatorPage}/{animatorPage}");
+                PageChanged.Invoke(_estimatedAnimatorPage);
+                await UniTask.Delay(1500);
+            }
         }
 
         public void TurnPages(int pages)

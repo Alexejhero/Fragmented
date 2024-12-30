@@ -14,7 +14,6 @@ public class BookSpread : MonoBehaviour
     private BasePopup[] _popups;
 
     public Cutscene playOnOpen;
-    public Cutscene playBeforeClose;
     public CustomSequencer[] customSequences;
 
     public Color lightColor = new Color32(255, 244, 214, 255);

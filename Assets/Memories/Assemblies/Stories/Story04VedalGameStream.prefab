@@ -2020,29 +2020,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5850947505537364804}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2484405755657850677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8648372489736690737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4664d4f760779f54480ba8dfbc7ab396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  book: {fileID: 0}
-  maxLiftAngle: {x: 90, y: 0, z: 0}
-  lastLift: 0
-  collider: {fileID: 0}
-  initializeCounterRotation: 1
-  ignoreBooks: 0
-  reverseRotation: 0
-  enableLabel: 1
-  tmp: {fileID: 0}
-  subPivots: []
-  speed: 1
 --- !u!1001 &6477944716812679233
 PrefabInstance:
   m_ObjectHideFlags: 0
