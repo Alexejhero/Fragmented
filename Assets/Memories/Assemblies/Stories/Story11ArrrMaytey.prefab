@@ -1734,8 +1734,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1684178896961739581, guid: 8902fc6b3c1ae5642b40ac1812be68b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5021084124210821853}
   m_SourcePrefab: {fileID: 100100000, guid: 8902fc6b3c1ae5642b40ac1812be68b1, type: 3}
+--- !u!1 &6513360973460858125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1684178896961739581, guid: 8902fc6b3c1ae5642b40ac1812be68b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5565178668082003504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5021084124210821853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513360973460858125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25de1cd6f45041546a50c93ee41b12db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceName: vedal_fall_down
+  offPlankPosition: {x: 0, y: -0.00172, z: 0}
+  targetLocalPosition: {x: -0.00008, y: -0.00172, z: -0.00419}
 --- !u!4 &8747820271151478884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3773449908978845268, guid: 8902fc6b3c1ae5642b40ac1812be68b1,
@@ -2237,11 +2262,36 @@ PrefabInstance:
       propertyPath: playOnOpen
       value: 
       objectReference: {fileID: 4877317961428470129}
+    - target: {fileID: 6940006490997658483, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: customSequences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940006490997658483, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: customSequences.Array.data[0]
+      value: 
+      objectReference: {fileID: 5021084124210821853}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: state
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 4500825700412776072}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

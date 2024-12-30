@@ -27,11 +27,22 @@ MonoBehaviour:
   - rid: 8057489073772953707
   - rid: 8057489073772953708
   - rid: 8057489073772953709
+  - rid: 3225858956674727940
+  - rid: 3225858956674727941
   - rid: 8057489073772953710
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 3225858956674727940
+      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sequenceName: vedal_fall_down
+    - rid: 3225858956674727941
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: text
     - rid: 8057489073772953700
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
