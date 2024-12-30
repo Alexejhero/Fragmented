@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349bed355875d604cb949405a6d79d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neuroCollider: {fileID: 3922153861998976229}
   groundTracker: {fileID: 4623211278605284916}
   popup: {fileID: 7617098642769553870}
   leftPage: {fileID: 0}
@@ -188,6 +189,7 @@ MonoBehaviour:
   animator: {fileID: 8402715580104880053}
   rb: {fileID: 2322004528421505944}
   controller: {fileID: 5750116666983498378}
+  isLeft: 1
 --- !u!114 &5750116666983498378
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ namespace Memories.Book;
 
 public class NeuroPopup : BasePopup
 {
+    public Collider neuroCollider;
     public GroundTracker groundTracker;
     public Popup popup;
 
@@ -41,6 +42,7 @@ public class NeuroPopup : BasePopup
             if (Mathf.Abs(transform.localPosition.x) < 0.3f)
             {
                 transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, 0.3f, Time.deltaTime * 2), transform.localPosition.y, transform.localPosition.z);
+                neuroCollider.enabled = false;
             }
         }
 
