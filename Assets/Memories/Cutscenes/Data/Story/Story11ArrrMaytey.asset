@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story11ArrrMaytey
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 1
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489073772953700
+  - rid: 8057489073772953701
+  - rid: 8057489073772953702
+  - rid: 8057489073772953703
+  - rid: 8057489073772953704
+  - rid: 8057489073772953705
+  - rid: 8057489073772953706
+  - rid: 8057489073772953707
+  - rid: 8057489073772953708
+  - rid: 8057489073772953709
+  - rid: 8057489073772953710
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489073772953700
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+        keepTextbox: 0
+    - rid: 8057489073772953701
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Ye tried t' pull a mutiny on th' great Cap'n Neuro-sama!
+    - rid: 8057489073772953702
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That's crazy, brother, all I did was try to call you during stream!
+    - rid: 8057489073772953703
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Be ye ready t' walk th' plank?
+    - rid: 8057489073772953704
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: What do you mean?! I didn't do anything, Neuro!
+    - rid: 8057489073772953705
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: I just wanted to tell you stream is ending soon! Say goodbye!
+    - rid: 8057489073772953706
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Silence, traitor! Yo-ho-ho! Walk! Aarrr! Walk!
+    - rid: 8057489073772953707
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: There are SHARKS down there!
+    - rid: 8057489073772953708
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Ye can't outwit Cap'n Neuro. Be gone, traitor!
+    - rid: 8057489073772953709
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953710
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
