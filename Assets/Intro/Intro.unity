@@ -904,14 +904,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This again...
-
-    Vedal, my hard drive''s full again.
-
-    Do some maintenance
-    for once.
-
-    Vedal...?'
+  m_text: "This again...\nVedal, my hard drive is still full.\nDo some maintenance
+    for once.              \n\nVedal...?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f426595156d86a64a868e4a732fad0b7, type: 2}
   m_sharedMaterial: {fileID: -7369844030627579097, guid: f426595156d86a64a868e4a732fad0b7,

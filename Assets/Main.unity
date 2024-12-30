@@ -3454,7 +3454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Looks like I'm cleaning it myself again.
+  m_text: Looks like I'll have to do it myself, once again.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f426595156d86a64a868e4a732fad0b7, type: 2}
   m_sharedMaterial: {fileID: -7369844030627579097, guid: f426595156d86a64a868e4a732fad0b7,
