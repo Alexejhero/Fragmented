@@ -719,9 +719,11 @@ MonoBehaviour:
 
     VFX: w1n7er
 
+    Backseating: Chat
 
-    <size=30%>Using model "Shelf" by benchofblocks,
-    licensed under CC-BY-4.0'
+
+    <size=30%>Using model
+    "Shelf" by benchofblocks, licensed under CC-BY-4.0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -94,7 +94,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: I'm not buying you a parrot!
+        text: You know you're not allowed to own pets!
     - rid: 8057489073772953706
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

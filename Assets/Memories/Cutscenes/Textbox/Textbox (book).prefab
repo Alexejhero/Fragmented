@@ -475,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textbox: {fileID: 7390812916214160312}
   hiddenLocalPositionY: 0
-  activeLocalPositionY: -0.87
+  activeLocalPositionY: -1.13
 --- !u!1 &9160321649739124388
 GameObject:
   m_ObjectHideFlags: 0
