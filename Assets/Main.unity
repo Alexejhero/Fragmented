@@ -1634,7 +1634,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1429647746}
   - component: {fileID: 1429647745}
-  - component: {fileID: 1429647747}
   m_Layer: 0
   m_Name: Main Scene Script
   m_TagString: Untagged
@@ -1704,14 +1703,6 @@ MonoBehaviour:
       Data3: -195092319
       Data4: -51119174
     Path: event:/sfx/book/page
-  bookshelfMusicTrack:
-    Guid:
-      Data1: 1968539332
-      Data2: 1220916622
-      Data3: -843447655
-      Data4: 1200648645
-    Path: event:/music/bookshelf
-  musicPlayer: {fileID: 1429647747}
 --- !u!4 &1429647746
 Transform:
   m_ObjectHideFlags: 0
@@ -1758,37 +1749,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1050796731}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
---- !u!114 &1429647747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429647744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1968539332
-      Data2: 1220916622
-      Data3: -843447655
-      Data4: 1200648645
-    Path: event:/music/bookshelf
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1453712642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2179,8 @@ GameObject:
   - component: {fileID: 1844591102}
   - component: {fileID: 1844591103}
   - component: {fileID: 1844591101}
+  - component: {fileID: 1844591104}
+  - component: {fileID: 1844591105}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2268,6 +2230,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCutscene: {fileID: 0}
+--- !u!114 &1844591104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844591100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edb268018f0fe441b58f366bfb88e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1844591105}
+--- !u!114 &1844591105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844591100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1040846559
+      Data2: 1128779476
+      Data3: -1294228546
+      Data4: -1146311378
+    Path: event:/music/all
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: Track
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2074789922
 GameObject:
   m_ObjectHideFlags: 0

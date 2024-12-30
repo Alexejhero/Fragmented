@@ -45,10 +45,6 @@ public class MainSceneScript : MonoBehaviour
     public EventReference bookOpen;
     public EventReference bookClose;
     public EventReference bookPage;
-    [Space]
-    public EventReference bookshelfMusicTrack;
-
-    public StudioEventEmitter musicPlayer;
     [UnGroupNext]
 
     private void Awake()

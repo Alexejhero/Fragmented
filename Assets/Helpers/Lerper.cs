@@ -27,23 +27,5 @@ public static class Lerper
         transform.DORotate(target.eulerAngles, duration)
             .SetEase(Ease.OutCubic);
         await UniTask.Delay(TimeSpan.FromSeconds(duration));
-
-        return;
-        Vector3 targetPosition = target.position;
-        Quaternion targetRotation = target.rotation;
-
-        Vector3 startPosition = transform.position;
-        Quaternion startRotation = transform.rotation;
-
-        float startTime = Time.time;
-        while (Time.time - startTime < duration)
-        {
-            float t = (Time.time - startTime) / duration;
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
-            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
-            await UniTask.Yield();
-        }
-        transform.position = targetPosition;
-        transform.rotation = targetRotation;
     }
 }

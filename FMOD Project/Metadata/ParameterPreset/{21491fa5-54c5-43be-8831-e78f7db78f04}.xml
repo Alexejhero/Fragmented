@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{21491fa5-54c5-43be-8831-e78f7db78f04}">
+		<property name="name">
+			<value>Guitar</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f0588559-db6a-4476-9e09-3628dd770e6e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{121a82e5-c0c1-4613-8ee2-5dd6b73b0583}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{121a82e5-c0c1-4613-8ee2-5dd6b73b0583}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.5</value>
+		</property>
+		<relationship name="automators">
+			<destination>{925b04ac-2a30-4640-8195-070c71a3fc6b}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{925b04ac-2a30-4640-8195-070c71a3fc6b}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{1e7eca38-3129-4bf0-8052-42cefce095b7}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{1e7eca38-3129-4bf0-8052-42cefce095b7}">
+		<relationship name="parameter">
+			<destination>{d4b5e224-761a-40c5-bf9f-99839d39f852}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{58908ed3-c685-4be1-8009-9a5f5a9c3cd5}</destination>
+			<destination>{d316f956-2a00-4a22-b7f6-a93e9741659d}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{58908ed3-c685-4be1-8009-9a5f5a9c3cd5}">
+		<property name="position">
+			<value>4</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{d316f956-2a00-4a22-b7f6-a93e9741659d}">
+		<property name="position">
+			<value>3</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

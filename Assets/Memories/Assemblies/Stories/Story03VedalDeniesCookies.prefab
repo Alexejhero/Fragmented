@@ -1902,6 +1902,11 @@ PrefabInstance:
       objectReference: {fileID: 3494051856523473082}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
+      propertyPath: musicTrack
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
       propertyPath: musicTrack.Path
       value: event:/music/jazzy
       objectReference: {fileID: 0}

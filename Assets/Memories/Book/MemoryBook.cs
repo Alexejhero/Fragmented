@@ -1,6 +1,6 @@
+using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using FMODUnity;
 using Helpers;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -32,7 +32,7 @@ namespace Memories.Book
         public GameObject realArmature;
         public GameObject[] openEnableObjects;
 
-        public EventReference musicTrack;
+        public MusicTrack musicTrack;
 
         public BookMaterialDriver materialDriver;
 
@@ -206,12 +206,7 @@ namespace Memories.Book
 
             await UniTask.Delay(2000);
 
-            if (!musicTrack.IsNull)
-            {
-                mainSceneScript.musicPlayer.Stop();
-                mainSceneScript.musicPlayer.EventReference = musicTrack;
-                mainSceneScript.musicPlayer.Play();
-            }
+            BackgroundMusic.Instance.SetTrack(musicTrack);
 
             state = State.Opened;
         }

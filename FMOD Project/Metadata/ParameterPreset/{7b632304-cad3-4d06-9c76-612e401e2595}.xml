@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7b632304-cad3-4d06-9c76-612e401e2595}">
+		<property name="name">
+			<value>Bookshelf</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f0588559-db6a-4476-9e09-3628dd770e6e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{96379d23-bc15-4e51-93b5-043a9efc17de}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{96379d23-bc15-4e51-93b5-043a9efc17de}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.5</value>
+		</property>
+		<relationship name="automators">
+			<destination>{30de7663-d606-4f21-8fa0-e016f7c67db0}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{30de7663-d606-4f21-8fa0-e016f7c67db0}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{e5531d38-96c3-49bf-8120-a57ff9cfeea8}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{e5531d38-96c3-49bf-8120-a57ff9cfeea8}">
+		<relationship name="parameter">
+			<destination>{d4b5e224-761a-40c5-bf9f-99839d39f852}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{e095453b-0d18-49ce-afc5-f5fc22df8f77}</destination>
+			<destination>{707feacd-c121-48eb-abac-0a98f90251f7}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{e095453b-0d18-49ce-afc5-f5fc22df8f77}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{707feacd-c121-48eb-abac-0a98f90251f7}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

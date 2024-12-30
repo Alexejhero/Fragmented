@@ -96,3 +96,9 @@ public sealed class TurnPages : DialogueInstruction
 public sealed class CloseBook : DialogueInstruction
 {
 }
+
+[Serializable]
+public sealed class SetMusicVolume : DialogueInstruction
+{
+
+}
