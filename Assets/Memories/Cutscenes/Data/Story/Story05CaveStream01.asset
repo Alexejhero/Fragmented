@@ -26,11 +26,17 @@ MonoBehaviour:
   - rid: 3225858945227423755
   - rid: 3225858945227423750
   - rid: 3225858945227423751
+  - rid: 949997422269431812
   - rid: 3225858945227423754
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 949997422269431812
+      type: {class: SetMusicVolume, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        volume: 0
+        fadeDuration: 4
     - rid: 3225858945227423748
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

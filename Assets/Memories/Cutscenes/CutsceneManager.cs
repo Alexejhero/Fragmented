@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using Audio;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using FMODUnity;
 using Helpers;
 using Memories.Book;
@@ -128,7 +129,8 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
             case SetMusicVolume vol:
             {
                 Debug.Log($"vol {vol.volume}");
-                AudioSystem.SetMusicVolume(vol.volume);
+                DOTween.To(() => AudioSystem.SavedMusicVolume, AudioSystem.SetMusicVolume, vol.volume, vol.fadeDuration)
+                    .SetEase(Ease.OutCubic);
                 break;
             }
             case SetGlobalFmodParameter sgfp:

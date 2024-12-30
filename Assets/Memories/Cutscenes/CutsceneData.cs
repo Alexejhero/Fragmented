@@ -101,6 +101,7 @@ public sealed class CloseBook : DialogueInstruction
 public sealed class SetMusicVolume : DialogueInstruction
 {
     public float volume;
+    public float fadeDuration;
 }
 
 [Serializable]

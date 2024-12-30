@@ -17,17 +17,49 @@ MonoBehaviour:
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
+  - rid: 949997422269431810
   - rid: 8057489064158822477
   - rid: 8057489064158822478
   - rid: 8057489064158822480
   - rid: 8057489064158822482
   - rid: 3225858945227423756
   - rid: 3225858945227423757
+  - rid: 949997422269431811
   - rid: 8057489064158822483
+  - rid: 949997422269431809
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 949997422269431809
+      type: {class: SetMusicVolume, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        volume: 1
+        fadeDuration: 1
+    - rid: 949997422269431810
+      type: {class: SetGlobalFmodParameter, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        soundEvent:
+          Guid:
+            Data1: 1085329594
+            Data2: 1074517985
+            Data3: 1572653725
+            Data4: -1271019846
+          Path: event:/sfx/barks/neuro
+        parameterName: Cave Reverb
+        value: 1
+    - rid: 949997422269431811
+      type: {class: SetGlobalFmodParameter, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        soundEvent:
+          Guid:
+            Data1: 1085329594
+            Data2: 1074517985
+            Data3: 1572653725
+            Data4: -1271019846
+          Path: event:/sfx/barks/neuro
+        parameterName: Cave Reverb
+        value: 0
     - rid: 3225858945227423756
       type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

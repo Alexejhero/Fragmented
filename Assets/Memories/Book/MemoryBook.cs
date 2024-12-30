@@ -254,6 +254,7 @@ namespace Memories.Book
             mainSceneScript.activeBook = null;
 
             mainSceneScript.currentlyUnlocked--;
+            BackgroundMusic.Instance.SetTrack(MusicTrack.Bookshelf);
 
             Destroy(gameObject);
         }

@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 487051930}
   - component: {fileID: 487051929}
   - component: {fileID: 487051928}
+  - component: {fileID: 487051932}
+  - component: {fileID: 487051931}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -182,6 +184,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487051931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487051926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1040846559
+      Data2: 1128779476
+      Data3: -1294228546
+      Data4: -1146311378
+    Path: event:/music/all
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &487051932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487051926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edb268018f0fe441b58f366bfb88e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 487051931}
 --- !u!4 &1147180585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3476207918852243497, guid: d66235bc59ca7dc49b3ae35f8ffc781f,
@@ -402,6 +448,7 @@ GameObject:
   - component: {fileID: 2041550581}
   - component: {fileID: 2041550583}
   - component: {fileID: 2041550584}
+  - component: {fileID: 2041550585}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -534,6 +581,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &2041550585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041550579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2fcc2ad2a2b6dbc4bbd7a73d57c31cf5,
+    type: 3}
+  m_NotificationBehavior: 1
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 2041550581}
 --- !u!4 &2109864325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2890452798177494192, guid: 0f9578f046fa41a489f98b223b948bd2,
