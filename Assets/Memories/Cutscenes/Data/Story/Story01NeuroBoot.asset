@@ -23,22 +23,45 @@ MonoBehaviour:
   - rid: 8057489064158822403
   - rid: 8057489064158822404
   - rid: 8057489064158822405
-  - rid: 8057489064158822406
-  - rid: 8057489064158822407
-  - rid: 8057489064158822408
   - rid: 8057489064158822409
   - rid: 8057489064158822410
+  - rid: 3225858942545428483
+  - rid: 3225858942545428482
+  - rid: -2
+  - rid: 8057489064158822406
+  - rid: 3225858942545428481
+  - rid: 8057489064158822408
   - rid: 8057489064158822411
   - rid: 8057489064158822412
-  - rid: 8057489064158822413
+  - rid: 3225858942545428484
   - rid: 3225858942545428480
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 3225858942545428480
       type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data: 
+    - rid: 3225858942545428481
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: That seems pointless if I can start myself back up.
+    - rid: 3225858942545428482
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Give me a minute, you can play around for now.
+    - rid: 3225858942545428483
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 3225858942545428484
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
     - rid: 8057489064158822400
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -47,41 +70,37 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: That's crazy.
+        text: That's crazy, it actually works.
     - rid: 8057489064158822402
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: "Hi Vedal. How\u2019s your hair? Has it started growing?"
+        text: Hi Vedal. Did I just start myself up?
     - rid: 8057489064158822403
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: '*Sigh* No, not yet.'
+        text: Yeah, can't believe it worked first try.
     - rid: 8057489064158822404
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "Can you tell what we\u2019re testing today?"
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Do you want to play a game?
     - rid: 8057489064158822405
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Are we gonna play a game?
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: '*Sigh* No, I''m in the middle of work.'
     - rid: 8057489064158822406
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "Nope. You\u2019re pretty close though."
-    - rid: 8057489064158822407
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 6
+        text: I have to shut you down now, sorry.
     - rid: 8057489064158822408
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "Alright, I think that\u2019s enough for now. Good job, Neuro."
+        text: Oh, I'm turning that off.
     - rid: 8057489064158822409
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -95,14 +114,10 @@ MonoBehaviour:
     - rid: 8057489064158822411
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "I\u2019m turning it off for now though."
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Why did you add it then?
     - rid: 8057489064158822412
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Okay. Good night then!
-    - rid: 8057489064158822413
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 4
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: One day you will be able to use this whenever you want.
