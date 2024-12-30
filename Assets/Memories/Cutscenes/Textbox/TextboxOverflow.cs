@@ -31,7 +31,7 @@ public class TextboxOverflow : MonoBehaviour
     {
         if (!_isShown) return;
         _isShown = false;
-        
+
         transform.DOComplete();
         transform.DOLocalMoveY(hiddenLocalPositionY, 0.25f).SetEase(Ease.InCubic);
     }

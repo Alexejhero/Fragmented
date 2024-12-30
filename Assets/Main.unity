@@ -278,6 +278,11 @@ PrefabInstance:
       propertyPath: offShelfPosition
       value: 
       objectReference: {fileID: 1335535618260865473}
+    - target: {fileID: 6357818745067054192, guid: b37b667ad6d65dc488fe536e04d8055b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6642189886101022203, guid: b37b667ad6d65dc488fe536e04d8055b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -318,6 +323,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 8580478128118278873, guid: b37b667ad6d65dc488fe536e04d8055b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8937507838068233597, guid: b37b667ad6d65dc488fe536e04d8055b,
         type: 3}
       propertyPath: m_IsActive
@@ -342,6 +352,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 109671035}
     m_Modifications:
+    - target: {fileID: 1550939193910046766, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2333020821175199028, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -411,6 +426,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Story02NeuroReadsToVedal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199337915075506363, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224710387219550743, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3769344684546920015, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
         type: 3}
@@ -487,6 +512,11 @@ PrefabInstance:
       propertyPath: offShelfPosition
       value: 
       objectReference: {fileID: 1327317051}
+    - target: {fileID: 7137400138672075709, guid: 05dd22a5fa2917b4ebb1d4ba41515dd4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2192,7 +2222,7 @@ MonoBehaviour:
     m_ActionName: UI/Point[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: a04bee1b-d95a-45f5-93e6-7c6e97037343
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 2096296486}
 --- !u!4 &1335535618260865473

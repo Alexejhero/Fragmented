@@ -27,7 +27,11 @@ namespace Memories.Cutscenes.Textbox
         public abstract UniTask HideTextbox();
         public abstract bool IsShown { get; }
 
-        public void Clear() => tmp.text = "";
+        public void Clear()
+        {
+            LastCharacterDropdown = -1;
+            tmp.text = "";
+        }
 
         public async UniTask Show(string text, DialogueActorData actor, int dropdownAt = -1, CancellationToken ct = default)
         {

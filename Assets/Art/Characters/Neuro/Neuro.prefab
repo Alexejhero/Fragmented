@@ -122,11 +122,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7483755889505758119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0071a7a6cb470ea0578838158de07f, type: 3}
+  m_Script: {fileID: 11500000, guid: 349bed355875d604cb949405a6d79d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftThreshold: -0.4
-  rightThreshold: 0.4
+  groundTracker: {fileID: 4623211278605284916}
+  popup: {fileID: 7617098642769553870}
+  leftPage: {fileID: 0}
+  rightPage: {fileID: 0}
+  bookMidpoint: 0.6
+  invertCollapse: 1
 --- !u!54 &2322004528421505944
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -79,10 +79,17 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                 await TextboxManager.Instance.Show(textLine.actor, textLine.text, dropdownAt: textLine is DropdownTextLine d ? d.dropdownAtChar : -1, ct: ct);
                 break;
             }
+            case ClearTextLine clearTextLine:
+            {
+                if (!clearTextLine.actor) throw new InvalidOperationException($"Actor not assigned to (clear)");
+                Debug.Log($"[{clearTextLine.actor.dialogueActorName}] (clear)");
+                TextboxManager.Instance.Clear(clearTextLine.actor);
+                break;
+            }
             case Pause pause:
             {
                 Debug.Log($"pause {pause.duration}");
-                await TextboxManager.Instance.HideTopmost();
+                if (!pause.keepTextbox) await TextboxManager.Instance.HideTopmost();
                 await UniTask.Delay(TimeSpan.FromSeconds(pause.duration), cancellationToken: ct);
                 break;
             }

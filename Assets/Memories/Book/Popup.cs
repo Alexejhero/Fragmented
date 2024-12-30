@@ -21,8 +21,7 @@ namespace Memories.Book
         [SerializeField]
         private bool ignoreBooks = false;
 
-        [SerializeField]
-        private bool reverseRotation = false;
+        public bool reverseRotation = false;
 
         [SerializeField]
         private bool enableLabel = true;

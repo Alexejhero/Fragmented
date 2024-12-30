@@ -30,7 +30,7 @@ namespace Memories.Book
         public GameObject fakeCover;
         public GameObject realCover;
         public GameObject realArmature;
-        public GameObject cage;
+        public GameObject[] openEnableObjects;
 
         public BookMaterialDriver materialDriver;
 
@@ -79,7 +79,13 @@ namespace Memories.Book
                 realArmature.SetActive(false);
             }
 
-            if (cage && state == State.OnShelf) cage.SetActive(false);
+            if (state == State.OnShelf)
+            {
+                foreach (GameObject obj in openEnableObjects)
+                {
+                    obj.SetActive(false);
+                }
+            }
 
             materialDriver.SetDefaults(false);
         }
@@ -192,7 +198,10 @@ namespace Memories.Book
 
             await UniTask.Delay(500);
 
-            if (cage) cage.SetActive(true);
+            foreach (GameObject obj in openEnableObjects)
+            {
+                obj.SetActive(true);
+            }
 
             await UniTask.Delay(2000);
 
@@ -210,7 +219,10 @@ namespace Memories.Book
 
             if (mainSceneScript) mainSceneScript.CloseBook().Forget();
 
-            if (cage) cage.SetActive(false);
+            foreach (GameObject obj in openEnableObjects)
+            {
+                obj.SetActive(false);
+            }
 
             await UniTask.Delay(2500 - 500);
 
