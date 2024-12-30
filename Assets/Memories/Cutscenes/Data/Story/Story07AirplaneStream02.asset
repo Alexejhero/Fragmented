@@ -17,7 +17,6 @@ MonoBehaviour:
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
-  - rid: 8057489073772953608
   - rid: 8057489073772953609
   - rid: 8057489073772953610
   - rid: 8057489073772953611
@@ -27,11 +26,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8057489073772953608
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 2
-        keepTextbox: 0
     - rid: 8057489073772953609
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

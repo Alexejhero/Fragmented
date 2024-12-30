@@ -17,7 +17,6 @@ MonoBehaviour:
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
-  - rid: 8057489073772953617
   - rid: 8057489073772953618
   - rid: 8057489073772953619
   - rid: 8057489073772953620
@@ -25,16 +24,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8057489073772953617
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
-        keepTextbox: 0
     - rid: 8057489073772953618
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: You already fly in circles, anyway.
+        text: You fly in circles anyway.
     - rid: 8057489073772953619
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
