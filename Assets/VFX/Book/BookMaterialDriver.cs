@@ -16,10 +16,12 @@ public class BookMaterialDriver : MonoBehaviour
     public Renderer bookRenderer;
     [Required]
     public Renderer dummyPagesRenderer;
-    
+
+    public Renderer[] coverRenderers;
+
     public float hoveringPowerPerUpdate = 3f;
-    private float _hoveringPower = 0f;
-    
+    private float _hoveringPower;
+
 #region IDForest
     private static readonly int DissolveFloatID = Shader.PropertyToID("_Dissolve");
     private static readonly int DissolveColorID = Shader.PropertyToID("_Dissolve_color");
@@ -29,6 +31,10 @@ public class BookMaterialDriver : MonoBehaviour
 
     public void SetDefaults(bool isAvailable)
     {
+        foreach (Renderer coverRenderer in coverRenderers)
+        {
+            coverRenderer.enabled = false;
+        }
         bookRenderer.material.SetFloat(DegreeOfLockedID, isAvailable ? 0f : 1f);
     }
 
@@ -36,7 +42,7 @@ public class BookMaterialDriver : MonoBehaviour
     {
         StartCoroutine(UnlockRoutine(1f));
     }
-    
+
     public void Forget(float duration)
     {
         StartCoroutine(DissolveRoutine(duration));
@@ -57,7 +63,7 @@ public class BookMaterialDriver : MonoBehaviour
         Color finalHoveringColor = new Color(hoveringColor.r, hoveringColor.g, hoveringColor.b, Math.Clamp(_hoveringPower, 0f, hoveringColor.a));
         bookRenderer.material.SetColor(HoverColorID, finalHoveringColor);
     }
-    
+
     private IEnumerator UnlockRoutine(float duration)
     {
         yield return CommonCoroutines.DoOverTime(duration, t =>
@@ -65,8 +71,12 @@ public class BookMaterialDriver : MonoBehaviour
             bookRenderer.material.SetFloat(DegreeOfLockedID, 1 - t / duration);
         });
         bookRenderer.material.SetFloat(DegreeOfLockedID, 0f);
+        foreach (Renderer coverRenderer in coverRenderers)
+        {
+            coverRenderer.enabled = true;
+        }
     }
-    
+
     private IEnumerator DissolveRoutine(float duration)
     {
         bookRenderer.material.SetColor(DissolveColorID, dissolveColor);
@@ -75,7 +85,10 @@ public class BookMaterialDriver : MonoBehaviour
         {
             bookRenderer.material.SetFloat(DissolveFloatID, t / duration);
             dummyPagesRenderer.material.SetFloat(DissolveFloatID, t / duration);
-
+            foreach (Renderer coverRenderer in coverRenderers)
+            {
+                coverRenderer.material.color = coverRenderer.material.color with { a = 1 - t / duration };
+            }
         });
         bookRenderer.material.SetFloat(DissolveFloatID, 1);
         dummyPagesRenderer.material.SetFloat(DissolveFloatID, 1);

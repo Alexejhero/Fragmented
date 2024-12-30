@@ -5346,6 +5346,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: coverRenderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: coverRenderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 3152614759901720243}
+    - target: {fileID: 6357649131598712962, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: coverRenderers.Array.data[1]
+      value: 
+      objectReference: {fileID: 193438895708428533}
     - target: {fileID: 6940006490997658483, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: playOnOpen
