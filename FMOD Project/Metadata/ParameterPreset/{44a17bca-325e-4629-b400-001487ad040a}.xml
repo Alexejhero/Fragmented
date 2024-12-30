@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{44a17bca-325e-4629-b400-001487ad040a}">
+		<property name="name">
+			<value>Cave Reverb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f0588559-db6a-4476-9e09-3628dd770e6e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3717fb74-9dde-409c-a965-97621b3f2bd2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3717fb74-9dde-409c-a965-97621b3f2bd2}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

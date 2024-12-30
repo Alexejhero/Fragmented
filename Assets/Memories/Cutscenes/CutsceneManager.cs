@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading;
+using Audio;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
 using Helpers;
@@ -124,6 +125,18 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                 await Book.Close();
                 break;
             }
+            case SetMusicVolume vol:
+            {
+                Debug.Log($"vol {vol.volume}");
+                AudioSystem.SetMusicVolume(vol.volume);
+                break;
+            }
+            case SetGlobalFmodParameter sgfp:
+            {
+                Debug.Log($"SetGlobalFmodParameter [{sgfp.soundEvent.Path}] {sgfp.parameterName}={sgfp.value}");
+                RuntimeManager.StudioSystem.setParameterByName(sgfp.parameterName, sgfp.value);
+                break;
+            }
         }
     }
 
@@ -131,12 +144,6 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
     {
         switch (instruction)
         {
-            case TextLine:
-            case Pause:
-            case PlaySfx:
-            {
-                break;
-            }
             case CustomSequence seq:
             {
                 CustomSequencer sequence = Book.GetCurrentSpread().GetSequencer(seq.sequenceName);
@@ -149,15 +156,22 @@ public sealed class CutsceneManager : MonoSingleton<CutsceneManager>
                     Skip(inner);
                 break;
             }
-            case TurnPages: // todo: erm... problem. how to instantly flip?
-            {
-                break;
-            }
             case CloseBook: // this one is just not skippable inherently
             {
                 Book.Close().Forget();
                 break;
             }
+            case SetMusicVolume vol:
+            {
+                AudioSystem.SetMusicVolume(vol.volume);
+                break;
+            }
+            case SetGlobalFmodParameter sgfp:
+            {
+                RuntimeManager.StudioSystem.setParameterByName(sgfp.parameterName, sgfp.value);
+                break;
+            }
+            // remaining cases can be cleanly skipped
         }
     }
 }

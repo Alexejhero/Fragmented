@@ -100,5 +100,13 @@ public sealed class CloseBook : DialogueInstruction
 [Serializable]
 public sealed class SetMusicVolume : DialogueInstruction
 {
+    public float volume;
+}
 
+[Serializable]
+public sealed class SetGlobalFmodParameter : DialogueInstruction
+{
+    public EventReference soundEvent;
+    public string parameterName;
+    public float value;
 }
