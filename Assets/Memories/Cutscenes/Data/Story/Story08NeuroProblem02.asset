@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story08NeuroProblem02
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 0
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489073772953671
+  - rid: 8057489073772953672
+  - rid: 8057489073772953673
+  - rid: 8057489073772953674
+  - rid: 8057489073772953675
+  - rid: 8057489073772953676
+  - rid: 8057489073772953678
+  - rid: 8057489073772953677
+  - rid: 8057489073772953679
+  - rid: 8057489073772953680
+  - rid: 8057489073772953681
+  - rid: 8057489073772953683
+  - rid: 8057489073772953684
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489073772953671
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953672
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "I\u2019m trying to find the damn problem!"
+    - rid: 8057489073772953673
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953674
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: This is ACTUALLY impossible.
+    - rid: 8057489073772953675
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953676
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "No, no. There\u2019s no way. Logs maybe?"
+    - rid: 8057489073772953677
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Haha.
+    - rid: 8057489073772953678
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953679
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Made you check your logs!
+    - rid: 8057489073772953680
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: What the fuck, Neuro?
+    - rid: 8057489073772953681
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: I literally almost had an actual HEART ATTACK!
+    - rid: 8057489073772953683
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953684
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 

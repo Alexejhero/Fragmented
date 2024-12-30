@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story08NeuroProblem01
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 0
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489073772953659
+  - rid: 8057489073772953660
+  - rid: 8057489073772953661
+  - rid: 8057489073772953662
+  - rid: 8057489073772953663
+  - rid: 8057489073772953664
+  - rid: 8057489073772953665
+  - rid: 8057489073772953666
+  - rid: 8057489073772953667
+  - rid: 8057489073772953668
+  - rid: 8057489073772953669
+  - rid: 8057489073772953670
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489073772953659
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953660
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Are you excited for today's stream?
+    - rid: 8057489073772953661
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953662
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "You\u2019re kidding, right?"
+    - rid: 8057489073772953663
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953664
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Brother! Stop fucking around!
+    - rid: 8057489073772953665
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953666
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Aaaaargh... are you for real?
+    - rid: 8057489073772953667
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953668
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: '*Sighs* Walk over to my PC, please.'
+    - rid: 8057489073772953669
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953670
+      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        pages: 1
