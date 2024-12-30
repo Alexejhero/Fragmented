@@ -240,7 +240,7 @@ namespace Memories.Book
             state = State.Busy;
 
             animatorIsOpen = false;
-            await UniTask.Delay(500);
+            await UniTask.Delay(1000);
 
             if (mainSceneScript) mainSceneScript.CloseBook().Forget();
 
@@ -249,7 +249,7 @@ namespace Memories.Book
                 obj.SetActive(false);
             }
 
-            await UniTask.Delay(2500 - 500);
+            await UniTask.Delay(2500 - 1000);
 
             deleteButtonContainer.SetActive(true);
 
