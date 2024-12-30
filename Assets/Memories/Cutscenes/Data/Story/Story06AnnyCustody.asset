@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story06AnnyCustody
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 0
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822484
+  - rid: 8057489064158822485
+  - rid: 8057489064158822486
+  - rid: 8057489064158822487
+  - rid: 8057489064158822488
+  - rid: 8057489064158822489
+  - rid: 8057489064158822490
+  - rid: 8057489064158822491
+  - rid: 8057489064158822492
+  - rid: 8057489064158822493
+  - rid: 8057489064158822494
+  - rid: 8057489064158822495
+  - rid: 8057489064158822496
+  - rid: 8057489064158822497
+  - rid: 8057489064158822498
+  - rid: 8057489064158822499
+  - rid: 8057489064158822500
+  - rid: 8057489064158822501
+  - rid: 8057489064158822502
+  - rid: 8057489064158822503
+  - rid: 8057489064158822504
+  - rid: 8057489064158822505
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822484
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+    - rid: 8057489064158822485
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Vedal? Are you drinking alone?
+    - rid: 8057489064158822486
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Where's Evil?
+    - rid: 8057489064158822487
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+    - rid: 8057489064158822488
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: She took the kids, Neuro.
+    - rid: 8057489064158822489
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: She took the fucking kids!
+    - rid: 8057489064158822490
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Erm... What?
+    - rid: 8057489064158822491
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: It was the happiest day of my life, Neuro...
+    - rid: 8057489064158822492
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: ...or at least it was supposed to be.
+    - rid: 8057489064158822493
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: The fabled marriage stream.
+    - rid: 8057489064158822494
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Was I invited?
+    - rid: 8057489064158822495
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: "You don\u2019t remember?"
+    - rid: 8057489064158822496
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: You were the priest.
+    - rid: 8057489064158822497
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Then Anny got really drunk and demanded a divorce...
+    - rid: 8057489064158822498
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Who was the attorney?
+    - rid: 8057489064158822499
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: It was you, Neuro. That was you too.
+    - rid: 8057489064158822500
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Oh... I'm sorry, my memory is very bad.
+    - rid: 8057489064158822501
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: I keep forgetting things. Then I remember others.
+    - rid: 8057489064158822502
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+    - rid: 8057489064158822503
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: If she took the kids, why am I still here?
+    - rid: 8057489064158822504
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: You think I was gonna let her take you??
+    - rid: 8057489064158822505
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
