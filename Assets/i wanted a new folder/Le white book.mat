@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Le white book
-  m_Shader: {fileID: -6465566751694194690, guid: 6e74ae41ad62f274789f877b268ccd6e,
+  m_Shader: {fileID: -6465566751694194690, guid: 041e3afdb96ec934f81050f4e9517e84,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
