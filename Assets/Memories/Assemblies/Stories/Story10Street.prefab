@@ -8841,8 +8841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e5867806ef7d445b476d28c938c773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 6386969167625668463}
-  durationOfDissolveAsFractionOfTotalPSDuration: 0.5
+  thanosParticles: {fileID: 6386969167625668463}
+  fog: {fileID: 0}
+  durationOfDissolveAsFractionOfTotalPSDuration: 0.4
 --- !u!4 &6438087335017732928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1896420379097358513, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
