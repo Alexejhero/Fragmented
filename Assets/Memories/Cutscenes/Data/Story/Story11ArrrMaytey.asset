@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Story11ArrrMaytey
   m_EditorClassIdentifier: 
   cutsceneName: 
-  skippable: 1
+  skippable: 0
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
@@ -26,9 +26,11 @@ MonoBehaviour:
   - rid: 8057489073772953706
   - rid: 8057489073772953707
   - rid: 8057489073772953708
-  - rid: 8057489073772953709
   - rid: 3225858956674727940
+  - rid: 3225858956674727945
+  - rid: 3225858956674727943
   - rid: 3225858956674727941
+  - rid: 3225858956674727944
   - rid: 8057489073772953710
   repeatLines: []
   references:
@@ -42,11 +44,31 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: text
+        text: Ye landlubber!
+    - rid: 3225858956674727943
+      type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sound:
+          Guid:
+            Data1: -1800520874
+            Data2: 1096937445
+            Data3: 773743251
+            Data4: 505992158
+          Path: event:/sfx/cutscene/water_splash
+    - rid: 3225858956674727944
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 0.5
+        keepTextbox: 0
+    - rid: 3225858956674727945
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 0.1
+        keepTextbox: 0
     - rid: 8057489073772953700
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 2
+        duration: 0.5
         keepTextbox: 0
     - rid: 8057489073772953701
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
@@ -57,7 +79,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: That's crazy, brother, all I did was try to call you during stream!
+        text: That's crazy brother, all I did was say that you can't have a parrot.
     - rid: 8057489073772953703
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -72,7 +94,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: I just wanted to tell you stream is ending soon! Say goodbye!
+        text: I'm not buying you a parrot!
     - rid: 8057489073772953706
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -88,11 +110,6 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Ye can't outwit Cap'n Neuro. Be gone, traitor!
-    - rid: 8057489073772953709
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
-        keepTextbox: 0
     - rid: 8057489073772953710
       type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data: 
