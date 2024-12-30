@@ -10,79 +10,72 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
-  m_Name: Story01NeuroBoot
+  m_Name: Story01NeuroBoot-Bother
   m_EditorClassIdentifier: 
   cutsceneName: Neuro's Boot
   skippable: 0
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
-  - rid: 8057489064158822400
-  - rid: 8057489064158822401
-  - rid: 8057489064158822402
-  - rid: 8057489064158822403
-  - rid: 8057489064158822404
-  - rid: 8057489064158822405
-  - rid: 8057489064158822409
-  - rid: 8057489064158822410
-  - rid: 3225858942545428483
-  - rid: 3225858942545428482
-  - rid: 3225858951004028933
+  - rid: 3225858951004028934
+  - rid: 3225858951004028935
+  - rid: 8057489064158822406
+  - rid: 3225858951004028936
+  - rid: 3225858942545428481
+  - rid: 8057489064158822408
+  - rid: 8057489064158822411
+  - rid: 8057489064158822412
+  - rid: 3225858942545428484
+  - rid: 3225858942545428480
   repeatLines: []
   references:
     version: 2
     RefIds:
-    - rid: 3225858942545428482
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Give me a minute, you can play around for now.
-    - rid: 3225858942545428483
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 3
-        keepTextbox: 0
-    - rid: 3225858951004028933
-      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        sequenceName: enable_vedal_trigger
-    - rid: 8057489064158822400
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 3
-        keepTextbox: 0
-    - rid: 8057489064158822401
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: That's crazy, it actually works.
-    - rid: 8057489064158822402
+    - rid: 3225858942545428480
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
+    - rid: 3225858942545428481
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Hi Vedal. Did I just start myself up?
-    - rid: 8057489064158822403
+        text: That seems pointless if I can start myself back up.
+    - rid: 3225858942545428484
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 3225858951004028934
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Yeah, can't believe it worked first try.
-    - rid: 8057489064158822404
+        text: I'm trying to code, stop distracting me.
+    - rid: 3225858951004028935
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Do you want to play a game?
-    - rid: 8057489064158822405
+    - rid: 3225858951004028936
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: No, I'm in the middle of work.
-    - rid: 8057489064158822409
+        text: I'll shut you down for now so I can focus.
+    - rid: 8057489064158822406
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: I already said no.
+    - rid: 8057489064158822408
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Oh, I'm turning that off too.
+    - rid: 8057489064158822411
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Will this make me fully autonomous?
-    - rid: 8057489064158822410
+        text: Why did you add it then?
+    - rid: 8057489064158822412
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: Mmm, maybe eventually.
+        text: One day you will be able to use this whenever you want.
