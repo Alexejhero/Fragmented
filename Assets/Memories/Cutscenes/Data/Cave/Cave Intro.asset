@@ -24,11 +24,6 @@ MonoBehaviour:
   - rid: 949997391457288245
   - rid: 949997391457288246
   - rid: 949997391457288247
-  - rid: 949997391457288248
-  - rid: 949997391457288249
-  - rid: 949997391457288250
-  - rid: 949997391457288252
-  - rid: 949997391457288254
   - rid: 949997391457288266
   - rid: 949997391457288259
   - rid: 949997391457288260
@@ -37,6 +32,7 @@ MonoBehaviour:
   - rid: 949997391457288263
   - rid: 949997414614302722
   - rid: 949997414614302721
+  - rid: 949997417788080130
   repeatLines: []
   references:
     version: 2
@@ -83,26 +79,6 @@ MonoBehaviour:
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 2
-    - rid: 949997391457288248
-      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        pages: 1
-    - rid: 949997391457288249
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 4
-    - rid: 949997391457288250
-      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        pages: 1
-    - rid: 949997391457288252
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 4
-    - rid: 949997391457288254
-      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        pages: 1
     - rid: 949997391457288259
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -147,3 +123,7 @@ MonoBehaviour:
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 3
+    - rid: 949997417788080130
+      type: {class: CustomSequence, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sequenceName: enable_shelf

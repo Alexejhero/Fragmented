@@ -10,18 +10,18 @@ namespace Memories.Mechanisms
         public float triggerInterval;
         private float _nextTriggerTime;
         public bool ignoreTriggers;
-        private List<Collider2D> _entered;
+        private List<Collider> _entered;
 
         protected virtual void Awake()
         {
-            _entered = new List<Collider2D>(2);
+            _entered = new List<Collider>(2);
         }
 
-        public void OnTriggerEnter2D(Collider2D other)
+        public void OnTriggerEnter(Collider other)
         {
-            if (!other.isActiveAndEnabled) return;
+            if (!other.enabled || !other.gameObject.activeInHierarchy) return;
             if (ignoreTriggers && other.isTrigger) return;
-            TTarget target = other.GetComponentInParent<TTarget>();
+            TTarget target = other.GetComponent<TTarget>();
             if (!target) return;
 
             if (Time.time < _nextTriggerTime) return;
@@ -31,10 +31,10 @@ namespace Memories.Mechanisms
             OnEnter(target);
         }
 
-        public void OnTriggerExit2D(Collider2D other)
+        public void OnTriggerExit(Collider other)
         {
             if (ignoreTriggers && other.isTrigger) return;
-            TTarget target = other.GetComponentInParent<TTarget>();
+            TTarget target = other.GetComponent<TTarget>();
             if (!target) return;
             int idx = _entered.IndexOf(other);
             if (idx < 0) return;
