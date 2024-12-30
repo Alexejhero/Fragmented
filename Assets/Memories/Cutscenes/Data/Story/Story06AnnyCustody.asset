@@ -20,7 +20,8 @@ MonoBehaviour:
   - rid: 8057489064158822484
   - rid: 8057489064158822485
   - rid: 8057489064158822486
-  - rid: 8057489064158822487
+  - rid: 3225858945227423758
+  - rid: 3225858945227423759
   - rid: 8057489064158822488
   - rid: 8057489064158822489
   - rid: 8057489064158822490
@@ -31,8 +32,6 @@ MonoBehaviour:
   - rid: 8057489064158822495
   - rid: 8057489064158822496
   - rid: 8057489064158822497
-  - rid: 8057489064158822498
-  - rid: 8057489064158822499
   - rid: 8057489064158822500
   - rid: 8057489064158822501
   - rid: 8057489064158822502
@@ -43,10 +42,20 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 3225858945227423758
+      type: {class: ClearTextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+    - rid: 3225858945227423759
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+        keepTextbox: 1
     - rid: 8057489064158822484
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 2
+        keepTextbox: 0
     - rid: 8057489064158822485
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -57,10 +66,6 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: Where's Evil?
-    - rid: 8057489064158822487
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
     - rid: 8057489064158822488
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -75,7 +80,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Erm... What?
+        text: Kids? What kids?
     - rid: 8057489064158822491
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -95,7 +100,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Was I invited?
+        text: Did you get married?
     - rid: 8057489064158822495
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -111,16 +116,6 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
         text: Then Anny got really drunk and demanded a divorce...
-    - rid: 8057489064158822498
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: Who was the attorney?
-    - rid: 8057489064158822499
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: It was you, Neuro. That was you too.
     - rid: 8057489064158822500
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -135,6 +130,7 @@ MonoBehaviour:
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 3
+        keepTextbox: 0
     - rid: 8057489064158822503
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
