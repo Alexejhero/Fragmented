@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2587285892229077770}
   - component: {fileID: 6278569725976360738}
   m_Layer: 0
-  m_Name: Story04VedalGameStream
+  m_Name: Story04WeLoveUnity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,7 +2031,7 @@ PrefabInstance:
     - target: {fileID: 1693508223542154709, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_Name
-      value: Story04VedalGameStream
+      value: Story04WeLoveUnity
       objectReference: {fileID: 0}
     - target: {fileID: 2074853677140447087, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
@@ -2095,16 +2095,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
-      propertyPath: openEnableObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
-        type: 3}
-      propertyPath: openEnableObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1157534886968087608}
-    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
-        type: 3}
       propertyPath: musicTrack
       value: 3
       objectReference: {fileID: 0}
@@ -2133,6 +2123,16 @@ PrefabInstance:
       propertyPath: musicTrack.Guid.Data4
       value: -1691072562
       objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1157534886968087608}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

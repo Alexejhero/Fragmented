@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb45288a52c4561846aa1915dffecc1, type: 3}
+  m_Name: Story04WeLoveUnity
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  skippable: 0
+  repeatable: 0
+  repeatBehaviour: 0
+  mainLines:
+  - rid: 8057489064158822451
+  - rid: 8057489073772953685
+  - rid: 8057489073772953686
+  - rid: 8057489073772953687
+  - rid: 8057489073772953688
+  - rid: 8057489073772953689
+  - rid: 8057489073772953690
+  - rid: 8057489073772953691
+  - rid: 8057489073772953692
+  - rid: 8057489073772953693
+  - rid: 8057489073772953695
+  - rid: 8057489073772953696
+  - rid: 8057489073772953697
+  - rid: 8057489073772953698
+  - rid: 8057489073772953699
+  repeatLines: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 8057489064158822451
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 1
+        keepTextbox: 0
+    - rid: 8057489073772953685
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Come on Unity it's been five minutes
+    - rid: 8057489073772953686
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Haha. We love Unity.
+    - rid: 8057489073772953687
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: This fucking 6000 bullshit, it takes ages to start!
+    - rid: 8057489073772953688
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Maybe it's a skill issue.
+    - rid: 8057489073772953689
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: You think you're being funny, but this is ACTUALLY crazy. This is an
+          empty fucking project!
+    - rid: 8057489073772953690
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 5
+        keepTextbox: 0
+    - rid: 8057489073772953691
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
+        text: No, the story isn't frozen. This is how fucking long Unity 6000 takes
+          to load.
+    - rid: 8057489073772953692
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 2
+        keepTextbox: 0
+    - rid: 8057489073772953693
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: SERIOUSLY! UNITY!? BROTHER!
+    - rid: 8057489073772953695
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: It's FINALLY loaded!
+    - rid: 8057489073772953696
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Someone tell Vedal there is a problem with my AI.
+    - rid: 8057489073772953697
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Nooooooooooo!! NOT THE SSL Errors!
+    - rid: 8057489073772953698
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: Chat, we love Unity.
+    - rid: 8057489073772953699
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
