@@ -12,6 +12,7 @@ public enum MusicTrack
     Retro,
     Pirate,
     Guitars,
+    Piano,
 }
 
 public sealed class BackgroundMusic : MonoSingleton<BackgroundMusic>
