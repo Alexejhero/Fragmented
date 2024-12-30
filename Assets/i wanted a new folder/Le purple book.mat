@@ -155,7 +155,7 @@ Material:
     - _Mode: 0
     - _Noise_scale: 5
     - _Noise_speed: 0.16
-    - _Noise_step: 0.28
+    - _Noise_step: 0.459
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
