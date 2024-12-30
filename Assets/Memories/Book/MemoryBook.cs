@@ -247,8 +247,9 @@ namespace Memories.Book
             realCover.SetActive(false);
             realArmature.SetActive(false);
 
-            materialDriver.Forget(1f);
-            await UniTask.Delay(1000);
+            mainSceneScript.bookDelete.PlayOneShot();
+            materialDriver.Forget(2f);
+            await UniTask.Delay(2000);
 
             mainSceneScript.PutBackBook();
             mainSceneScript.activeBook = null;

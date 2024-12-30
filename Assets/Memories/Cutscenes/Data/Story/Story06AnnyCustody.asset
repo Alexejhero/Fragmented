@@ -101,7 +101,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: The fabled marriage stream.
+        text: The <i>fabled</i> marriage stream.
     - rid: 8057489064158822494
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

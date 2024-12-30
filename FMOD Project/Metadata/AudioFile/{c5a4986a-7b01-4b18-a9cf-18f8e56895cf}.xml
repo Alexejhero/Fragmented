@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{c5a4986a-7b01-4b18-a9cf-18f8e56895cf}">
 		<property name="assetPath">
-			<value>sfx/ambient/hdd.ogg</value>
+			<value>sfx/computer/hdd.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

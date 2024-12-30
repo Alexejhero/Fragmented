@@ -45,6 +45,7 @@ public class MainSceneScript : MonoBehaviour
     public EventReference bookOpen;
     public EventReference bookClose;
     public EventReference bookPage;
+    public EventReference bookDelete;
     [UnGroupNext]
 
     private void Awake()

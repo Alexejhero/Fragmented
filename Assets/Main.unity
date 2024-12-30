@@ -1964,6 +1964,13 @@ MonoBehaviour:
       Data3: -195092319
       Data4: -51119174
     Path: event:/sfx/book/page
+  bookDelete:
+    Guid:
+      Data1: -2073104326
+      Data2: 1223164022
+      Data3: -1460303940
+      Data4: -714276047
+    Path: event:/sfx/book/delete
 --- !u!4 &1429647746
 Transform:
   m_ObjectHideFlags: 0
