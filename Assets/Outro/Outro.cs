@@ -5,19 +5,21 @@ using Memories.Book;
 using Memories.Characters.Movement;
 using UnityEngine;
 using UnityEngine.Serialization;
+using VFX.Last_scene;
 
 public class Outro : MonoBehaviour
 {
     [FormerlySerializedAs("destroyList")] public UnityEngine.Object[] disableList;
 
     private bool _started = false;
-
+    public LastEffect eff;
     public void StartOutro()
     {
         if (_started) return;
         _started = true;
 
         OutroSequence().Forget();
+        eff.Play();
     }
 
     private async UniTask OutroSequence()
