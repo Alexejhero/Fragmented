@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Xml;
+using UnityEngine;
 
 namespace Memories.Book;
 
@@ -12,6 +13,8 @@ public class AnimatorPopup : BasePopup
 
     private Animator _animator;
 
+	private float lastLift = 0;
+
 	private void Awake()
 	{
         _animator = GetComponent<Animator>();
@@ -20,6 +23,13 @@ public class AnimatorPopup : BasePopup
 	public override void DoRotate(float lift)
     {
 		bool setvalue = lift < leftThreshold || lift > rightThreshold;
+		if (lift < lastLift)
+		{
+			//Debug.Log("AnimatorPopup: Reverse flip detected, settings value to false");
+			setvalue = false;
+		}
+
 		_animator.SetBool(animatorParam, !setvalue);
-    }
+		lastLift = lift;
+	}
 }
