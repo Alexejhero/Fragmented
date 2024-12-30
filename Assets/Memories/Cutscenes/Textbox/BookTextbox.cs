@@ -32,6 +32,8 @@ namespace Memories.Cutscenes.Textbox
 
         private void Update()
         {
+            if (!Application.isEditor) return;
+
             if (UnityEngine.Input.GetKeyDown(KeyCode.Minus))
             {
                 HideTextbox().Forget();
