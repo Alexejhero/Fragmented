@@ -38,12 +38,25 @@ public class NeuroPopup : BasePopup
         }
         else if (_initialized)
         {
-            if (Mathf.Abs(transform.localPosition.x) < 0.3f)
+            Vector3 localPos = leftPage.parent.InverseTransformPoint(transform.position);
+
+            if (Mathf.Abs(localPos.x) < 0.3f)
             {
-                transform.SetParent(rightPage, true);
-                transform.localPosition = new Vector3(Mathf.Lerp(transform.localPosition.x, 0.3f, Time.deltaTime), transform.localPosition.y, transform.localPosition.z);
+                if (_lastLift < 0)
+                {
+                    transform.SetParent(leftPage, true);
+                    transform.position = leftPage.parent.TransformPoint(new Vector3(Mathf.Lerp(localPos.x, 0.3f, Time.deltaTime * 2), localPos.y, localPos.z));
+                }
+                else if (_lastLift > 0)
+                {
+                    transform.SetParent(rightPage, true);
+                    transform.position = leftPage.parent.TransformPoint(new Vector3(Mathf.Lerp(localPos.x, -0.3f, Time.deltaTime * 2), localPos.y, localPos.z));
+                }
             }
         }
+
+        Vector3 localPos2 = leftPage.parent.InverseTransformPoint(transform.position);
+        if (_initialized) Debug.Log(localPos2);
     }
 
     public override void DoRotate(float lift)

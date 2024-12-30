@@ -1,3 +1,4 @@
+using System;
 using Helpers;
 using Memories.Characters.Movement;
 using TriInspector;
@@ -27,7 +28,7 @@ namespace Memories.Characters
 
         [ShowInInspector]
         private bool isMoving;
-        [ShowInInspector]
+        [ShowInInspector,SerializeField]
         private bool isLeft = true;
         private void Awake()
         {

@@ -21,22 +21,30 @@ MonoBehaviour:
   - rid: 8057489064158822440
   - rid: 8057489064158822441
   - rid: 8057489064158822442
-  - rid: 8057489064158822443
-  - rid: 8057489064158822444
-  - rid: 8057489064158822445
+  - rid: 3225858945227423745
   - rid: 8057489064158822446
   - rid: 8057489064158822447
   - rid: 8057489064158822448
   - rid: 8057489064158822449
   - rid: 8057489064158822450
+  - rid: 3225858945227423747
   repeatLines: []
   references:
     version: 2
     RefIds:
+    - rid: 3225858945227423745
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: ...
+    - rid: 3225858945227423747
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 
     - rid: 8057489064158822439
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 2
+        duration: 0.5
+        keepTextbox: 0
     - rid: 8057489064158822440
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -51,20 +59,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
-        text: "You said I\u2019d get a cookie if I killed Camila!"
-    - rid: 8057489064158822443
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
-    - rid: 8057489064158822444
-      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        actor: {fileID: 11400000, guid: 4cb51cc84d7474b4681a89a178c22628, type: 2}
-        text: She means in Minecraft, of course
-    - rid: 8057489064158822445
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 1
+        text: You said you'd give me a cookie!
     - rid: 8057489064158822446
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -79,7 +74,7 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: I NEVER LIE!
+        text: Come on, do you take me for a liar?
     - rid: 8057489064158822449
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -88,4 +83,5 @@ MonoBehaviour:
     - rid: 8057489064158822450
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 3
+        duration: 1
+        keepTextbox: 0
