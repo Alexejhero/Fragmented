@@ -19,7 +19,7 @@ public class Outro : MonoBehaviour
         _started = true;
 
         OutroSequence().Forget();
-        eff.Play();
+        
     }
 
     private async UniTask OutroSequence()
@@ -43,5 +43,8 @@ public class Outro : MonoBehaviour
                 rend.enabled = false;
             }
         }
+        
+        eff.Play();
+        await UniTask.Delay((int) eff.DurationSeconds * 1000);
     }
 }

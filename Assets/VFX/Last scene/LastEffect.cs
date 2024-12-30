@@ -2,16 +2,22 @@ using System.Collections;
 using Helpers;
 using TriInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace VFX.Last_scene;
 
 public class LastEffect : MonoBehaviour
 {
-    [Required]
-    public ParticleSystem ps;
+    [FormerlySerializedAs("ps")] [Required]
+    public ParticleSystem thanosParticles;
+    public ParticleSystem fog;
+    
     private float halfPSDuration;
     private static readonly int GlobalDissolveValueID = Shader.PropertyToID("_DissScene");
-    public float durationOfDissolveAsFractionOfTotalPSDuration = 0.5f;
+    [SerializeField]
+    private float durationOfDissolveAsFractionOfTotalPSDuration = 0.5f;
+
+    public float DurationSeconds => halfPSDuration;
 
     private void OnValidate()
     {
@@ -20,15 +26,18 @@ public class LastEffect : MonoBehaviour
 
     private void Awake()
     {
-        halfPSDuration = ps.main.duration + ps.main.startLifetime.Evaluate(1) * durationOfDissolveAsFractionOfTotalPSDuration;
+        halfPSDuration = thanosParticles.main.duration + thanosParticles.main.startLifetime.Evaluate(1) * durationOfDissolveAsFractionOfTotalPSDuration;
         Shader.SetGlobalFloat(GlobalDissolveValueID, 0);
     }
 
     public void Play()
     {
+        fog.Stop(false, ParticleSystemStopBehavior.StopEmitting);
         StartCoroutine(DissolveCoroutine());
-        ps.Play();
+        thanosParticles.Play();
     }
+    
+    public IEnumerator WaitForFogGone() { yield return new WaitUntil(() => !fog.isPlaying);}
     
     private IEnumerator DissolveCoroutine()
     {
