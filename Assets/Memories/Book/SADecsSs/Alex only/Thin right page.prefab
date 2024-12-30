@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thin right page
       objectReference: {fileID: 0}
+    - target: {fileID: 5556803614567393420, guid: 83861e0b4f3cd124a8a5a81fde11e28b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -77,6 +82,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2574786800769609266}
   m_SourcePrefab: {fileID: 100100000, guid: 83861e0b4f3cd124a8a5a81fde11e28b, type: 3}
+--- !u!65 &1546610006642832939 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1035782627613931346, guid: 83861e0b4f3cd124a8a5a81fde11e28b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1957235514162561401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &6211805456618564085 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5556803614567393420, guid: 83861e0b4f3cd124a8a5a81fde11e28b,
@@ -102,3 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 6211805456618564085}
+  collider: {fileID: 1546610006642832939}
+  localEulerY: 0

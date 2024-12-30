@@ -71,5 +71,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8824375449151375030, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 104460952378356574}
   m_SourcePrefab: {fileID: 100100000, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d, type: 3}
+--- !u!1 &963369855133084139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8824375449151375030, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8586369360482692957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &104460952378356574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963369855133084139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f42823992b9554ba51727a814f8f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  collider: {fileID: 1545088867138787954}
+  localEulerY: 180
+--- !u!65 &1545088867138787954 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7086883864465487151, guid: 8eaf7a7cff74a1c4cbc3260cae18b88d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8586369360482692957}
+  m_PrefabAsset: {fileID: 0}
