@@ -13,7 +13,7 @@ namespace Memories.Book
         // todo: animator
         // public Animator animator;
         [SerializeField]
-        private Collider collider;
+        private new Collider collider;
 
         [SerializeField]
         private bool initializeCounterRotation = false;

@@ -23,3 +23,5 @@ MonoBehaviour:
     Path: event:/sfx/barks/neuro
   textboxType: 0
   fontAsset: {fileID: 11400000, guid: f426595156d86a64a868e4a732fad0b7, type: 2}
+  minFontSize: 6
+  maxFontSize: 9

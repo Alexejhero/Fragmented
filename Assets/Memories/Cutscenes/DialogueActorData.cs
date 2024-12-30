@@ -13,4 +13,6 @@ public sealed class DialogueActorData : ScriptableObject
     public EventReference talkNoise;
     public TextboxType textboxType;
     public TMP_FontAsset fontAsset;
+    public float minFontSize = 6;
+    public float maxFontSize = 8;
 }

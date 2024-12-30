@@ -48,6 +48,8 @@ namespace Memories.Cutscenes.Textbox
             {
                 LastCharacterDropdown = dropdownAt;
                 tmp.font = actor.fontAsset;
+                tmp.fontSizeMin = actor.minFontSize;
+                tmp.fontSizeMax = actor.maxFontSize;
                 tmp.color = actor.textColor;
                 tmp.text = text;
                 tmp.maxVisibleCharacters = 0;
