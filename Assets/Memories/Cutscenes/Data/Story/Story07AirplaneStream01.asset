@@ -22,7 +22,6 @@ MonoBehaviour:
   - rid: 8057489073772953602
   - rid: 8057489073772953603
   - rid: 8057489073772953604
-  - rid: 8057489073772953605
   - rid: 8057489073772953606
   repeatLines: []
   references:
@@ -53,11 +52,6 @@ MonoBehaviour:
       data:
         actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
         text: "You can\u2019t tell me what to do. I\u2019ll land where I want."
-    - rid: 8057489073772953605
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
-      data:
-        duration: 2
-        keepTextbox: 0
     - rid: 8057489073772953606
       type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
