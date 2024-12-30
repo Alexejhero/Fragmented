@@ -1,10 +1,13 @@
 using Cysharp.Threading.Tasks;
+using FMODUnity;
+using Helpers;
 using TMPro;
 using UnityEngine;
 
 public class Logger : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public EventReference beep;
 
     private int _hour = 21;
     private int _minute = 15;
@@ -68,6 +71,7 @@ public class Logger : MonoBehaviour
     private void LogError(string message)
     {
         LogInternal("red", message);
+        beep.PlayOneShot();
     }
 
     private void LogInternal(string color, string message)

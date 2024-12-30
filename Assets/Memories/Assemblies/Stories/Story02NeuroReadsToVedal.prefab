@@ -1715,6 +1715,31 @@ PrefabInstance:
       propertyPath: openEnableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1550939193910046766}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack.Path
+      value: event:/music/retro
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack.Guid.Data1
+      value: -1960843561
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack.Guid.Data2
+      value: 1087995702
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack.Guid.Data3
+      value: 1960091834
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: musicTrack.Guid.Data4
+      value: -1582586993
+      objectReference: {fileID: 0}
     - target: {fileID: 9188281565481855328, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_LocalScale.x

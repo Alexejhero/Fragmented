@@ -5,7 +5,7 @@
 			<value>bookshelf</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{3c1a1777-b15e-4c8a-b090-3e56dcf9053d}</destination>
@@ -38,6 +38,10 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{86d8528d-16da-4646-89a3-1a85f8e3bb6d}">
+		<relationship name="modules">
+			<destination>{6d767a9e-9da3-4b8c-a7f8-4b592909801f}</destination>
+			<destination>{f7f77e4e-7b73-4e5b-9efc-d7b749083af7}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{1b9030a5-ba13-493a-b871-ffacbd27fe26}</destination>
 		</relationship>
@@ -56,13 +60,17 @@
 	<object class="EventAutomatableProperties" id="{d9c50dc6-3296-48d6-91fa-26b9061cd84c}" />
 	<object class="MarkerTrack" id="{a6a861f4-0e8e-4092-948b-53cfa614d73e}" />
 	<object class="Timeline" id="{6bbb5188-3de1-4b06-a050-44bd7a7ecd00}">
+		<relationship name="modules">
+			<destination>{6d767a9e-9da3-4b8c-a7f8-4b592909801f}</destination>
+			<destination>{f7f77e4e-7b73-4e5b-9efc-d7b749083af7}</destination>
+		</relationship>
 		<relationship name="markers">
 			<destination>{3c06920e-d01b-4eb8-b7d8-f27df61b7f3f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{1b9030a5-ba13-493a-b871-ffacbd27fe26}">
 		<property name="volume">
-			<value>-36</value>
+			<value>-19.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{01faa7b8-b42c-491e-b92e-08caaa4df848}</destination>
@@ -72,6 +80,22 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{ce3124d9-dbe3-4dad-87a4-b688e4ec0d70}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{6d767a9e-9da3-4b8c-a7f8-4b592909801f}">
+		<property name="length">
+			<value>57.648000000000003</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{8f5121bd-9f90-4226-807e-8edc022e4415}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{f7f77e4e-7b73-4e5b-9efc-d7b749083af7}">
+		<property name="length">
+			<value>57.648000000000003</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{ea4af861-3bd1-44e4-9fce-2021fec2cf40}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{ad85c9f1-dc8e-4125-b8ad-3394343af801}">

@@ -11,6 +11,7 @@ public sealed class CutsceneTrigger : Trigger<PlayerController>
         if (CutsceneManager.Instance.currentCutscene) return;
 
         cutscene.Play();
-        Destroy(this);
+        if (!cutscene.data.repeatable)
+            Destroy(this);
     }
 }

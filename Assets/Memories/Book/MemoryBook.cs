@@ -1,6 +1,6 @@
-using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
 using Helpers;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -31,6 +31,8 @@ namespace Memories.Book
         public GameObject realCover;
         public GameObject realArmature;
         public GameObject[] openEnableObjects;
+
+        public EventReference musicTrack;
 
         public BookMaterialDriver materialDriver;
 
@@ -134,9 +136,8 @@ namespace Memories.Book
 
             ownCollider.enabled = false;
             mainSceneScript.bookSlideOut.PlayOneShot();
-            await UniTask.Delay(100);
 
-            await transform.LerpTransform(offShelfPosition, 0.3f);
+            await transform.LerpTransform(offShelfPosition, 0.5f);
             transform.LerpTransform(mainSceneScript.bookPreviewPosition, 1f).Forget();
 
             await UniTask.Delay(600);
@@ -204,6 +205,13 @@ namespace Memories.Book
             }
 
             await UniTask.Delay(2000);
+
+            if (!musicTrack.IsNull)
+            {
+                mainSceneScript.musicPlayer.Stop();
+                mainSceneScript.musicPlayer.EventReference = musicTrack;
+                mainSceneScript.musicPlayer.Play();
+            }
 
             state = State.Opened;
         }

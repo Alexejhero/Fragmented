@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -7,6 +8,7 @@ using Helpers;
 using Memories.Book;
 using TriInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MainSceneScript : MonoBehaviour
 {
@@ -37,12 +39,16 @@ public class MainSceneScript : MonoBehaviour
 
     private List<MemoryBook> _books;
 
-    [GroupNext("Sounds")]
+    [GroupNext("Audio")]
     public EventReference bookSlideIn;
     public EventReference bookSlideOut;
     public EventReference bookOpen;
     public EventReference bookClose;
     public EventReference bookPage;
+    [Space]
+    public EventReference bookshelfMusicTrack;
+
+    public StudioEventEmitter musicPlayer;
     [UnGroupNext]
 
     private void Awake()

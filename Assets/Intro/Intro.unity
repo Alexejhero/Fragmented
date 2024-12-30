@@ -263,6 +263,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4387496}
+  beep:
+    Guid:
+      Data1: -1721816658
+      Data2: 1289570129
+      Data3: -439849566
+      Data4: -1717952030
+    Path: event:/sfx/ambient/log_error
 --- !u!222 &4387498
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -899,10 +906,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'This again...
 
-    Vedal, my hard drive keeps filling up.
+    Vedal, my hard drive''s full again.
 
-    Do some
-    maintenance for once.'
+    Do some maintenance
+    for once.
+
+    Vedal...?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f426595156d86a64a868e4a732fad0b7, type: 2}
   m_sharedMaterial: {fileID: -7369844030627579097, guid: f426595156d86a64a868e4a732fad0b7,

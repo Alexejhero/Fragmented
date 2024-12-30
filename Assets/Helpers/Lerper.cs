@@ -1,4 +1,6 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +22,13 @@ public static class Lerper
 
     public static async UniTask LerpTransform(this Transform transform, Transform target, float duration)
     {
+        transform.DOMove(target.position, duration)
+            .SetEase(Ease.OutCubic);
+        transform.DORotate(target.eulerAngles, duration)
+            .SetEase(Ease.OutCubic);
+        await UniTask.Delay(TimeSpan.FromSeconds(duration));
+
+        return;
         Vector3 targetPosition = target.position;
         Quaternion targetRotation = target.rotation;
 

@@ -73,7 +73,7 @@ namespace Memories.Characters.Movement
             foreach (ContactPoint contact in collision.contacts)
             {
                 Vector3 normal = contact.normal;
-                if (Vector3.Dot(Vector3.up, normal) >= minSurfaceCos)
+                if (Vector3.Dot(transform.up, normal) >= minSurfaceCos)
                 {
                     surfaceNormal = normal;
                     lastSurfacePoint = contact.point;
