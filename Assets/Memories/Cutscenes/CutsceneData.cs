@@ -41,9 +41,10 @@ public abstract class DialogueInstruction
 }
 
 [Serializable]
-public sealed class Pause : DialogueInstruction
+public class Pause : DialogueInstruction
 {
     public float duration;
+    public bool keepTextbox;
 }
 
 [Serializable]
@@ -52,6 +53,12 @@ public class TextLine : DialogueInstruction
     public DialogueActorData actor;
     [TextArea]
     public string text;
+}
+
+[Serializable]
+public class ClearTextLine : DialogueInstruction
+{
+    public DialogueActorData actor;
 }
 
 [Serializable]

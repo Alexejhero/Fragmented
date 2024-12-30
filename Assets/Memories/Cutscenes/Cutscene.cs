@@ -33,14 +33,17 @@ public sealed class Cutscene : MonoBehaviour
 
     private void Update()
     {
-        if (UnityEngine.Input.GetKeyDown(KeyCode.Return))
+        if (Application.isEditor)
         {
-            Play();
-        }
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Return))
+            {
+                Play();
+            }
 
-        if (UnityEngine.Input.GetKeyDown(KeyCode.Backspace))
-        {
-            Skip();
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Backspace))
+            {
+                Skip();
+            }
         }
     }
 

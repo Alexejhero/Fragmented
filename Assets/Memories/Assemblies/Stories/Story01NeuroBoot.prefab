@@ -1687,14 +1687,24 @@ PrefabInstance:
       objectReference: {fileID: 1352353162134014889}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
-      propertyPath: cage
+      propertyPath: state
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 8580478128118278873}
     - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
-      propertyPath: state
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: openEnableObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 6357818745067054192}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3187,6 +3197,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+        type: 3}
+      propertyPath: leftPage
+      value: 
+      objectReference: {fileID: 4473065590229325582}
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+        type: 3}
+      propertyPath: rightPage
+      value: 
+      objectReference: {fileID: 4179315908554419242}
     - target: {fileID: 7483755889505758119, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
       propertyPath: m_Name

@@ -17,10 +17,10 @@ MonoBehaviour:
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
-  - rid: 8057489064158822431
   - rid: 8057489064158822432
   - rid: 8057489064158822433
   - rid: 8057489064158822434
+  - rid: 3225858945227423744
   - rid: 8057489064158822435
   - rid: 8057489064158822436
   - rid: 8057489064158822438
@@ -28,10 +28,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8057489064158822431
-      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+    - rid: 3225858945227423744
+      type: {class: ClearTextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 3
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
     - rid: 8057489064158822432
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -50,12 +50,13 @@ MonoBehaviour:
     - rid: 8057489064158822435
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 3
+        duration: 1.5
+        keepTextbox: 1
     - rid: 8057489064158822436
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "I have no idea what you\u2019re talking about."
+        text: I have no idea what you're talking about.
     - rid: 8057489064158822438
       type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:

@@ -1680,6 +1680,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2702999234736394723, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_text
+      value: My story
+      objectReference: {fileID: 0}
+    - target: {fileID: 4010606621153492292, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: m_text
+      value: My story
+      objectReference: {fileID: 0}
     - target: {fileID: 6940006490997658483, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: playOnOpen
@@ -1695,6 +1705,16 @@ PrefabInstance:
       propertyPath: state
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172066487179924795, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
+        type: 3}
+      propertyPath: openEnableObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1550939193910046766}
     - target: {fileID: 9188281565481855328, guid: ee5ea34ec88a7784282b79ea95f4b5f0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2797,6 +2817,16 @@ PrefabInstance:
       propertyPath: ignoreBooks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+        type: 3}
+      propertyPath: leftPage
+      value: 
+      objectReference: {fileID: 2384320577267085774}
+    - target: {fileID: 7394644498612428623, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
+        type: 3}
+      propertyPath: rightPage
+      value: 
+      objectReference: {fileID: 2808735678241344234}
     - target: {fileID: 7483755889505758119, guid: 0931e287cf4d2cc43a55e9f03c8a138d,
         type: 3}
       propertyPath: m_Name

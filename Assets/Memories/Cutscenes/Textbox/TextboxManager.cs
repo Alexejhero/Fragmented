@@ -23,6 +23,14 @@ namespace Memories.Cutscenes.Textbox
             return textbox.Show(text, actor, dropdownAt, ct);
         }
 
+        public void Clear(DialogueActorData actor)
+        {
+            TextboxController textbox = GetByType(actor.textboxType);
+            if (!textbox) textbox = bookTextbox;
+
+            textbox.Clear();
+        }
+
         private void Update()
         {
             // todo: remove (temp)
