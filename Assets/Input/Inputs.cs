@@ -64,15 +64,6 @@ namespace Memories.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Noclip"",
-                    ""type"": ""Button"",
-                    ""id"": ""6d06c04c-eab0-421b-9505-734b16bd4827"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -273,61 +264,6 @@ namespace Memories.Input
                     ""action"": ""Pause Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""79cb78e9-e50d-4503-85a5-2aa774d1998a"",
-                    ""path"": ""<Keyboard>/v"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""Noclip"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Both Shoulders + Select [Gamepad]"",
-                    ""id"": ""8668fbd8-1a3a-4ac8-98ba-1a890cb55ea7"",
-                    ""path"": ""TwoModifiers"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Noclip"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier1"",
-                    ""id"": ""f255f2b0-de93-47bb-ba7c-40d91a81e245"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Xbox Controller;Switch Controller;PlayStation Controller"",
-                    ""action"": ""Noclip"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""modifier2"",
-                    ""id"": ""5a1a05a9-0c0d-42dd-be12-00f25a101e7a"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Xbox Controller;Switch Controller;PlayStation Controller"",
-                    ""action"": ""Noclip"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""f1919c53-4fe7-4c25-9b33-650ccbc8ec3b"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Xbox Controller;Switch Controller;PlayStation Controller"",
-                    ""action"": ""Noclip"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -337,12 +273,12 @@ namespace Memories.Input
             ""actions"": [
                 {
                     ""name"": ""Click"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""045398f6-185f-425d-9287-23039332a1d3"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""AnyKey"",
@@ -837,7 +773,6 @@ namespace Memories.Input
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_PauseMenu = m_Player.FindAction("Pause Menu", throwIfNotFound: true);
-            m_Player_Noclip = m_Player.FindAction("Noclip", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
@@ -917,7 +852,6 @@ namespace Memories.Input
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_PauseMenu;
-        private readonly InputAction m_Player_Noclip;
         public struct PlayerActions
         {
             private @Inputs m_Wrapper;
@@ -926,7 +860,6 @@ namespace Memories.Input
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
             public InputAction @PauseMenu => m_Wrapper.m_Player_PauseMenu;
-            public InputAction @Noclip => m_Wrapper.m_Player_Noclip;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -948,9 +881,6 @@ namespace Memories.Input
                 @PauseMenu.started += instance.OnPauseMenu;
                 @PauseMenu.performed += instance.OnPauseMenu;
                 @PauseMenu.canceled += instance.OnPauseMenu;
-                @Noclip.started += instance.OnNoclip;
-                @Noclip.performed += instance.OnNoclip;
-                @Noclip.canceled += instance.OnNoclip;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -967,9 +897,6 @@ namespace Memories.Input
                 @PauseMenu.started -= instance.OnPauseMenu;
                 @PauseMenu.performed -= instance.OnPauseMenu;
                 @PauseMenu.canceled -= instance.OnPauseMenu;
-                @Noclip.started -= instance.OnNoclip;
-                @Noclip.performed -= instance.OnNoclip;
-                @Noclip.canceled -= instance.OnNoclip;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -1115,7 +1042,6 @@ namespace Memories.Input
             void OnJump(InputAction.CallbackContext context);
             void OnInteract(InputAction.CallbackContext context);
             void OnPauseMenu(InputAction.CallbackContext context);
-            void OnNoclip(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

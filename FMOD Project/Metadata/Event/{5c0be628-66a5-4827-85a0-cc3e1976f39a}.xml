@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>0.25623582766439912</value>
 		</property>
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<relationship name="fadeInCurve">
 			<destination>{dfb136d5-2740-4cb4-bfe1-f05dc484a5e9}</destination>
 		</relationship>
@@ -101,7 +104,6 @@
 		<relationship name="sounds">
 			<destination>{5407530f-6aff-48ca-8a4d-cc5a8c406e83}</destination>
 			<destination>{d17b074d-6aaf-41f9-86a6-06a8f2d42a5c}</destination>
-			<destination>{02072944-fbff-482e-b2c4-350c8fdad5b2}</destination>
 			<destination>{c4d9dab9-b211-4f3d-bbf6-28d8b57d5666}</destination>
 			<destination>{3978fc02-7bfe-4d4f-8e98-4d4361e229d0}</destination>
 			<destination>{716e2969-3cf1-4d31-b942-d422a6c07ede}</destination>
@@ -157,11 +159,6 @@
 	<object class="SingleSound" id="{d17b074d-6aaf-41f9-86a6-06a8f2d42a5c}">
 		<relationship name="audioFile">
 			<destination>{a0a33625-263e-4af8-95f2-2dcf4c4f5584}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{02072944-fbff-482e-b2c4-350c8fdad5b2}">
-		<relationship name="audioFile">
-			<destination>{fe3c6381-023d-4f97-b49c-469d6704fa75}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{c4d9dab9-b211-4f3d-bbf6-28d8b57d5666}">

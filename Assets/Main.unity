@@ -1915,6 +1915,7 @@ GameObject:
   - component: {fileID: 2096296485}
   - component: {fileID: 2096296488}
   - component: {fileID: 2096296489}
+  - component: {fileID: 2096296490}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2055,6 +2056,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
+--- !u!114 &2096296490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096296484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 2fcc2ad2a2b6dbc4bbd7a73d57c31cf5,
+    type: 3}
+  m_NotificationBehavior: 1
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d7a9fca-ee50-4c97-9dc9-f83d811e63a0
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01f0ec62-5134-4113-802e-d7b026221771
+    m_ActionName: Player/Jump[/Keyboard/space,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e67ede01-3b45-437a-8bf9-a127ff17f23c
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ab0a5f04-630e-463b-84c1-da037e065003
+    m_ActionName: Player/Pause Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 045398f6-185f-425d-9287-23039332a1d3
+    m_ActionName: UI/Click[/Mouse/leftButton,/Mouse/press,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6dcf9bc7-c114-4718-8399-1b661a85e30b
+    m_ActionName: UI/AnyKey[/Mouse/leftButton,/Mouse/middleButton,/Mouse/rightButton,/Mouse/press,/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29446fac-4dc9-4245-89e1-3c7f78af30c1
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5ec16e7-5205-43f6-8256-786de9a9b240
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1283e303-7f42-4eef-b310-ff4c3bee2c22
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7b23412-2857-4885-80b5-53a32d6dbb0b
+    m_ActionName: UI/Point[/Mouse/position]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: a04bee1b-d95a-45f5-93e6-7c6e97037343
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 2096296486}
 --- !u!4 &1335535618260865473
 Transform:
   m_ObjectHideFlags: 0

@@ -1,8 +1,10 @@
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Memories.Cutscenes.Textbox
 {
@@ -97,6 +99,8 @@ namespace Memories.Cutscenes.Textbox
 
         public void Advance()
         {
+            if (!IsShown) return;
+
             Debug.Log("Advance");
             // need to swap _advanceSource before TrySetResult() invokes its callbacks
             UniTaskCompletionSource oldSource = _advanceSource;
@@ -105,8 +109,11 @@ namespace Memories.Cutscenes.Textbox
         }
 
         // input system, triggers when clicking anywhere (or pressing the key bound to Submit)
-        public void OnClick()
+        [UsedImplicitly]
+        public void OnClick(InputValue val)
         {
+            if (!IsShown) return;
+
             Debug.Log("Clicked");
             Advance();
         }
