@@ -17,17 +17,53 @@ MonoBehaviour:
   repeatable: 0
   repeatBehaviour: 0
   mainLines:
-  - rid: 8057489064158822475
-  - rid: 8057489064158822476
+  - rid: 8057489064158822477
+  - rid: 8057489064158822478
+  - rid: 8057489064158822480
+  - rid: 8057489064158822482
+  - rid: 3225858945227423756
+  - rid: 3225858945227423757
+  - rid: 8057489064158822483
   repeatLines: []
   references:
     version: 2
     RefIds:
-    - rid: 8057489064158822475
+    - rid: 3225858945227423756
+      type: {class: PlaySfx, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        sound:
+          Guid:
+            Data1: 712651088
+            Data2: 1173469376
+            Data3: -251000182
+            Data4: 1440126224
+          Path: event:/sfx/cutscene/cave_noise
+    - rid: 3225858945227423757
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         duration: 2
-    - rid: 8057489064158822476
-      type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+        keepTextbox: 0
+    - rid: 8057489064158822477
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        pages: 1
+        duration: 2
+        keepTextbox: 0
+    - rid: 8057489064158822478
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: Vedal is officially creatively bankrupt as of today.
+    - rid: 8057489064158822480
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 7723b2abc264d174db20fa5452ef54da, type: 2}
+        text: "I watched him file the paperwork as he sobbed into his beige patternless
+          handkerchief.\r"
+    - rid: 8057489064158822482
+      type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        duration: 3
+        keepTextbox: 0
+    - rid: 8057489064158822483
+      type: {class: CloseBook, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data: 

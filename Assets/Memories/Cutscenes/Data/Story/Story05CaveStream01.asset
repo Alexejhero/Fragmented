@@ -23,6 +23,7 @@ MonoBehaviour:
   - rid: 8057489064158822472
   - rid: 3225858945227423748
   - rid: 3225858945227423749
+  - rid: 3225858945227423755
   - rid: 3225858945227423750
   - rid: 3225858945227423751
   - rid: 3225858945227423754
@@ -34,9 +35,9 @@ MonoBehaviour:
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
         actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
-        text: "They said it couldn't be done. They said - \"Vedal, you're insane.
-          You cannot plan a stream this good. You're going to break every streaming
-          platform in existence.\"\r"
+        text: "They said it couldn't be done. They said \"Vedal, you're insane. You
+          cannot plan a stream this good. You're going to break every streaming platform
+          in existence.\"\r"
     - rid: 3225858945227423749
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
@@ -58,11 +59,17 @@ MonoBehaviour:
     - rid: 3225858945227423754
       type: {class: TurnPages, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        pages: 2
+        pages: 3
+    - rid: 3225858945227423755
+      type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
+      data:
+        actor: {fileID: 11400000, guid: 5ae20bcd1f43bf146a1680e85f1b5063, type: 2}
+        text: That's right, ladies and gentlemen. The most requested stream of the
+          decade. You've all asked for it, and I am here to deliver.
     - rid: 8057489064158822469
       type: {class: Pause, ns: Memories.Cutscenes, asm: Assembly-CSharp}
       data:
-        duration: 2
+        duration: 0.5
         keepTextbox: 0
     - rid: 8057489064158822470
       type: {class: TextLine, ns: Memories.Cutscenes, asm: Assembly-CSharp}
